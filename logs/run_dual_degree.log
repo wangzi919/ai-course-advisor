@@ -1,0 +1,15 @@
+2026-03-29 21:37:40,203 - INFO - 開始更新雙聯學位資料...
+2026-03-29 21:37:40,209 - INFO - 強制更新模式
+2026-03-29 21:37:40,211 - INFO - ✓ 已清除 HTML 快取: c:\Users\Peter\Desktop\ai-course-advisor\data\oia\dual_degree_cache
+2026-03-29 21:37:40,214 - INFO - ==================================================
+2026-03-29 21:37:40,220 - INFO - 開始爬取: https://www.oia.nchu.edu.tw/index.php/zh/7-partnership-with-nchu-tw/7-3-dual-degree-program-tw/7-3-2-list-of-partner-universities-of-dual-degree-program-tw
+2026-03-29 21:37:40,220 - INFO - ==================================================
+2026-03-29 21:37:40,221 - INFO - 正在抓取: https://www.oia.nchu.edu.tw/index.php/zh/7-partnership-with-nchu-tw/7-3-dual-degree-program-tw/7-3-1-agreement-signing-tw
+2026-03-29 21:37:42,104 - INFO - 正在抓取: https://www.oia.nchu.edu.tw/index.php/zh/7-partnership-with-nchu-tw/7-3-dual-degree-program-tw/7-3-2-list-of-partner-universities-of-dual-degree-program-tw
+2026-03-29 21:37:42,646 - INFO - 共解析 55 筆締約學校資料
+2026-03-29 21:37:42,649 - INFO - 資料已儲存至: c:\Users\Peter\Desktop\ai-course-advisor\data\oia\dual_degree.json（共 55 筆）
+2026-03-29 21:37:42,964 - WARNING - ⚠ 無法載入 hot_reload 模組，跳過熱重載
+2026-03-29 21:37:42,964 - INFO - ==================================================
+2026-03-29 21:37:42,964 - INFO - 爬蟲完成! 共抓取 56 筆資料
+2026-03-29 21:37:42,964 - INFO - ==================================================
+2026-03-29 21:37:42,964 - INFO - 雙聯學位資料更新成功。

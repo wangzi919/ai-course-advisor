@@ -1,345 +1,638 @@
 {
   "course_search_by_keyword": {
-    "description": "Search for courses in NCHU course database.",
-    "parameters": {
-      "keyword": "str",
-      "limit": "int",
-      "search_fields": "str | None",
-      "case_sensitive": "bool",
-      "include_details": "bool"
-    },
-    "defaults": {
-      "limit": 10,
-      "search_fields": null,
-      "case_sensitive": false,
-      "include_details": false
-    },
-    "full_docstring": "Search for courses in NCHU course database.\n\nArgs:\n    keyword: Search keyword\n    limit: Maximum number of results to return (default: 10)\n    search_fields: Comma-separated fields to search in (default: 課程名稱,課程簡述,每週授課內容,開課系所,授課教師)\n    case_sensitive: Whether search is case sensitive (default: False)\n    include_details: Whether to include detailed course information (default: False)\n\nReturns:\n    JSON string containing search results"
+    "description": "依關鍵字搜尋中興大學課程資料庫中的課程。",
+    "required_parameters": [
+      {
+        "name": "keyword",
+        "type": "STRING",
+        "description": "搜尋關鍵字"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "回傳結果上限",
+        "default": 10
+      },
+      {
+        "name": "search_fields",
+        "type": "STRING",
+        "description": "要搜尋的欄位，逗號分隔（課程名稱,課程簡述,每週授課內容,開課系所,授課教師），不填則搜尋所有主要欄位",
+        "default": null
+      },
+      {
+        "name": "case_sensitive",
+        "type": "BOOLEAN",
+        "description": "是否區分大小寫",
+        "default": false
+      },
+      {
+        "name": "include_details",
+        "type": "BOOLEAN",
+        "description": "是否回傳詳細課程資訊（含大綱）",
+        "default": false
+      }
+    ]
   },
   "course_search_by_department": {
-    "description": "Search courses by department.",
-    "parameters": {
-      "department": "str",
-      "limit": "int"
-    },
-    "defaults": {
-      "limit": 20
-    },
-    "full_docstring": "Search courses by department.\n\nArgs:\n    department: Department name to search for\n    limit: Maximum number of results to return (default: 20)\n\nReturns:\n    JSON string containing search results"
+    "description": "依開課系所搜尋課程。",
+    "required_parameters": [
+      {
+        "name": "department",
+        "type": "STRING",
+        "description": "系所名稱（支援部分比對）"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "回傳結果上限",
+        "default": 20
+      }
+    ]
   },
   "course_search_by_type": {
-    "description": "Search courses by course type (required/elective).",
-    "parameters": {
-      "course_type": "str",
-      "limit": "int"
-    },
-    "defaults": {
-      "limit": 20
-    },
-    "full_docstring": "Search courses by course type (required/elective).\n\nArgs:\n    course_type: Course type to search for (e.g., 必修, 選修)\n    limit: Maximum number of results to return (default: 20)\n\nReturns:\n    JSON string containing search results"
+    "description": "依課程類別（必修／選修）搜尋課程。",
+    "required_parameters": [
+      {
+        "name": "course_type",
+        "type": "STRING",
+        "description": "課程類別，例如「必修」或「選修」"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "回傳結果上限",
+        "default": 20
+      }
+    ]
   },
   "course_get_stats": {
-    "description": "Get statistics about the course database.",
-    "parameters": {},
-    "defaults": {},
-    "full_docstring": "Get statistics about the course database.\n\nReturns:\n    JSON string containing database statistics"
+    "description": "取得課程資料庫的統計資訊（總課程數、系所數等）。",
+    "required_parameters": [],
+    "optional_parameters": []
   },
   "course_get_detail": {
-    "description": "Get detailed information about a specific course.",
-    "parameters": {
-      "course_id": "str"
-    },
-    "defaults": {},
-    "full_docstring": "Get detailed information about a specific course.\n\nArgs:\n    course_id: Course ID (序號 or 流水號)\n\nReturns:\n    JSON string containing detailed course information"
+    "description": "依課程 ID 取得單門課程的詳細資訊與完整大綱。",
+    "required_parameters": [
+      {
+        "name": "course_id",
+        "type": "STRING",
+        "description": "課程序號或流水號"
+      }
+    ],
+    "optional_parameters": []
   },
   "course_search_by_teacher": {
-    "description": "Search courses by teacher name.",
-    "parameters": {
-      "teacher_name": "str",
-      "limit": "int"
-    },
-    "defaults": {
-      "limit": 20
-    },
-    "full_docstring": "Search courses by teacher name.\n\nArgs:\n    teacher_name: Teacher name to search for\n    limit: Maximum number of results to return (default: 20)\n\nReturns:\n    JSON string containing search results"
+    "description": "依授課教師姓名搜尋課程。",
+    "required_parameters": [
+      {
+        "name": "teacher_name",
+        "type": "STRING",
+        "description": "教師姓名（支援部分比對）"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "回傳結果上限",
+        "default": 20
+      }
+    ]
   },
   "course_get_teacher_courses": {
-    "description": "Get all courses taught by a specific teacher.",
-    "parameters": {
-      "teacher_name": "str",
-      "exact_match": "bool",
-      "limit": "int"
-    },
-    "defaults": {
-      "exact_match": false,
-      "limit": 50
-    },
-    "full_docstring": "Get all courses taught by a specific teacher.\n\nArgs:\n    teacher_name: Teacher name\n    exact_match: Whether to use exact match (default: False)\n    limit: Maximum number of results to return (default: 50)\n\nReturns:\n    JSON string containing teacher's courses"
+    "description": "取得特定教師所開設的所有課程清單。",
+    "required_parameters": [
+      {
+        "name": "teacher_name",
+        "type": "STRING",
+        "description": "教師姓名"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "exact_match",
+        "type": "BOOLEAN",
+        "description": "是否使用完全比對（預設為部分比對）",
+        "default": false
+      },
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "回傳結果上限",
+        "default": 50
+      }
+    ]
   },
   "course_get_all_teachers": {
-    "description": "Get all teachers and their course statistics.",
-    "parameters": {},
-    "defaults": {},
-    "full_docstring": "Get all teachers and their course statistics.\n\nReturns:\n    JSON string containing all teachers and their course counts"
+    "description": "取得所有授課教師清單及其開課統計數量。",
+    "required_parameters": [],
+    "optional_parameters": []
   },
   "answer_borrow_rules": {
-    "description": "Answer questions about borrowing rules via Gemini Pro 2.5.",
-    "parameters": {
-      "question": "str"
-    },
-    "defaults": {},
-    "full_docstring": "Answer questions about borrowing rules via Gemini Pro 2.5."
+    "description": "使用 AI 回答圖書館借閱規則相關問題。",
+    "required_parameters": [
+      {
+        "name": "question",
+        "type": "STRING",
+        "description": "關於借閱規則的問題（如借書期限、逾期罰款、遺失賠償等）"
+      }
+    ],
+    "optional_parameters": []
   },
   "confirm_then_answer": {
-    "description": "Describe the confirmation process before answering.",
-    "parameters": {
-      "question": "str",
-      "user_id": "str | None"
-    },
-    "defaults": {
-      "user_id": null
-    },
-    "full_docstring": "Describe the confirmation process before answering.\n\nThe returned message is an instruction to later agents. It explains\nthat they should first verify the user's NCHU library ID, confirm that\nthe question relates to borrowing regulations, and only then invoke\n:func:`answer_borrow_rules` to produce the final reply."
+    "description": "描述回答前的身份驗證流程（驗證圖書館讀者證後再回答借閱規則問題）。",
+    "required_parameters": [
+      {
+        "name": "question",
+        "type": "STRING",
+        "description": "關於借閱規則的問題"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "user_id",
+        "type": "STRING",
+        "description": "使用者的圖書館讀者證號",
+        "default": null
+      }
+    ]
   },
   "library_activities_search": {
-    "description": "library_activities_search",
-    "parameters": {
-      "keyword": "str",
-      "date_range": "str",
-      "instructor": "str",
-      "location": "str",
-      "limit": "int"
-    },
-    "defaults": {
-      "keyword": "",
-      "date_range": "",
-      "instructor": "",
-      "location": "",
-      "limit": 20
-    },
-    "full_docstring": ""
+    "description": "搜尋圖書館舉辦的活動與講座。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "keyword",
+        "type": "STRING",
+        "description": "活動關鍵字",
+        "default": ""
+      },
+      {
+        "name": "date_range",
+        "type": "STRING",
+        "description": "日期範圍，格式為 YYYY-MM-DD,YYYY-MM-DD",
+        "default": ""
+      },
+      {
+        "name": "instructor",
+        "type": "STRING",
+        "description": "講師姓名",
+        "default": ""
+      },
+      {
+        "name": "location",
+        "type": "STRING",
+        "description": "活動地點",
+        "default": ""
+      },
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "回傳結果上限",
+        "default": 20
+      }
+    ]
   },
   "library_activities_upcoming": {
-    "description": "library_activities_upcoming",
-    "parameters": {
-      "days": "int",
-      "limit": "int"
-    },
-    "defaults": {
-      "days": 30,
-      "limit": 20
-    },
-    "full_docstring": ""
+    "description": "取得圖書館即將舉辦的活動清單。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "days",
+        "type": "NUMBER",
+        "description": "往後查詢幾天的活動",
+        "default": 30
+      },
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "回傳結果上限",
+        "default": 20
+      }
+    ]
   },
   "library_activities_stats": {
-    "description": "library_activities_stats",
-    "parameters": {},
-    "defaults": {},
-    "full_docstring": ""
+    "description": "取得圖書館活動資料的統計資訊。",
+    "required_parameters": [],
+    "optional_parameters": []
   },
   "library_search_books": {
-    "description": "Search books from NCHU Library using the Primo API.",
-    "parameters": {
-      "query": "str"
-    },
-    "defaults": {},
-    "full_docstring": "Search books from NCHU Library using the Primo API.\n\nArgs:\n    query (str): The search keyword (supports Chinese characters).\n\nReturns:\n    List[Dict]: Each dictionary contains:\n        - 'title': Book title\n        - 'creator': Main author or contributor (cleaned)\n        - 'link': Alma detail page link\n        - 'error': Optional, if request fails"
+    "description": "使用 Primo API 在中興大學圖書館館藏中搜尋圖書。",
+    "required_parameters": [
+      {
+        "name": "query",
+        "type": "STRING",
+        "description": "搜尋關鍵字（支援中文）"
+      }
+    ],
+    "optional_parameters": []
   },
   "library_get_loan_history": {
-    "description": "Get a user's Alma loan history.",
-    "parameters": {
-      "user_id": "str"
-    },
-    "defaults": {},
-    "full_docstring": "Get a user's Alma loan history.\n\nArgs:\n    user_id (str): User identifier in the library system,  The `user_id` field is automatically provided by the backend.\n\nReturns:\n    List[Dict]: Loan records with fields:\n        Index, User Name, Department, User Group, User ID,\n        Author, Barcode, Loan Date, Return Date, Title, email"
+    "description": "取得使用者在圖書館的借閱歷史紀錄。",
+    "required_parameters": [
+      {
+        "name": "user_id",
+        "type": "STRING",
+        "description": "圖書館系統中的使用者識別碼（由後端自動帶入）"
+      }
+    ],
+    "optional_parameters": []
   },
   "library_elearning_list": {
-    "description": "List e-learning courses with optional filters.",
-    "parameters": {
-      "limit": "int",
-      "search": "str",
-      "source": "str"
-    },
-    "defaults": {
-      "limit": 20,
-      "search": "",
-      "source": ""
-    },
-    "full_docstring": "List e-learning courses with optional filters.\n\nArgs:\n    limit: Maximum number of courses to return (default: 20)\n    search: Search keyword in course titles\n    source: Filter by source location name"
+    "description": "列出圖書館提供的電子學習課程（可依關鍵字或來源篩選）。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "回傳結果上限",
+        "default": 20
+      },
+      {
+        "name": "search",
+        "type": "STRING",
+        "description": "課程標題搜尋關鍵字",
+        "default": ""
+      },
+      {
+        "name": "source",
+        "type": "STRING",
+        "description": "依來源地點名稱篩選",
+        "default": ""
+      }
+    ]
   },
   "library_elearning_get_by_id": {
-    "description": "Get specific course details by ID.",
-    "parameters": {
-      "course_id": "int"
-    },
-    "defaults": {},
-    "full_docstring": "Get specific course details by ID.\n\nArgs:\n    course_id: Course ID number"
+    "description": "依 ID 取得特定電子學習課程的詳細資訊。",
+    "required_parameters": [
+      {
+        "name": "course_id",
+        "type": "NUMBER",
+        "description": "課程 ID 編號"
+      }
+    ],
+    "optional_parameters": []
   },
   "library_elearning_categories": {
-    "description": "Get all course categories with course counts.",
-    "parameters": {},
-    "defaults": {},
-    "full_docstring": "Get all course categories with course counts."
+    "description": "取得所有電子學習課程的分類清單及各分類課程數量。",
+    "required_parameters": [],
+    "optional_parameters": []
   },
   "library_elearning_popular": {
-    "description": "Get most popular courses sorted by view count.",
-    "parameters": {
-      "limit": "int"
-    },
-    "defaults": {
-      "limit": 10
-    },
-    "full_docstring": "Get most popular courses sorted by view count.\n\nArgs:\n    limit: Maximum number of courses to return (default: 10)"
+    "description": "取得瀏覽次數最多的熱門電子學習課程。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "回傳結果上限",
+        "default": 10
+      }
+    ]
   },
   "library_elearning_stats": {
-    "description": "Get statistics of e-learning courses.",
-    "parameters": {},
-    "defaults": {},
-    "full_docstring": "Get statistics of e-learning courses."
+    "description": "取得電子學習課程的統計資訊。",
+    "required_parameters": [],
+    "optional_parameters": []
   },
   "library_guide_get_title": {
-    "description": "Get the title of the library guide.",
-    "parameters": {},
-    "defaults": {},
-    "full_docstring": "Get the title of the library guide."
+    "description": "取得圖書館使用指南的標題。",
+    "required_parameters": [],
+    "optional_parameters": []
   },
   "library_guide_list_sections": {
-    "description": "List all first-level sections of the library guide.",
-    "parameters": {},
-    "defaults": {},
-    "full_docstring": "List all first-level sections of the library guide."
+    "description": "列出圖書館使用指南的所有第一層章節。",
+    "required_parameters": [],
+    "optional_parameters": []
   },
   "library_guide_get_section": {
-    "description": "Get specific section content by heading.",
-    "parameters": {
-      "heading": "str"
-    },
-    "defaults": {},
-    "full_docstring": "Get specific section content by heading.\n\nArgs:\n    heading: Section heading (first-level), e.g., \"借閱服務SO sweet\""
+    "description": "依章節標題取得圖書館使用指南中特定章節的內容。",
+    "required_parameters": [
+      {
+        "name": "heading",
+        "type": "STRING",
+        "description": "第一層章節標題，例如「借閱服務SO sweet」"
+      }
+    ],
+    "optional_parameters": []
   },
   "library_guide_search": {
-    "description": "Search for content containing the keyword in the library guide.",
-    "parameters": {
-      "keyword": "str"
-    },
-    "defaults": {},
-    "full_docstring": "Search for content containing the keyword in the library guide.\n\nArgs:\n    keyword: Search keyword"
+    "description": "在圖書館使用指南中搜尋包含指定關鍵字的內容。",
+    "required_parameters": [
+      {
+        "name": "keyword",
+        "type": "STRING",
+        "description": "搜尋關鍵字"
+      }
+    ],
+    "optional_parameters": []
   },
   "library_guide_get_tables": {
-    "description": "Get all tables in the library guide.",
-    "parameters": {},
-    "defaults": {},
-    "full_docstring": "Get all tables in the library guide."
+    "description": "取得圖書館使用指南中的所有表格資料。",
+    "required_parameters": [],
+    "optional_parameters": []
   },
   "library_guide_stats": {
-    "description": "Get statistics of the library guide.",
-    "parameters": {},
-    "defaults": {},
-    "full_docstring": "Get statistics of the library guide."
+    "description": "取得圖書館使用指南的統計資訊。",
+    "required_parameters": [],
+    "optional_parameters": []
   },
   "get_library_hours": {
-    "description": "取得所有圖書館空間的開放時間資訊",
-    "parameters": {},
-    "defaults": {},
-    "full_docstring": "取得所有圖書館空間的開放時間資訊\n\nReturns:\n    str: 格式化的圖書館開放時間資訊"
+    "description": "取得所有圖書館空間的開放時間資訊。",
+    "required_parameters": [],
+    "optional_parameters": []
   },
   "search_library_space": {
-    "description": "搜尋特定圖書館空間的開放時間",
-    "parameters": {
-      "space_name": "str"
-    },
-    "defaults": {},
-    "full_docstring": "搜尋特定圖書館空間的開放時間\n\nArgs:\n    space_name: 空間名稱（支援部分匹配）\n\nReturns:\n    str: 搜尋結果"
+    "description": "搜尋特定圖書館空間的開放時間（支援部分名稱比對）。",
+    "required_parameters": [
+      {
+        "name": "space_name",
+        "type": "STRING",
+        "description": "空間名稱（支援部分比對）"
+      }
+    ],
+    "optional_parameters": []
   },
   "get_24hour_spaces": {
-    "description": "取得 24 小時開放的空間資訊",
-    "parameters": {},
-    "defaults": {},
-    "full_docstring": "取得 24 小時開放的空間資訊\n\nReturns:\n    str: 24 小時開放空間列表"
+    "description": "取得圖書館中 24 小時開放的空間資訊。",
+    "required_parameters": [],
+    "optional_parameters": []
   },
   "get_library_hours_summary": {
-    "description": "取得圖書館開放時間摘要（簡要資訊）",
-    "parameters": {},
-    "defaults": {},
-    "full_docstring": "取得圖書館開放時間摘要（簡要資訊）\n\nReturns:\n    str: 簡要的開放時間資訊"
+    "description": "取得圖書館開放時間的簡要摘要資訊。",
+    "required_parameters": [],
+    "optional_parameters": []
   },
   "check_library_hours_update": {
-    "description": "檢查圖書館開放時間資料的更新狀態",
-    "parameters": {},
-    "defaults": {},
-    "full_docstring": "檢查圖書館開放時間資料的更新狀態\n\nReturns:\n    str: 資料更新狀態資訊"
+    "description": "檢查圖書館開放時間資料的最後更新狀態。",
+    "required_parameters": [],
+    "optional_parameters": []
   },
   "school_activities_news_search": {
-    "description": "Search for school news by keyword and event date range found in the news content.",
-    "parameters": {
-      "keyword": "str",
-      "date_range": "str",
-      "limit": "int"
-    },
-    "defaults": {
-      "keyword": "",
-      "date_range": "",
-      "limit": 20
-    },
-    "full_docstring": "Search for school news by keyword and event date range found in the news content.\n\nArgs:\n    keyword: Search keyword (default: \"\")\n    date_range: Date range in format \"YYYY-MM-DD,YYYY-MM-DD\" to filter by event dates in content (default: \"\")\n    limit: Maximum number of results to return (default: 20)\n\nReturns:\n    JSON string containing search results"
+    "description": "依關鍵字或日期範圍搜尋全校活動公告新聞。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "keyword",
+        "type": "STRING",
+        "description": "搜尋關鍵字",
+        "default": ""
+      },
+      {
+        "name": "date_range",
+        "type": "STRING",
+        "description": "活動日期範圍，格式為 YYYY-MM-DD,YYYY-MM-DD",
+        "default": ""
+      },
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "回傳結果上限",
+        "default": 20
+      }
+    ]
   },
   "school_activities_news_upcoming": {
-    "description": "Get school news containing upcoming events within a specified number of days.",
-    "parameters": {
-      "days": "int",
-      "limit": "int"
-    },
-    "defaults": {
-      "days": 7,
-      "limit": 20
-    },
-    "full_docstring": "Get school news containing upcoming events within a specified number of days.\n\nArgs:\n    days: Number of days to look ahead (default: 7)\n    limit: Maximum number of results to return (default: 20)\n\nReturns:\n    JSON string containing upcoming event news"
+    "description": "取得全校近期即將舉辦的活動公告。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "days",
+        "type": "NUMBER",
+        "description": "往後查詢幾天內的活動",
+        "default": 7
+      },
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "回傳結果上限",
+        "default": 20
+      }
+    ]
   },
   "school_activities_news_stats": {
-    "description": "Get statistics about the school news.",
-    "parameters": {},
-    "defaults": {},
-    "full_docstring": "Get statistics about the school news.\n\nReturns:\n    JSON string containing database statistics"
+    "description": "取得全校活動公告新聞資料的統計資訊。",
+    "required_parameters": [],
+    "optional_parameters": []
   },
   "modules_list_all": {
-    "description": "Return the list of available course module names.",
-    "parameters": {},
-    "defaults": {},
-    "full_docstring": "Return the list of available course module names.\n\nReturns:\n    List[str]: Names of all available modules."
+    "description": "列出所有可用的跨領域學習模組名稱。",
+    "required_parameters": [],
+    "optional_parameters": []
   },
   "modules_get_detail": {
-    "description": "Return detailed information for a specific module.",
-    "parameters": {
-      "name": "str"
-    },
-    "defaults": {},
-    "full_docstring": "Return detailed information for a specific module.\n\nArgs:\n    name: Module name.\n\nReturns:\n    Dict: Module details, or None if not found."
+    "description": "取得特定跨領域學習模組的詳細資訊（含課程清單與修課規定）。",
+    "required_parameters": [
+      {
+        "name": "name",
+        "type": "STRING",
+        "description": "模組名稱"
+      }
+    ],
+    "optional_parameters": []
   },
   "modules_get_rules": {
-    "description": "Return the rules and regulations for course modules at NCHU.",
-    "parameters": {},
-    "defaults": {},
-    "full_docstring": "Return the rules and regulations for course modules at NCHU.\n\nReturns:\n    str: The course module rules text."
+    "description": "取得中興大學跨領域學習模組的修課規則與規定說明。",
+    "required_parameters": [],
+    "optional_parameters": []
   },
   "rule_search_by_query": {
-    "description": "Search school rules by query string using dense vector retrieval.",
-    "parameters": {
-      "query": "str",
-      "top_k": "int"
-    },
-    "defaults": {
-      "top_k": 5
-    },
-    "full_docstring": "Search school rules by query string.\n\nArgs:\n    query: Query string (e.g., \"獎懲規定\", \"請假流程\").\n    top_k: Number of results to return (1-10).\n\nReturns:\n    Dictionary containing retrieved documents and metadata."
+    "description": "使用語意向量搜尋查詢教務處法規章則（學則、辦法、要點等）。",
+    "required_parameters": [
+      {
+        "name": "query",
+        "type": "STRING",
+        "description": "查詢問題或關鍵字，例如「轉系辦法」、「請假流程」"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "top_k",
+        "type": "NUMBER",
+        "description": "回傳最相關的結果數量（1-10）",
+        "default": 5
+      }
+    ]
   },
   "rule_list_all": {
-    "description": "List all available school rule documents.",
-    "parameters": {
-      "limit": "int"
-    },
-    "defaults": {
-      "limit": 20
-    },
-    "full_docstring": "List all available school rule documents.\n\nArgs:\n    limit: Maximum number of documents to return (1-100).\n\nReturns:\n    Dictionary with document metadata and counts."
+    "description": "列出所有可用的學校法規文件清單。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "回傳文件數量上限（1-100）",
+        "default": 20
+      }
+    ]
+  },
+  "nchu_dual_degree_get_info": {
+    "description": "取得中興大學雙聯學位計畫的締約說明與相關法規連結。",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_dual_degree_list_continents": {
+    "description": "列出各洲雙聯學位締約學校數量，作為查詢締約學校的入口。",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_dual_degree_search": {
+    "description": "搜尋中興大學雙聯學位締約學校（支援關鍵字、洲別、國家、學位類型、有效期篩選）。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "keyword",
+        "type": "STRING",
+        "description": "關鍵字，搜尋學校名稱、國家、系所",
+        "default": ""
+      },
+      {
+        "name": "continent",
+        "type": "STRING",
+        "description": "洲別，例如「亞洲」、「歐洲」、「美洲」",
+        "default": ""
+      },
+      {
+        "name": "country",
+        "type": "STRING",
+        "description": "國家名稱，例如「日本」、「美國」",
+        "default": ""
+      },
+      {
+        "name": "degree",
+        "type": "STRING",
+        "description": "學位類型，例如「學士」、「碩士」、「博士」",
+        "default": ""
+      },
+      {
+        "name": "active_only",
+        "type": "BOOLEAN",
+        "description": "是否只顯示未過期的有效合約",
+        "default": false
+      },
+      {
+        "name": "program_type",
+        "type": "STRING",
+        "description": "計畫類型：dual_degree（雙聯學位）或 3_plus_x（3+X 學位）",
+        "default": ""
+      }
+    ]
+  },
+  "nchu_partner_universities_overview": {
+    "description": "取得中興大學全球締約學校的統計概覽（各洲別與合作項目的學校數與合作筆數）。",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_partner_universities_search": {
+    "description": "搜尋中興大學全球締約學校（支援關鍵字、洲別、國家、合作項目篩選，分頁回傳）。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "keyword",
+        "type": "STRING",
+        "description": "關鍵字，搜尋學校名稱（中英文）或國家名稱",
+        "default": ""
+      },
+      {
+        "name": "continent",
+        "type": "STRING",
+        "description": "洲別篩選，例如「亞洲」或「Asia」",
+        "default": ""
+      },
+      {
+        "name": "country",
+        "type": "STRING",
+        "description": "國家篩選，例如「日本」或「Japan」",
+        "default": ""
+      },
+      {
+        "name": "program",
+        "type": "STRING",
+        "description": "合作項目篩選，例如「交換學生」、「雙聯」",
+        "default": ""
+      },
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "每頁回傳筆數上限",
+        "default": 5
+      },
+      {
+        "name": "offset",
+        "type": "NUMBER",
+        "description": "從第幾筆開始（用於翻頁）",
+        "default": 0
+      }
+    ]
+  },
+  "nchu_uibp_faq_search": {
+    "description": "語意搜尋中興大學校學士（校務規劃處）常見問答 FAQ。",
+    "required_parameters": [
+      {
+        "name": "query",
+        "type": "STRING",
+        "description": "搜尋問題，例如「誰可以申請校學士」、「校學士會延畢嗎」"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "top_k",
+        "type": "NUMBER",
+        "description": "回傳最相關的 FAQ 數量（1-10）",
+        "default": 5
+      }
+    ]
+  },
+  "nchu_uibp_faq_list_all": {
+    "description": "列出所有校學士 FAQ 問答項目的完整清單。",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_uibp_faq_stats": {
+    "description": "取得校學士 FAQ 資料集的統計資訊（問題總數、更新時間等）。",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_uibp_get_apply_process": {
+    "description": "取得校學士學位的完整申請流程（含所有步驟、時程與聯絡方式）。",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_uibp_get_apply_step": {
+    "description": "取得校學士申請流程中特定步驟的詳細資訊。",
+    "required_parameters": [
+      {
+        "name": "step_number",
+        "type": "NUMBER",
+        "description": "步驟編號（1-4）"
+      }
+    ],
+    "optional_parameters": []
+  },
+  "nchu_uibp_get_apply_timeline": {
+    "description": "取得校學士申請的重要時程（文件繳交期間、結果公告日期等）。",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_uibp_get_apply_contact": {
+    "description": "取得校學士申請承辦單位的聯絡資訊（電話、信箱、地址等）。",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_uibp_list_apply_steps": {
+    "description": "列出校學士申請所有步驟的摘要標題，快速概覽整個申請流程。",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_uibp_apply_stats": {
+    "description": "取得校學士申請資料的統計資訊（步驟數、最後更新時間等）。",
+    "required_parameters": [],
+    "optional_parameters": []
   }
 }

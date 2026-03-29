@@ -5,8 +5,15 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-import google.generativeai as genai
+# import google.generativeai as genai  # 已改用 Ollama，不再需要金鑰
 from mcp.server.fastmcp import FastMCP
+
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from my_llm import call_ollama
+
+OLLAMA_MODEL = "qwen3:32b"
 
 
 BORROW_RULES = """
@@ -121,25 +128,25 @@ mcp = FastMCP("nchu_borrow_rules")
 
 @mcp.tool()
 def answer_borrow_rules(question: str) -> str:
-    """Answer questions about borrowing rules via Gemini Pro 2.5."""
+    """Answer questions about borrowing rules via local Ollama model."""
 
+    # ── 原本使用 Gemini，已改為 Ollama（不需金鑰）──
+    # api_key = os.getenv("GOOGLE_API_KEY")
+    # if not api_key:
+    #     key_file = Path(__file__).with_name(".google_api_key")
+    #     if key_file.exists():
+    #         api_key = key_file.read_text().strip()
+    # if not api_key:
+    #     raise RuntimeError(
+    #         "GOOGLE_API_KEY environment variable not set and .google_api_key file missing"
+    #     )
+    # genai.configure(api_key=api_key)
+    # model = genai.GenerativeModel("gemini-2.0-flash")
+    # response = model.generate_content(prompt)
+    # return response.text
 
-
-    api_key = os.getenv("GOOGLE_API_KEY")
-    if not api_key:
-        key_file = Path(__file__).with_name(".google_api_key")
-        if key_file.exists():
-            api_key = key_file.read_text().strip()
-    if not api_key:
-        raise RuntimeError(
-            "GOOGLE_API_KEY environment variable not set and .google_api_key file missing"
-        )
-
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel("gemini-2.0-flash")
     prompt = f"根據以下規則回答使用者問題：\n{BORROW_RULES}\n問題：{question}"
-    response = model.generate_content(prompt)
-    return response.text
+    return call_ollama(OLLAMA_MODEL, prompt)
 
 
 @mcp.tool()

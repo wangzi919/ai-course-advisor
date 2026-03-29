@@ -44,7 +44,7 @@
 
 - 圖書館各服務章節內容（借閱、還書、館際合作等）
 - 指南中的規則表格
-- 借閱規則自然語言問答（Gemini Pro 2.5 驅動）
+- 借閱規則自然語言問答（Ollama 本地模型驅動）
 
 ---
 
@@ -79,6 +79,20 @@
 
 ---
 
+### 🌍 國際事務 (OIA) — 締約學校與雙聯學位
+
+- 全球締約學校資訊與統計概覽（支援關鍵字、洲別、合作項目篩選）
+- 雙聯學位（Dual Degree / 3+X）締約說明、法規與學校搜尋
+
+---
+
+### 🎓 校學士 (UIBP)
+
+- 校學士常見問答 (FAQ) 語意搜尋
+- 校學士完整申請流程、步驟、時程與聯絡資訊
+
+---
+
 ## 🚀 快速啟動
 
 ```bash
@@ -89,10 +103,17 @@ python ste_runner.py
 python ste_runner.py --filter course_search_by_keyword
 
 # 自訂模型與參數
-python ste_runner.py --model qwen3:8b --episodes 15 --turns 5
+python ste_runner.py --model qwen3:32b --episodes 15 --turns 5
 ```
 
 ## 🧠 需求
 
 - Python 3.10+
-- [Ollama](https://ollama.com/)（例如 `ollama pull qwen3:8b`）
+- [Ollama](https://ollama.com/)（例如 `ollama pull qwen3:32b`）
+
+## 🔑 金鑰與環境變數
+
+部分工具在執行時會需要依賴外部 API 授權與配置：
+
+- **`ALMA_ANALYTICS_API_KEY`**：用於圖書館借閱紀錄查詢工具 (`library_get_loan_history`)，需設定此環境變數，或將金鑰放置於 `library_tools/.alma_analytics_api_key` 中。
+- **`EMBEDDING_API_URL`**：用於校規查詢與校學士 FAQ 的語意搜尋工具，需設定此環境變數至負責處理 embedding 的 API 節點，否則無法進行向量檢索。

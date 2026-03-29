@@ -53,12 +53,6 @@
     "category": "library",
     "tool_name": "borrow_rules_api"
   },
-  "confirm_then_answer": {
-    "module": "library_tools/borrow_rules_api.py",
-    "function": "confirm_then_answer",
-    "category": "library",
-    "tool_name": "borrow_rules_api"
-  },
   "library_activities_search": {
     "module": "library_tools/library_activities_api.py",
     "function": "library_activities_search",
@@ -232,5 +226,89 @@
     "function": "rule_list_all",
     "category": "rule",
     "tool_name": "school_rules_api"
+  },
+  "nchu_dual_degree_get_info": {
+    "module": "oia_tools/dual_degree_api.py",
+    "function": "nchu_dual_degree_get_info",
+    "category": "oia",
+    "tool_name": "dual_degree_api"
+  },
+  "nchu_dual_degree_list_continents": {
+    "module": "oia_tools/dual_degree_api.py",
+    "function": "nchu_dual_degree_list_continents",
+    "category": "oia",
+    "tool_name": "dual_degree_api"
+  },
+  "nchu_dual_degree_search": {
+    "module": "oia_tools/dual_degree_api.py",
+    "function": "nchu_dual_degree_search",
+    "category": "oia",
+    "tool_name": "dual_degree_api"
+  },
+  "nchu_partner_universities_overview": {
+    "module": "oia_tools/partner_universities_api.py",
+    "function": "nchu_partner_universities_overview",
+    "category": "oia",
+    "tool_name": "partner_universities_api"
+  },
+  "nchu_partner_universities_search": {
+    "module": "oia_tools/partner_universities_api.py",
+    "function": "nchu_partner_universities_search",
+    "category": "oia",
+    "tool_name": "partner_universities_api"
+  },
+  "nchu_uibp_faq_search": {
+    "module": "uibp_tools/uibp_faq_search_api.py",
+    "function": "nchu_uibp_faq_search",
+    "category": "uibp",
+    "tool_name": "uibp_faq_search_api"
+  },
+  "nchu_uibp_faq_list_all": {
+    "module": "uibp_tools/uibp_faq_search_api.py",
+    "function": "nchu_uibp_faq_list_all",
+    "category": "uibp",
+    "tool_name": "uibp_faq_search_api"
+  },
+  "nchu_uibp_faq_stats": {
+    "module": "uibp_tools/uibp_faq_search_api.py",
+    "function": "nchu_uibp_faq_stats",
+    "category": "uibp",
+    "tool_name": "uibp_faq_search_api"
+  },
+  "nchu_uibp_get_apply_process": {
+    "module": "uibp_tools/uibp_apply_api.py",
+    "function": "nchu_uibp_get_apply_process",
+    "category": "uibp",
+    "tool_name": "uibp_apply_api"
+  },
+  "nchu_uibp_get_apply_step": {
+    "module": "uibp_tools/uibp_apply_api.py",
+    "function": "nchu_uibp_get_apply_step",
+    "category": "uibp",
+    "tool_name": "uibp_apply_api"
+  },
+  "nchu_uibp_get_apply_timeline": {
+    "module": "uibp_tools/uibp_apply_api.py",
+    "function": "nchu_uibp_get_apply_timeline",
+    "category": "uibp",
+    "tool_name": "uibp_apply_api"
+  },
+  "nchu_uibp_get_apply_contact": {
+    "module": "uibp_tools/uibp_apply_api.py",
+    "function": "nchu_uibp_get_apply_contact",
+    "category": "uibp",
+    "tool_name": "uibp_apply_api"
+  },
+  "nchu_uibp_list_apply_steps": {
+    "module": "uibp_tools/uibp_apply_api.py",
+    "function": "nchu_uibp_list_apply_steps",
+    "category": "uibp",
+    "tool_name": "uibp_apply_api"
+  },
+  "nchu_uibp_apply_stats": {
+    "module": "uibp_tools/uibp_apply_api.py",
+    "function": "nchu_uibp_apply_stats",
+    "category": "uibp",
+    "tool_name": "uibp_apply_api"
   }
 }

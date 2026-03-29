@@ -1,0 +1,109 @@
+{
+  "metadata": {
+    "last_updated": "2026-03-29T21:42:03.586523",
+    "total_count": 1,
+    "data_source": "https://uibp.nchu.edu.tw/apply.php?Key=2"
+  },
+  "data": [
+    {
+      "steps": [
+        {
+          "step": 1,
+          "title": "修習課程",
+          "content": [
+            {
+              "number": "01",
+              "subtitle": "打好基礎",
+              "text": [
+                "先修習至少2學分非所屬學系領域模組或大學部跨領域學分學程的課程。"
+              ]
+            },
+            {
+              "number": "02",
+              "subtitle": "準備文件",
+              "text": [
+                "A.歷年成績單(需有領域模組或大學部跨領域學分學程修課紀錄)"
+              ]
+            }
+          ]
+        },
+        {
+          "step": 2,
+          "title": "預約會談 釐清方向",
+          "content": [
+            {
+              "number": "01",
+              "text": [
+                "與教學資源暨發展中心學習規劃師進行深入會談，討論並完善你的學習計畫，確保方向明確。"
+              ]
+            },
+            {
+              "number": "02",
+              "subtitle": "準備文件",
+              "text": [
+                "B.學習規劃諮詢證明"
+              ]
+            }
+          ]
+        },
+        {
+          "step": 3,
+          "title": "撰寫計畫書 展現熱忱",
+          "content": [
+            {
+              "number": "01",
+              "text": [
+                "清楚闡述你的學習目標及完整的課程規劃，展現你對跨領域學習的熱誠與規劃能力。"
+              ]
+            },
+            {
+              "number": "02",
+              "subtitle": "準備文件",
+              "text": [
+                "C.校學士學位修讀計畫書 點此下載",
+                "D.本學期選課紀錄",
+                "E.課外活動資料（如參與相關領域研習、參展、社團等證明【非必要】）"
+              ],
+              "download_url": "https://uibp.nchu.edu.tw/download.php"
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "title": "繳交送審 靜候佳音",
+          "content": [
+            {
+              "number": "01",
+              "subtitle": "將所有文件",
+              "text": [
+                "A.歷年成績單",
+                "B.學習規劃諮詢證明",
+                "C.校學士學位修讀計畫書",
+                "D.本學期選課紀錄",
+                "E.課外活動資料（如參與相關領域研習、參展、社團等證明【非必要】）"
+              ]
+            },
+            {
+              "number": "02",
+              "text": [
+                "請整併為單一PDF檔案，並在規定時間內寄送至承辦人信箱 uibpnchu@email.nchu.edu.tw"
+              ]
+            }
+          ]
+        }
+      ],
+      "timeline": {
+        "submission_period": "文件繳交期間：115年5月18日（星期一）至6月18日（星期四）",
+        "result_announcement": "結果公告：請於115年8月18日（星期二）上午10:00起，自行至「國立中興大學校學士網站-最新消息-【放榜】」查詢核准名單。",
+        "note": "請務必注意！ 所有文件必須在繳交期限內完成。若逾期或資料不齊全，將視同放棄申請，請特別留意。"
+      },
+      "contact": {
+        "department": "國立中興大學通識教育中心",
+        "address": "台中市南區興大路145號綜合教學大樓6樓",
+        "phone": "TEL :04-22840597*32",
+        "email": "uibpnchu@email.nchu.edu.tw",
+        "submission_email": "uibpnchu@email.nchu.edu.tw"
+      }
+    }
+  ]
+}

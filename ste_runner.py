@@ -15,7 +15,7 @@ from datetime import datetime
 from pathlib import Path
 
 # ===== 本地模組 =====
-from utils import parse_response
+from react_parser import parse_response
 from my_llm import chat_my, call_ollama
 from local_tool_runner import run_local_tool
 
@@ -137,7 +137,7 @@ def main(
                     + "\n".join(LTM(explored_queries, success_labels))
                     + f"\n\n{past_msg_post}"
                 )
-            prompt_q += "\n\n只輸出問題本身，不要輸出其他任何內容。\n使用者問題："
+            prompt_q += "\n\n只輸出問題本身，不要輸出其他任何內容。\n"
 
             query = strip_think(call_ollama(model_ckpt, prompt_q)).strip('"\'')
             print(f"🧠 New Query: {query}")
@@ -219,7 +219,7 @@ def main(
                         + "\n".join(LTM(explored_queries, success_labels))
                         + f"\n\n{past_msg_post}"
                     )
-                follow_q += "\n\n只輸出問題本身，不要輸出其他任何內容。\n使用者問題："
+                follow_q += "\n\n只輸出問題本身，不要輸出其他任何內容。\n"
 
                 # Follow-up query 從對話歷史產生（對照 reference 的寫法）
                 follow_query = strip_think(chat_my(messages, follow_q, model=model_ckpt)[-1]["content"]).strip().strip('"\'')
@@ -292,7 +292,16 @@ def main(
         yes_ep = success_labels.count("Yes")
         print(f"\n📊 {api_name}：共 {total_ep} 筆，成功 {yes_ep} 筆")
 
-    # ===== 寫出結果 =====
+        # ===== 寫出個別 API 結果 =====
+        safe_model = model_ckpt.replace(":", "-").replace("/", "-")
+        api_dir = os.path.join(dir_write, api_name)
+        os.makedirs(api_dir, exist_ok=True)
+        api_out_path = os.path.join(api_dir, f"{safe_model}_{RUN_ID}.json")
+        with open(api_out_path, "w", encoding="utf-8") as f:
+            json.dump(all_sessions, f, indent=2, ensure_ascii=False)
+        print(f"  💾 已儲存：{api_out_path}")
+
+    # ===== 寫出完整合併結果 =====
     safe_model = model_ckpt.replace(":", "-").replace("/", "-")
     out_path = os.path.join(dir_write, f"{safe_model}_{RUN_ID}.json")
     with open(out_path, "w", encoding="utf-8") as f:
@@ -304,7 +313,8 @@ def main(
         for s in sessions if s.get("reflection") == "Yes"
     )
     print(f"\n{'='*50}")
-    print(f"📁 結果已儲存：{out_path}")
+    print(f"📁 合併結果：{out_path}")
+    print(f"📁 個別結果：{dir_write}<api_name>/<model>_<timestamp>.json")
     print(f"📊 總計：{total} 筆，成功：{success} 筆（{100*success//max(total,1)}%）")
     print(f"{'='*50}")
 
@@ -313,7 +323,7 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="STE 工具探索訓練資料生成")
-    parser.add_argument("--model",    default="qwen3:8b",    help="Ollama 模型名稱")
+    parser.add_argument("--model",    default="qwen3:32b",    help="Ollama 模型名稱")
     parser.add_argument("--episodes", type=int, default=15,   help="每個工具探索幾輪")
     parser.add_argument("--stm",      type=int, default=2,   help="每輪 follow-up 數量（含原始問題）")
     parser.add_argument("--turns",    type=int, default=5,   help="ReAct 最大迭代次數")
