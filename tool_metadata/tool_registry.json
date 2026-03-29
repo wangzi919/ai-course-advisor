@@ -1,0 +1,236 @@
+{
+  "course_search_by_keyword": {
+    "module": "course_tools/course_search_api.py",
+    "function": "course_search_by_keyword",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "course_search_by_department": {
+    "module": "course_tools/course_search_api.py",
+    "function": "course_search_by_department",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "course_search_by_type": {
+    "module": "course_tools/course_search_api.py",
+    "function": "course_search_by_type",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "course_get_stats": {
+    "module": "course_tools/course_search_api.py",
+    "function": "course_get_stats",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "course_get_detail": {
+    "module": "course_tools/course_search_api.py",
+    "function": "course_get_detail",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "course_search_by_teacher": {
+    "module": "course_tools/course_search_api.py",
+    "function": "course_search_by_teacher",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "course_get_teacher_courses": {
+    "module": "course_tools/course_search_api.py",
+    "function": "course_get_teacher_courses",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "course_get_all_teachers": {
+    "module": "course_tools/course_search_api.py",
+    "function": "course_get_all_teachers",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "answer_borrow_rules": {
+    "module": "library_tools/borrow_rules_api.py",
+    "function": "answer_borrow_rules",
+    "category": "library",
+    "tool_name": "borrow_rules_api"
+  },
+  "confirm_then_answer": {
+    "module": "library_tools/borrow_rules_api.py",
+    "function": "confirm_then_answer",
+    "category": "library",
+    "tool_name": "borrow_rules_api"
+  },
+  "library_activities_search": {
+    "module": "library_tools/library_activities_api.py",
+    "function": "library_activities_search",
+    "category": "library",
+    "tool_name": "library_activities_api"
+  },
+  "library_activities_upcoming": {
+    "module": "library_tools/library_activities_api.py",
+    "function": "library_activities_upcoming",
+    "category": "library",
+    "tool_name": "library_activities_api"
+  },
+  "library_activities_stats": {
+    "module": "library_tools/library_activities_api.py",
+    "function": "library_activities_stats",
+    "category": "library",
+    "tool_name": "library_activities_api"
+  },
+  "library_search_books": {
+    "module": "library_tools/library_api.py",
+    "function": "library_search_books",
+    "category": "library",
+    "tool_name": "library_api"
+  },
+  "library_get_loan_history": {
+    "module": "library_tools/library_api.py",
+    "function": "library_get_loan_history",
+    "category": "library",
+    "tool_name": "library_api"
+  },
+  "library_elearning_list": {
+    "module": "library_tools/library_elearning_api.py",
+    "function": "library_elearning_list",
+    "category": "library",
+    "tool_name": "library_elearning_api"
+  },
+  "library_elearning_get_by_id": {
+    "module": "library_tools/library_elearning_api.py",
+    "function": "library_elearning_get_by_id",
+    "category": "library",
+    "tool_name": "library_elearning_api"
+  },
+  "library_elearning_categories": {
+    "module": "library_tools/library_elearning_api.py",
+    "function": "library_elearning_categories",
+    "category": "library",
+    "tool_name": "library_elearning_api"
+  },
+  "library_elearning_popular": {
+    "module": "library_tools/library_elearning_api.py",
+    "function": "library_elearning_popular",
+    "category": "library",
+    "tool_name": "library_elearning_api"
+  },
+  "library_elearning_stats": {
+    "module": "library_tools/library_elearning_api.py",
+    "function": "library_elearning_stats",
+    "category": "library",
+    "tool_name": "library_elearning_api"
+  },
+  "library_guide_get_title": {
+    "module": "library_tools/library_guide_api.py",
+    "function": "library_guide_get_title",
+    "category": "library",
+    "tool_name": "library_guide_api"
+  },
+  "library_guide_list_sections": {
+    "module": "library_tools/library_guide_api.py",
+    "function": "library_guide_list_sections",
+    "category": "library",
+    "tool_name": "library_guide_api"
+  },
+  "library_guide_get_section": {
+    "module": "library_tools/library_guide_api.py",
+    "function": "library_guide_get_section",
+    "category": "library",
+    "tool_name": "library_guide_api"
+  },
+  "library_guide_search": {
+    "module": "library_tools/library_guide_api.py",
+    "function": "library_guide_search",
+    "category": "library",
+    "tool_name": "library_guide_api"
+  },
+  "library_guide_get_tables": {
+    "module": "library_tools/library_guide_api.py",
+    "function": "library_guide_get_tables",
+    "category": "library",
+    "tool_name": "library_guide_api"
+  },
+  "library_guide_stats": {
+    "module": "library_tools/library_guide_api.py",
+    "function": "library_guide_stats",
+    "category": "library",
+    "tool_name": "library_guide_api"
+  },
+  "get_library_hours": {
+    "module": "library_tools/library_hours_api.py",
+    "function": "get_library_hours",
+    "category": "library",
+    "tool_name": "library_hours_api"
+  },
+  "search_library_space": {
+    "module": "library_tools/library_hours_api.py",
+    "function": "search_library_space",
+    "category": "library",
+    "tool_name": "library_hours_api"
+  },
+  "get_24hour_spaces": {
+    "module": "library_tools/library_hours_api.py",
+    "function": "get_24hour_spaces",
+    "category": "library",
+    "tool_name": "library_hours_api"
+  },
+  "get_library_hours_summary": {
+    "module": "library_tools/library_hours_api.py",
+    "function": "get_library_hours_summary",
+    "category": "library",
+    "tool_name": "library_hours_api"
+  },
+  "check_library_hours_update": {
+    "module": "library_tools/library_hours_api.py",
+    "function": "check_library_hours_update",
+    "category": "library",
+    "tool_name": "library_hours_api"
+  },
+  "school_activities_news_search": {
+    "module": "activity_tools/school_activities_news_api.py",
+    "function": "school_activities_news_search",
+    "category": "activity",
+    "tool_name": "school_activities_news_api"
+  },
+  "school_activities_news_upcoming": {
+    "module": "activity_tools/school_activities_news_api.py",
+    "function": "school_activities_news_upcoming",
+    "category": "activity",
+    "tool_name": "school_activities_news_api"
+  },
+  "school_activities_news_stats": {
+    "module": "activity_tools/school_activities_news_api.py",
+    "function": "school_activities_news_stats",
+    "category": "activity",
+    "tool_name": "school_activities_news_api"
+  },
+  "modules_list_all": {
+    "module": "module_tools/modules_search_api.py",
+    "function": "modules_list_all",
+    "category": "module",
+    "tool_name": "modules_search_api"
+  },
+  "modules_get_detail": {
+    "module": "module_tools/modules_search_api.py",
+    "function": "modules_get_detail",
+    "category": "module",
+    "tool_name": "modules_search_api"
+  },
+  "modules_get_rules": {
+    "module": "module_tools/modules_search_api.py",
+    "function": "modules_get_rules",
+    "category": "module",
+    "tool_name": "modules_search_api"
+  },
+  "rule_search_by_query": {
+    "module": "rule_tools/school_rules_api.py",
+    "function": "rule_search_by_query",
+    "category": "rule",
+    "tool_name": "school_rules_api"
+  },
+  "rule_list_all": {
+    "module": "rule_tools/school_rules_api.py",
+    "function": "rule_list_all",
+    "category": "rule",
+    "tool_name": "school_rules_api"
+  }
+}
