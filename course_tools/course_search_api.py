@@ -134,7 +134,16 @@ class CourseSearcher:
 
         try:
             with open(json_path, 'r', encoding='utf-8') as f:
-                courses = json.load(f)
+                raw = json.load(f)
+            # 支援兩種格式：
+            # 1. {"metadata": {...}, "data": [...]}  (新格式)
+            # 2. [...]                               (舊格式: 直接是 list)
+            if isinstance(raw, dict) and 'data' in raw:
+                courses = raw['data']
+            elif isinstance(raw, list):
+                courses = raw
+            else:
+                raise RuntimeError(f"JSON 格式不支援，應為 list 或含 'data' 欄位的 dict: {json_path}")
             self.loaded_semesters[semester] = courses
             return courses
         except FileNotFoundError:
@@ -1062,7 +1071,10 @@ def nchu_course_search_by_keyword(
     try:
         fields = None
         if search_fields:
-            fields = [field.strip() for field in search_fields.split(',')]
+            if isinstance(search_fields, list):
+                fields = [str(f).strip() for f in search_fields]
+            else:
+                fields = [field.strip() for field in str(search_fields).split(',')]
 
         results = searcher.search_courses(
             keyword=keyword,
@@ -1107,11 +1119,17 @@ def nchu_course_search_across_semesters(
     try:
         fields = None
         if search_fields:
-            fields = [field.strip() for field in search_fields.split(',')]
+            if isinstance(search_fields, list):
+                fields = [str(f).strip() for f in search_fields]
+            else:
+                fields = [field.strip() for field in str(search_fields).split(',')]
 
         sem_list = None
         if semesters:
-            sem_list = [s.strip() for s in semesters.split(',')]
+            if isinstance(semesters, list):
+                sem_list = [str(s).strip() for s in semesters]
+            else:
+                sem_list = [s.strip() for s in str(semesters).split(',')]
 
         results = searcher.search_across_semesters(
             keyword=keyword,

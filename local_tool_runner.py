@@ -84,6 +84,12 @@ def run_local_tool(api_name: str, args: dict, registry: dict, truncate: int = 20
                 parsed['_truncated'] = True
 
         result_str = json.dumps(parsed, ensure_ascii=False)
+        # 如果超過 truncate 限制，縮減 results 到能容納的大小
+        if len(result_str) > truncate and isinstance(parsed, dict) and 'results' in parsed:
+            while parsed['results'] and len(result_str) > truncate:
+                parsed['results'].pop()
+                parsed['_truncated'] = True
+                result_str = json.dumps(parsed, ensure_ascii=False)
         return result_str[:truncate]
 
     except TypeError as e:

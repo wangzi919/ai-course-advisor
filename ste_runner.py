@@ -39,16 +39,21 @@ def run_tool(api_name: str, args: dict, truncate: int = 2048) -> str:
 
 # ===== 安全解析 JSON =====
 def safe_json_loads(s: str) -> dict:
-    """從字串中擷取並解析 JSON。"""
-    match = re.search(r"\{[\s\S]*\}", s)
-    if not match:
-        raise ValueError(f"找不到有效 JSON：{s[:100]}")
-    json_str = match.group(0)
-    json_str = re.sub(r"//.*?(?=\n|$)", "", json_str)
-    json_str = re.sub(r"/\*[\s\S]*?\*/", "", json_str)
-    json_str = re.sub(r",\s*}", "}", json_str)
-    json_str = re.sub(r",\s*\]", "]", json_str)
-    return json.loads(json_str)
+    """從字串中擷取並解析第一個完整的 JSON object。
+    
+    使用 raw_decode 只解析第一個 JSON，避免 LLM 輸出多個 JSON 時
+    造成的 'Extra data' 錯誤。
+    """
+    decoder = json.JSONDecoder()
+    s_stripped = s.strip()
+    for i in range(len(s_stripped)):
+        if s_stripped[i] == '{':
+            try:
+                obj, _ = decoder.raw_decode(s_stripped, i)
+                return obj
+            except json.JSONDecodeError:
+                continue
+    raise ValueError(f"找不到有效 JSON：{s[:100]}")
 
 
 def strip_think(text: str) -> str:
@@ -137,7 +142,7 @@ def main(
                     + "\n".join(LTM(explored_queries, success_labels))
                     + f"\n\n{past_msg_post}"
                 )
-            prompt_q += "\n\n只輸出問題本身，不要輸出其他任何內容。\n"
+            prompt_q += "\n\n只輸出問題本身，不要輸出其他任何內容。使用繁體中文\n"
 
             query = strip_think(call_ollama(model_ckpt, prompt_q)).strip('"\'')
             print(f"🧠 New Query: {query}")
@@ -219,7 +224,7 @@ def main(
                         + "\n".join(LTM(explored_queries, success_labels))
                         + f"\n\n{past_msg_post}"
                     )
-                follow_q += "\n\n只輸出問題本身，不要輸出其他任何內容。\n"
+                follow_q += "\n\n只輸出問題本身，不要輸出其他任何內容。使用繁體中文\n"
 
                 # Follow-up query 從對話歷史產生（對照 reference 的寫法）
                 follow_query = strip_think(chat_my(messages, follow_q, model=model_ckpt)[-1]["content"]).strip().strip('"\'')
@@ -324,7 +329,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="STE 工具探索訓練資料生成")
     parser.add_argument("--model",    default="qwen3:32b",    help="Ollama 模型名稱")
-    parser.add_argument("--episodes", type=int, default=10,   help="每個工具探索幾輪")
+    parser.add_argument("--episodes", type=int, default=5,   help="每個工具探索幾輪")
     parser.add_argument("--stm",      type=int, default=2,   help="每輪 follow-up 數量（含原始問題）")
     parser.add_argument("--turns",    type=int, default=5,   help="ReAct 最大迭代次數")
     parser.add_argument("--output",   default="results/ste/", help="輸出目錄")

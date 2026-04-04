@@ -1,150 +1,4 @@
 {
-  "course_search_by_keyword": {
-    "description": "依關鍵字搜尋中興大學課程資料庫中的課程。",
-    "required_parameters": [
-      {
-        "name": "keyword",
-        "type": "STRING",
-        "description": "搜尋關鍵字"
-      }
-    ],
-    "optional_parameters": [
-      {
-        "name": "limit",
-        "type": "NUMBER",
-        "description": "回傳結果上限",
-        "default": 10
-      },
-      {
-        "name": "search_fields",
-        "type": "STRING",
-        "description": "要搜尋的欄位，逗號分隔（課程名稱,課程簡述,每週授課內容,開課系所,授課教師），不填則搜尋所有主要欄位",
-        "default": null
-      },
-      {
-        "name": "case_sensitive",
-        "type": "BOOLEAN",
-        "description": "是否區分大小寫",
-        "default": false
-      },
-      {
-        "name": "include_details",
-        "type": "BOOLEAN",
-        "description": "是否回傳詳細課程資訊（含大綱）",
-        "default": false
-      }
-    ]
-  },
-  "course_search_by_department": {
-    "description": "依開課系所搜尋課程。",
-    "required_parameters": [
-      {
-        "name": "department",
-        "type": "STRING",
-        "description": "系所名稱（支援部分比對）"
-      }
-    ],
-    "optional_parameters": [
-      {
-        "name": "limit",
-        "type": "NUMBER",
-        "description": "回傳結果上限",
-        "default": 20
-      }
-    ]
-  },
-  "course_search_by_type": {
-    "description": "依課程類別（必修／選修）搜尋課程。",
-    "required_parameters": [
-      {
-        "name": "course_type",
-        "type": "STRING",
-        "description": "課程類別，例如「必修」或「選修」"
-      }
-    ],
-    "optional_parameters": [
-      {
-        "name": "limit",
-        "type": "NUMBER",
-        "description": "回傳結果上限",
-        "default": 20
-      }
-    ]
-  },
-  "course_get_stats": {
-    "description": "取得課程資料庫的統計資訊（總課程數、系所數等）。",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
-  "course_get_detail": {
-    "description": "依課程 ID 取得單門課程的詳細資訊與完整大綱。",
-    "required_parameters": [
-      {
-        "name": "course_id",
-        "type": "STRING",
-        "description": "課程序號或流水號"
-      }
-    ],
-    "optional_parameters": []
-  },
-  "course_search_by_teacher": {
-    "description": "依授課教師姓名搜尋課程。",
-    "required_parameters": [
-      {
-        "name": "teacher_name",
-        "type": "STRING",
-        "description": "教師姓名（支援部分比對）"
-      }
-    ],
-    "optional_parameters": [
-      {
-        "name": "limit",
-        "type": "NUMBER",
-        "description": "回傳結果上限",
-        "default": 20
-      }
-    ]
-  },
-  "course_get_teacher_courses": {
-    "description": "取得特定教師所開設的所有課程清單。",
-    "required_parameters": [
-      {
-        "name": "teacher_name",
-        "type": "STRING",
-        "description": "教師姓名"
-      }
-    ],
-    "optional_parameters": [
-      {
-        "name": "exact_match",
-        "type": "BOOLEAN",
-        "description": "是否使用完全比對（預設為部分比對）",
-        "default": false
-      },
-      {
-        "name": "limit",
-        "type": "NUMBER",
-        "description": "回傳結果上限",
-        "default": 50
-      }
-    ]
-  },
-  "course_get_all_teachers": {
-    "description": "取得所有授課教師清單及其開課統計數量。",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
-  "answer_borrow_rules": {
-    "description": "使用 AI 回答圖書館借閱規則相關問題。",
-    "required_parameters": [
-      {
-        "name": "question",
-        "type": "STRING",
-        "description": "關於借閱規則的問題（如借書期限、逾期罰款、遺失賠償等）"
-      }
-    ],
-    "optional_parameters": []
-  },
   "library_activities_search": {
     "description": "搜尋圖書館舉辦的活動與講座。",
     "required_parameters": [],
@@ -1427,36 +1281,36 @@
     ]
   },
   "nchu_teacher_search_by_name": {
-    "description": "Search for NCHU teachers by name.",
+    "description": "依姓名搜尋中興大學教師。",
     "required_parameters": [
       {
         "name": "name",
         "type": "STRING",
-        "description": "Teacher name to search for (Chinese or English)"
+        "description": "欲搜尋的教師姓名（中英文皆可）"
       }
     ],
     "optional_parameters": [
       {
         "name": "exact_match",
         "type": "BOOLEAN",
-        "description": "Whether to use exact match (default: False)",
+        "description": "是否使用完全比對（預設為否）",
         "default": false
       },
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 20)",
+        "description": "最多回傳幾筆結果（預設為 20）",
         "default": 20
       }
     ]
   },
   "nchu_teacher_search_by_department": {
-    "description": "Search for NCHU teachers by department.",
+    "description": "依系所搜尋中興大學教師。",
     "required_parameters": [
       {
         "name": "department",
         "type": "STRING",
-        "description": "Department name to search for (supports partial match)"
+        "description": "欲搜尋的系所名稱（支援部分比對）"
       }
     ],
     "optional_parameters": [
@@ -1469,117 +1323,425 @@
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 50)",
+        "description": "最多回傳幾筆結果（預設為 50）",
         "default": 50
       }
     ]
   },
   "nchu_teacher_search_by_college": {
-    "description": "Search for NCHU teachers by college.",
+    "description": "依學院搜尋中興大學教師。",
     "required_parameters": [
       {
         "name": "college",
         "type": "STRING",
-        "description": "College name to search for (supports partial match)"
+        "description": "欲搜尋的學院名稱（支援部分比對）"
       }
     ],
     "optional_parameters": [
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 100)",
+        "description": "最多回傳幾筆結果（預設為 100）",
         "default": 100
       }
     ]
   },
   "nchu_teacher_search_by_research_area": {
-    "description": "Search for NCHU teachers by research area/expertise.",
+    "description": "依研究專長領域搜尋中興大學教師。",
     "required_parameters": [
       {
         "name": "keywords",
         "type": "STRING",
-        "description": "Research area keywords to search for (space-separated)"
+        "description": "欲搜尋的研究領域關鍵字（以空白分隔）"
       }
     ],
     "optional_parameters": [
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 30)",
+        "description": "最多回傳幾筆結果（預設為 30）",
         "default": 30
       }
     ]
   },
   "nchu_teacher_search": {
-    "description": "General search for NCHU teachers.",
+    "description": "一般搜尋中興大學教師資訊。",
     "required_parameters": [
       {
         "name": "keywords",
         "type": "STRING",
-        "description": "Search keywords (space-separated)"
+        "description": "搜尋關鍵字（以空白分隔）"
       }
     ],
     "optional_parameters": [
       {
         "name": "department",
         "type": "STRING",
-        "description": "Optional department filter",
+        "description": "可選的系所篩選",
         "default": null
       },
       {
         "name": "college",
         "type": "STRING",
-        "description": "Optional college filter",
+        "description": "可選的學院篩選",
         "default": null
       },
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 30)",
+        "description": "最多回傳幾筆結果（預設為 30）",
         "default": 30
       }
     ]
   },
   "nchu_teacher_get_detail": {
-    "description": "Get detailed information about a specific NCHU teacher.",
+    "description": "取得特定中興大學教師的詳細資訊。",
     "required_parameters": [
       {
         "name": "teacher_id",
         "type": "STRING",
-        "description": "Teacher ID (from search results)"
+        "description": "教師 ID（來自搜尋結果）"
       }
     ],
     "optional_parameters": []
   },
   "nchu_teacher_list_departments": {
-    "description": "List all departments with teacher counts.",
+    "description": "列出所有系所及其教師數量統計。",
     "required_parameters": [],
     "optional_parameters": []
   },
   "nchu_teacher_list_colleges": {
-    "description": "List all colleges with teacher counts.",
+    "description": "列出所有學院及其教師數量統計。",
     "required_parameters": [],
     "optional_parameters": []
   },
   "nchu_teacher_list_research_areas": {
-    "description": "List research areas with teacher counts.",
+    "description": "列出研究領域及其教師數量統計。",
     "required_parameters": [],
     "optional_parameters": [
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 100)",
+        "description": "最多回傳幾筆結果（預設為 100）",
         "default": 100
       }
     ]
   },
   "nchu_course_teachers_search_by_name": {
-    "description": "Search NCHU teachers from course data by name.",
+    "description": "從課程資料依姓名搜尋中興大學教師。",
     "required_parameters": [
       {
         "name": "name",
         "type": "STRING",
-        "description": "Teacher name to search for (Chinese or English)"
+        "description": "欲搜尋的教師姓名（中英文皆可）"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "exact_match",
+        "type": "BOOLEAN",
+        "description": "是否使用完全比對（預設為否）",
+        "default": false
+      },
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "最多回傳幾筆結果（預設為 30）",
+        "default": 30
+      }
+    ]
+  },
+  "nchu_course_teachers_search_by_department": {
+    "description": "從課程資料依系所搜尋中興大學教師。",
+    "required_parameters": [
+      {
+        "name": "department",
+        "type": "STRING",
+        "description": "系所名稱（支援部分比對）"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "最多回傳幾筆結果（預設為 50）",
+        "default": 50
+      }
+    ]
+  },
+  "nchu_course_teachers_search_by_course": {
+    "description": "依授課課程名稱搜尋中興大學教師。",
+    "required_parameters": [
+      {
+        "name": "course_name",
+        "type": "STRING",
+        "description": "欲搜尋的課程名稱（支援部分比對）"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "最多回傳幾筆結果（預設為 30）",
+        "default": 30
+      }
+    ]
+  },
+  "nchu_course_teachers_search_by_semester": {
+    "description": "搜尋在特定學期授課的中興大學教師。",
+    "required_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "Semester code (e.g., \"1131\" for 113學年度第1學期)"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "最多回傳幾筆結果（預設為 100）",
+        "default": 100
+      }
+    ]
+  },
+  "nchu_course_teachers_search": {
+    "description": "在課程資料中一般搜尋中興大學教師。",
+    "required_parameters": [
+      {
+        "name": "keywords",
+        "type": "STRING",
+        "description": "搜尋關鍵字（以空白分隔）"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "department",
+        "type": "STRING",
+        "description": "可選的系所篩選",
+        "default": null
+      },
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "最多回傳幾筆結果（預設為 30）",
+        "default": 30
+      }
+    ]
+  },
+  "nchu_course_teachers_get_detail": {
+    "description": "取得特定教師的詳細資訊。",
+    "required_parameters": [
+      {
+        "name": "teacher_id",
+        "type": "STRING",
+        "description": "教師 ID（來自搜尋結果）"
+      }
+    ],
+    "optional_parameters": []
+  },
+  "nchu_course_teachers_get_courses": {
+    "description": "取得特定教師的課程授課紀錄。",
+    "required_parameters": [
+      {
+        "name": "teacher_id",
+        "type": "STRING",
+        "description": "教師 ID（來自搜尋結果）"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "可選的學期篩選（例如：「1131」）",
+        "default": null
+      },
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "最多回傳幾筆課程結果（預設為 50）",
+        "default": 50
+      }
+    ]
+  },
+  "nchu_course_teachers_list_departments": {
+    "description": "列出所有系所及其教師數量統計。",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_course_teachers_list_semesters": {
+    "description": "列出所有學期及其教師數量統計。",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_course_teachers_get_stats": {
+    "description": "取得課程教師資料庫統計資訊。",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_course_search_by_keyword": {
+    "description": "依關鍵字搜尋中興大學課程資料庫中的課程。",
+    "required_parameters": [
+      {
+        "name": "keyword",
+        "type": "STRING",
+        "description": "Search keyword"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 10)",
+        "default": 10
+      },
+      {
+        "name": "search_fields",
+        "type": "STRING",
+        "description": "Comma-separated fields to search in (default: 科目名稱,上課教師,開課單位,系所名稱,備註)",
+        "default": null
+      },
+      {
+        "name": "case_sensitive",
+        "type": "BOOLEAN",
+        "description": "Whether search is case sensitive (default: False)",
+        "default": false
+      },
+      {
+        "name": "include_syllabus_search",
+        "type": "BOOLEAN",
+        "description": "Also search in syllabus content (課程簡述, 課程目標, 每週授課內容, etc.) (default: False)",
+        "default": false
+      },
+      {
+        "name": "include_syllabus_in_result",
+        "type": "BOOLEAN",
+        "description": "Include full syllabus in results (default: False)",
+        "default": false
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "Semester code (e.g., \"1142\" for 113-2). If not specified, uses the latest semester.",
+        "default": null
+      }
+    ]
+  },
+  "nchu_course_search_by_department": {
+    "description": "依開課系所搜尋課程。",
+    "required_parameters": [
+      {
+        "name": "department",
+        "type": "STRING",
+        "description": "Department name to search for (e.g., 資工系, 文學院, 管理學院)"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 20)",
+        "default": 20
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "Semester code. If not specified, uses the latest semester.",
+        "default": null
+      }
+    ]
+  },
+  "nchu_course_search_by_type": {
+    "description": "依課程類別（必修／選修）搜尋課程。",
+    "required_parameters": [
+      {
+        "name": "course_type",
+        "type": "STRING",
+        "description": "Course type to search for (e.g., 必修, 選修)"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 20)",
+        "default": 20
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "Semester code. If not specified, uses the latest semester.",
+        "default": null
+      }
+    ]
+  },
+  "nchu_course_get_stats": {
+    "description": "取得課程資料庫的統計資訊（總課程數、系所數等）。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "Semester code. If not specified, uses the latest semester.",
+        "default": null
+      }
+    ]
+  },
+  "nchu_course_get_detail": {
+    "description": "依課程 ID 取得單門課程的詳細資訊與完整大綱。",
+    "required_parameters": [
+      {
+        "name": "course_id",
+        "type": "STRING",
+        "description": "Course ID (選課號碼)"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "include_syllabus",
+        "type": "BOOLEAN",
+        "description": "Include full syllabus content (課程簡述, 課程目標, 每週授課內容, 教學方法, 評量方法, etc.) (default: True)",
+        "default": true
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "Semester code. If not specified, uses the latest semester.",
+        "default": null
+      }
+    ]
+  },
+  "nchu_course_search_by_teacher": {
+    "description": "依授課教師姓名搜尋課程。",
+    "required_parameters": [
+      {
+        "name": "teacher_name",
+        "type": "STRING",
+        "description": "Teacher name to search for"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 20)",
+        "default": 20
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "Semester code. If not specified, uses the latest semester.",
+        "default": null
+      }
+    ]
+  },
+  "nchu_course_get_teacher_courses": {
+    "description": "取得特定教師所開設的所有課程清單。",
+    "required_parameters": [
+      {
+        "name": "teacher_name",
+        "type": "STRING",
+        "description": "Teacher name"
       }
     ],
     "optional_parameters": [
@@ -1592,137 +1754,283 @@
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 30)",
-        "default": 30
-      }
-    ]
-  },
-  "nchu_course_teachers_search_by_department": {
-    "description": "Search NCHU teachers by department from course data.",
-    "required_parameters": [
-      {
-        "name": "department",
-        "type": "STRING",
-        "description": "Department name (supports partial match)"
-      }
-    ],
-    "optional_parameters": [
-      {
-        "name": "limit",
-        "type": "NUMBER",
         "description": "Maximum number of results to return (default: 50)",
         "default": 50
-      }
-    ]
-  },
-  "nchu_course_teachers_search_by_course": {
-    "description": "Search NCHU teachers by course name they teach.",
-    "required_parameters": [
-      {
-        "name": "course_name",
-        "type": "STRING",
-        "description": "Course name to search for (supports partial match)"
-      }
-    ],
-    "optional_parameters": [
-      {
-        "name": "limit",
-        "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 30)",
-        "default": 30
-      }
-    ]
-  },
-  "nchu_course_teachers_search_by_semester": {
-    "description": "Search NCHU teachers who taught in a specific semester.",
-    "required_parameters": [
+      },
       {
         "name": "semester",
         "type": "STRING",
-        "description": "Semester code (e.g., \"1131\" for 113學年度第1學期)"
-      }
-    ],
-    "optional_parameters": [
-      {
-        "name": "limit",
-        "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 100)",
-        "default": 100
+        "description": "Semester code. If not specified, uses the latest semester.",
+        "default": null
       }
     ]
   },
-  "nchu_course_teachers_search": {
-    "description": "General search for NCHU teachers in course data.",
+  "nchu_course_get_all_teachers": {
+    "description": "取得所有授課教師清單及其開課統計數量。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "Semester code. If not specified, uses the latest semester.",
+        "default": null
+      }
+    ]
+  },
+  "nchu_course_search_across_semesters": {
+    "description": "Search for courses across multiple semesters. Useful for finding historical course offerings. Note: This may be slow if searching all semesters as it loads data on demand. JSON string containing search results grouped by semester",
     "required_parameters": [
       {
-        "name": "keywords",
+        "name": "keyword",
         "type": "STRING",
-        "description": "Search keywords (space-separated)"
+        "description": "Search keyword (course name, teacher name, etc.)"
       }
     ],
     "optional_parameters": [
+      {
+        "name": "limit_per_semester",
+        "type": "NUMBER",
+        "description": "Maximum number of results per semester (default: 10)",
+        "default": 10
+      },
+      {
+        "name": "search_fields",
+        "type": "STRING",
+        "description": "Comma-separated fields to search in (default: 科目名稱,上課教師,開課單位)",
+        "default": null
+      },
+      {
+        "name": "semesters",
+        "type": "STRING",
+        "description": "Comma-separated semester codes to search (e.g., \"1142,1141,1132\"). If not specified, searches all available semesters.",
+        "default": null
+      }
+    ]
+  },
+  "nchu_course_get_available_semesters": {
+    "description": "Get all available semesters in the course database. JSON string containing list of available semesters with descriptions",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_course_search_selectable_courses": {
+    "description": "Search courses that students of a specific department and academic level CAN ENROLL in. This is different from nchu_course_search_by_department which only finds courses OFFERED by a department. This tool finds all courses that a department's students are eligible to enroll in, including: - Courses offered by the same department - Courses offered by OTHER departments but designated for this department's students Academic level rules: - 學士班 (Undergraduate): Can enroll in 學士班 + 碩士班 courses - 碩士班 (Master): Can enroll in 碩士班 + 博士班 courses (NOT undergraduate courses) - 博士班 (PhD): Can enroll in 博士班 courses only - 碩專班 (Executive Master): Can enroll in 碩專班 + 碩士班 + 博士班 courses JSON string containing: - results: List of selectable courses with enrollment info - summary: Count of same-dept vs other-dept courses - search_params: Parameters used for the search including selectable career levels",
+    "required_parameters": [
       {
         "name": "department",
         "type": "STRING",
-        "description": "Optional department filter",
+        "description": "Department name keyword (e.g., \"資工\", \"電機\", \"中文\")"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "career",
+        "type": "STRING",
+        "description": "Academic level - 學士班, 碩士班, 博士班, 碩專班, 進修學士班 (default: 學士班)",
+        "default": "學士班"
+      },
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 20)",
+        "default": 20
+      },
+      {
+        "name": "include_other_dept",
+        "type": "BOOLEAN",
+        "description": "Include courses offered by other departments but selectable by this department (default: True)",
+        "default": true
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "Semester code. If not specified, uses the latest semester.",
+        "default": null
+      }
+    ]
+  },
+  "nchu_course_search_by_time": {
+    "description": "Search courses by class time. JSON string containing search results",
+    "required_parameters": [
+      {
+        "name": "weekday",
+        "type": "STRING",
+        "description": "Day of week (1=Monday, 2=Tuesday, ..., 7=Sunday)"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "period",
+        "type": "STRING",
+        "description": "Class period (1-9 for day classes, A-D for evening classes), optional",
         "default": null
       },
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 30)",
-        "default": 30
+        "description": "Maximum number of results to return (default: 20)",
+        "default": 20
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "Semester code. If not specified, uses the latest semester.",
+        "default": null
       }
     ]
   },
-  "nchu_course_teachers_get_detail": {
-    "description": "Get detailed information about a specific teacher.",
+  "nchu_course_get_teacher_history": {
+    "description": "Get a teacher's course history across all semesters. This searches all available semesters to find courses taught by the specified teacher. Note: This may be slow as it loads data from all semesters. JSON string containing teacher's course history grouped by semester",
     "required_parameters": [
       {
-        "name": "teacher_id",
+        "name": "teacher_name",
         "type": "STRING",
-        "description": "Teacher ID (from search results)"
+        "description": "Teacher name to search for"
       }
     ],
+    "optional_parameters": [
+      {
+        "name": "limit_per_semester",
+        "type": "NUMBER",
+        "description": "Maximum number of courses to show per semester (default: 10)",
+        "default": 10
+      }
+    ]
+  },
+  "nchu_course_get_all_departments": {
+    "description": "Get all departments and their course counts. JSON string containing all departments and their course counts",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "Semester code. If not specified, uses the latest semester.",
+        "default": null
+      }
+    ]
+  },
+  "nchu_course_time_format_help": {
+    "description": "Get help information about class time format codes. JSON string containing time format explanation",
+    "required_parameters": [],
     "optional_parameters": []
   },
-  "nchu_course_teachers_get_courses": {
-    "description": "Get course teaching records for a specific teacher.",
+  "nchu_course_search_syllabus": {
+    "description": "Search courses by syllabus content. This tool specifically searches within course syllabus fields including: - 課程簡述 (Course description) - 課程目標 (Course objectives) - 教學方法 (Teaching methods) - 評量方法 (Assessment methods) - 每週授課內容 (Weekly course content) - 教科書與參考書目 (Textbooks and references) - 核心能力與配比 (Core competencies and weightings) - 課程教材 (Course materials) JSON string containing courses with matching syllabus content",
     "required_parameters": [
       {
-        "name": "teacher_id",
+        "name": "keyword",
         "type": "STRING",
-        "description": "Teacher ID (from search results)"
+        "description": "Search keyword to find in syllabus content"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 10)",
+        "default": 10
+      },
+      {
+        "name": "include_syllabus_in_result",
+        "type": "BOOLEAN",
+        "description": "Include full syllabus in results (default: False)",
+        "default": false
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "Semester code. If not specified, uses the latest semester.",
+        "default": null
+      }
+    ]
+  },
+  "nchu_course_search_by_teaching_method": {
+    "description": "Search courses by teaching method. Common teaching methods: 講授, 討論, 習作, 實習, 實驗, 專題, 報告, 演講, etc. JSON string containing courses using the specified teaching method",
+    "required_parameters": [
+      {
+        "name": "method",
+        "type": "STRING",
+        "description": "Teaching method to search for (e.g., 實習, 討論, 專題)"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 20)",
+        "default": 20
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "Semester code. If not specified, uses the latest semester.",
+        "default": null
+      }
+    ]
+  },
+  "nchu_course_search_by_assessment_method": {
+    "description": "Search courses by assessment/evaluation method. Common assessment methods: 期中考, 期末考, 作業, 報告, 實作, 出席, 小考, 作品, etc. JSON string containing courses using the specified assessment method",
+    "required_parameters": [
+      {
+        "name": "method",
+        "type": "STRING",
+        "description": "Assessment method to search for (e.g., 實作, 報告, 期末考)"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 20)",
+        "default": 20
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "Semester code. If not specified, uses the latest semester.",
+        "default": null
+      }
+    ]
+  },
+  "nchu_course_search_by_sdg": {
+    "description": "Search courses by UN Sustainable Development Goals (SDGs). JSON string containing courses related to the specified SDG",
+    "required_parameters": [
+      {
+        "name": "sdg_keyword",
+        "type": "STRING",
+        "description": "SDG keyword to search for (e.g., 氣候, 永續, 健康, 教育)"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 20)",
+        "default": 20
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "Semester code. If not specified, uses the latest semester.",
+        "default": null
+      }
+    ]
+  },
+  "nchu_course_get_weekly_content": {
+    "description": "Get weekly course content for a specific course. JSON string containing weekly course content (每週授課內容)",
+    "required_parameters": [
+      {
+        "name": "course_id",
+        "type": "STRING",
+        "description": "Course ID (選課號碼)"
       }
     ],
     "optional_parameters": [
       {
         "name": "semester",
         "type": "STRING",
-        "description": "Optional semester filter (e.g., \"1131\")",
+        "description": "Semester code. If not specified, uses the latest semester.",
         "default": null
-      },
-      {
-        "name": "limit",
-        "type": "NUMBER",
-        "description": "Maximum number of courses to return (default: 50)",
-        "default": 50
       }
     ]
-  },
-  "nchu_course_teachers_list_departments": {
-    "description": "List all departments with teacher counts.",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
-  "nchu_course_teachers_list_semesters": {
-    "description": "List all semesters with teacher counts.",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
-  "nchu_course_teachers_get_stats": {
-    "description": "Get course teachers database statistics.",
-    "required_parameters": [],
-    "optional_parameters": []
   }
 }

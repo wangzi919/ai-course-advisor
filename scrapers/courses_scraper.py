@@ -22,9 +22,13 @@ from pathlib import Path
 from typing import List, Dict, Any, Optional
 from datetime import datetime
 
+import urllib3
 import requests
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
+
+# 忽略 SSL 憑證驗證警告
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 from .nchu_departments import DEPARTMENTS, get_career
 from .syllabus_parser import parse_syllabus
@@ -91,6 +95,7 @@ class CoursesScraper:
 
         # 設定 requests session
         self.session = requests.Session()
+        self.session.verify = False  # 繞過 SSL 憑證驗證
         self.session.headers.update({
             'user-agent': os.getenv('USER_AGENT', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36')
         })

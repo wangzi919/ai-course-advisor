@@ -94,7 +94,7 @@ python ste_runner.py
 python ste_runner.py --filter course_search_by_keyword
 
 # 自訂模型與參數
-python ste_runner.py --model qwen3:32b --episodes 15 --turns 5
+python ste_runner.py --model qwen3:32b --episodes 5 --turns 5
 ```
 
 ## 🧠 需求

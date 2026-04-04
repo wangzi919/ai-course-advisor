@@ -6,7 +6,6 @@ LAB_KEY = "zhuantisheng"
 
 def call_ollama(model: str, prompt: str, temperature: float = 0.7,
                 host: str = "lab", max_retries: int = 10, retry_delay: float = 3.0):
-    print("\n####\n"+prompt+"\n####\n")
     if host == "local":
         url = "http://localhost:11434/api/generate"
         payload = {"model": model, "prompt": prompt, "options": {"temperature": temperature}}

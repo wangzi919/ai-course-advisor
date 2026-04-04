@@ -1,58 +1,4 @@
 {
-  "course_search_by_keyword": {
-    "module": "course_tools/course_search_api.py",
-    "function": "course_search_by_keyword",
-    "category": "course",
-    "tool_name": "course_search_api"
-  },
-  "course_search_by_department": {
-    "module": "course_tools/course_search_api.py",
-    "function": "course_search_by_department",
-    "category": "course",
-    "tool_name": "course_search_api"
-  },
-  "course_search_by_type": {
-    "module": "course_tools/course_search_api.py",
-    "function": "course_search_by_type",
-    "category": "course",
-    "tool_name": "course_search_api"
-  },
-  "course_get_stats": {
-    "module": "course_tools/course_search_api.py",
-    "function": "course_get_stats",
-    "category": "course",
-    "tool_name": "course_search_api"
-  },
-  "course_get_detail": {
-    "module": "course_tools/course_search_api.py",
-    "function": "course_get_detail",
-    "category": "course",
-    "tool_name": "course_search_api"
-  },
-  "course_search_by_teacher": {
-    "module": "course_tools/course_search_api.py",
-    "function": "course_search_by_teacher",
-    "category": "course",
-    "tool_name": "course_search_api"
-  },
-  "course_get_teacher_courses": {
-    "module": "course_tools/course_search_api.py",
-    "function": "course_get_teacher_courses",
-    "category": "course",
-    "tool_name": "course_search_api"
-  },
-  "course_get_all_teachers": {
-    "module": "course_tools/course_search_api.py",
-    "function": "course_get_all_teachers",
-    "category": "course",
-    "tool_name": "course_search_api"
-  },
-  "answer_borrow_rules": {
-    "module": "library_tools/borrow_rules_api.py",
-    "function": "answer_borrow_rules",
-    "category": "library",
-    "tool_name": "borrow_rules_api"
-  },
   "library_activities_search": {
     "module": "library_tools/library_activities_api.py",
     "function": "library_activities_search",
@@ -646,5 +592,125 @@
     "function": "nchu_course_teachers_get_stats",
     "category": "teacher",
     "tool_name": "course_teachers_search_api"
+  },
+  "nchu_course_search_by_keyword": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_search_by_keyword",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "nchu_course_search_by_department": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_search_by_department",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "nchu_course_search_by_type": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_search_by_type",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "nchu_course_get_stats": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_get_stats",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "nchu_course_get_detail": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_get_detail",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "nchu_course_search_by_teacher": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_search_by_teacher",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "nchu_course_get_teacher_courses": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_get_teacher_courses",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "nchu_course_get_all_teachers": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_get_all_teachers",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "nchu_course_search_across_semesters": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_search_across_semesters",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "nchu_course_get_available_semesters": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_get_available_semesters",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "nchu_course_search_selectable_courses": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_search_selectable_courses",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "nchu_course_search_by_time": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_search_by_time",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "nchu_course_get_teacher_history": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_get_teacher_history",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "nchu_course_get_all_departments": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_get_all_departments",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "nchu_course_time_format_help": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_time_format_help",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "nchu_course_search_syllabus": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_search_syllabus",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "nchu_course_search_by_teaching_method": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_search_by_teaching_method",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "nchu_course_search_by_assessment_method": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_search_by_assessment_method",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "nchu_course_search_by_sdg": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_search_by_sdg",
+    "category": "course",
+    "tool_name": "course_search_api"
+  },
+  "nchu_course_get_weekly_content": {
+    "module": "course_tools/course_search_api.py",
+    "function": "nchu_course_get_weekly_content",
+    "category": "course",
+    "tool_name": "course_search_api"
   }
 }
