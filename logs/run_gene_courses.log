@@ -1,0 +1,130 @@
+2026-04-04 16:03:06,037 - INFO - 將專案根目錄加入路徑: C:\Users\Peter\Desktop\ai-course-advisor
+2026-04-04 16:03:06,361 - ERROR - 無法匯入 GeneCoursesScraper: No module named 'dotenv'
+2026-04-04 16:03:25,247 - INFO - 將專案根目錄加入路徑: C:\Users\Peter\Desktop\ai-course-advisor
+2026-04-04 16:03:25,601 - INFO - 準備抓取 1 個學年期
+2026-04-04 16:03:25,601 - INFO - 通識類別: all
+2026-04-04 16:03:25,601 - INFO - 抓取課程大綱: 否
+2026-04-04 16:03:25,602 - INFO - [1/1] 開始抓取學年期 1142...
+2026-04-04 16:03:25,603 - INFO - ==================================================
+2026-04-04 16:03:25,610 - INFO - 開始抓取學年期 1142 的通識課程...
+2026-04-04 16:03:25,610 - INFO - ==================================================
+2026-04-04 16:03:25,610 - INFO - 查詢類別: EFGKM (人文/社會/自然/統合/核心素養)
+2026-04-04 16:03:26,133 - ERROR - 學年期 1142 抓取失敗: HTTPSConnectionPool(host='onepiece.nchu.edu.tw', port=443): Max retries exceeded with url: /cofsys/plsql/crseqry_gene (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Missing Subject Key Identifier (_ssl.c:1032)')))
+Traceback (most recent call last):
+  File "C:\Users\Peter\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Peter\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Peter\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connection.py", line 790, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+        sock=sock,
+    ...<14 lines>...
+        assert_fingerprint=self.assert_fingerprint,
+    )
+  File "C:\Users\Peter\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connection.py", line 969, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+        sock=sock,
+    ...<8 lines>...
+        tls_in_tls=tls_in_tls,
+    )
+  File "C:\Users\Peter\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\util\ssl_.py", line 480, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "C:\Users\Peter\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\util\ssl_.py", line 524, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Peter\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sock=sock,
+        ^^^^^^^^^^
+    ...<5 lines>...
+        session=session
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Peter\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1076, in _create
+    self.do_handshake()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Peter\AppData\Local\Programs\Python\Python313\Lib\ssl.py", line 1372, in do_handshake
+    self._sslobj.do_handshake()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Missing Subject Key Identifier (_ssl.c:1032)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Peter\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\Peter\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Missing Subject Key Identifier (_ssl.c:1032)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Peter\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\Peter\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\Peter\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='onepiece.nchu.edu.tw', port=443): Max retries exceeded with url: /cofsys/plsql/crseqry_gene (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Missing Subject Key Identifier (_ssl.c:1032)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Peter\Desktop\ai-course-advisor\runners\run_gene_courses.py", line 84, in main
+    scraper.run()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Peter\Desktop\ai-course-advisor\scrapers\gene_courses_scraper.py", line 154, in run
+    courses = self._fetch_gene_courses()
+  File "C:\Users\Peter\Desktop\ai-course-advisor\scrapers\gene_courses_scraper.py", line 190, in _fetch_gene_courses
+    courses = self._fetch_single_subject(subj)
+  File "C:\Users\Peter\Desktop\ai-course-advisor\scrapers\gene_courses_scraper.py", line 214, in _fetch_single_subject
+    response = self.session.post(self.api_url, data=data)
+  File "C:\Users\Peter\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Peter\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Peter\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Peter\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\adapters.py", line 675, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='onepiece.nchu.edu.tw', port=443): Max retries exceeded with url: /cofsys/plsql/crseqry_gene (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Missing Subject Key Identifier (_ssl.c:1032)')))
+2026-04-04 16:03:26,241 - WARNING - 以下學年期抓取失敗: 1142
+2026-04-04 16:07:44,707 - INFO - 將專案根目錄加入路徑: C:\Users\Peter\Desktop\ai-course-advisor
+2026-04-04 16:07:45,104 - INFO - 準備抓取 1 個學年期
+2026-04-04 16:07:45,105 - INFO - 通識類別: all
+2026-04-04 16:07:45,105 - INFO - 抓取課程大綱: 否
+2026-04-04 16:07:45,105 - INFO - [1/1] 開始抓取學年期 1142...
+2026-04-04 16:07:45,107 - INFO - ==================================================
+2026-04-04 16:07:45,107 - INFO - 開始抓取學年期 1142 的通識課程...
+2026-04-04 16:07:45,107 - INFO - ==================================================
+2026-04-04 16:07:45,108 - INFO - 查詢類別: EFGKM (人文/社會/自然/統合/核心素養)
+2026-04-04 16:07:45,929 - INFO -   取得 235 筆
+2026-04-04 16:07:46,229 - INFO - 查詢類別: L (通識資訊素養)
+2026-04-04 16:07:46,330 - INFO -   取得 17 筆
+2026-04-04 16:07:46,630 - INFO - 查詢類別: 3 (敘事表達/大學國文)
+2026-04-04 16:07:46,799 - INFO -   取得 53 筆
+2026-04-04 16:07:47,099 - INFO - 查詢類別: N (外國語文(110學年後))
+2026-04-04 16:07:47,281 - INFO -   取得 59 筆
+2026-04-04 16:07:47,582 - INFO - 共抓取 364 筆不重複課程
+2026-04-04 16:07:47,598 - INFO - 資料已儲存至: C:\Users\Peter\Desktop\ai-course-advisor\data\courses\all_ge_courses_syllabi\ge_courses_1142.json
+2026-04-04 16:07:47,598 - INFO - ==================================================
+2026-04-04 16:07:47,599 - INFO - 爬蟲完成! 共抓取 364 筆課程
+2026-04-04 16:07:47,599 - INFO - ==================================================
+2026-04-04 16:07:47,599 - INFO - 全部 1 個學年期抓取完成。

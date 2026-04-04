@@ -324,7 +324,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="STE 工具探索訓練資料生成")
     parser.add_argument("--model",    default="qwen3:32b",    help="Ollama 模型名稱")
-    parser.add_argument("--episodes", type=int, default=15,   help="每個工具探索幾輪")
+    parser.add_argument("--episodes", type=int, default=10,   help="每個工具探索幾輪")
     parser.add_argument("--stm",      type=int, default=2,   help="每輪 follow-up 數量（含原始問題）")
     parser.add_argument("--turns",    type=int, default=5,   help="ReAct 最大迭代次數")
     parser.add_argument("--output",   default="results/ste/", help="輸出目錄")

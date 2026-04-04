@@ -62,10 +62,17 @@ class EmbeddingProvider:
         """
         headers = {"accept": "application/json", "Content-Type": "application/json"}
         response = requests.post(
-            self.api_url, headers=headers, json={"inputs": text}, timeout=self.timeout
+            self.api_url,
+            headers=headers,
+            json={"model": "bge-m3", "input": text},
+            timeout=self.timeout,
         )
         response.raise_for_status()
         result = response.json()
+        # Ollama /api/embed 回傳格式：{"embeddings": [[...]]}
+        if isinstance(result, dict) and "embeddings" in result:
+            return result["embeddings"][0]
+        # 舊版 HuggingFace TEI 相容格式：[[...]]
         if isinstance(result, list) and result:
             return result[0] if isinstance(result[0], list) else result
         raise ValueError(f"無法解析 embedding 回應：{result}")
@@ -169,7 +176,7 @@ BASE_DIR = Path(__file__).resolve().parent
 PARENT_DIR = BASE_DIR.parent
 load_dotenv(PARENT_DIR / ".env")
 
-EMBEDDING_API_URL = os.getenv("EMBEDDING_API_URL", "")
+EMBEDDING_API_URL = os.getenv("EMBEDDING_API_URL", "http://localhost:11434/api/embed")
 
 # Load documents
 DOCS = _load_documents("data/rules/school_rules.json")

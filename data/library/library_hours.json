@@ -1,0 +1,301 @@
+{
+  "metadata": {
+    "last_updated": "2026-04-04T15:45:07.014046",
+    "total_count": 3,
+    "data_source": "https://www.lib.nchu.edu.tw/service.php?cID=35"
+  },
+  "main_library": {
+    "學期中　(114/9/8 ~114/12/26)": {
+      "headers": [
+        "各區域服務時間",
+        "週一～週五",
+        "週六～週日",
+        "國定假日"
+      ],
+      "data": [
+        {
+          "space_name": "閱覽",
+          "weekday": "8:00-22:00",
+          "weekend": "9:00-17:00",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "借還書櫃檯",
+          "weekday": "8:00-21:30",
+          "weekend": "9:00-17:00",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "參考諮詢櫃檯",
+          "weekday": "8:00-21:30",
+          "weekend": "9:00-17:00",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "多媒體中心",
+          "weekday": "10:00-21:00",
+          "weekend": "10:00-17:00",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "校史館",
+          "weekday": "週一、三、五：10:00~16:00",
+          "weekend": "",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "特藏室",
+          "weekday": "週二、 四：10:00~16:00",
+          "weekend": "",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "興閱坊",
+          "weekday": "8:30-21:30",
+          "weekend": "9:00-17:00",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "*自習室",
+          "weekday": "8:00-24:00",
+          "weekend": "9:00-24:00",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "行政單位",
+          "weekday": "8:00-17:00",
+          "weekend": "不開放",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "備註",
+          "weekday": "",
+          "weekend": "",
+          "holiday": "不開放"
+        }
+      ]
+    },
+    "寒假 (114/12/29 ~115/2/22)": {
+      "headers": [
+        "各區域服務時間",
+        "週一～週五",
+        "週六",
+        "週日",
+        "國定假日"
+      ],
+      "data": [
+        {
+          "space_name": "閱覽",
+          "weekday": "8:00-17:00",
+          "saturday": "9:00-17:00",
+          "sunday": "不開放",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "借還書櫃檯",
+          "weekday": "8:00-17:00",
+          "saturday": "9:00-17:00",
+          "sunday": "不開放",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "參考諮詢櫃檯",
+          "weekday": "8:00-17:00",
+          "saturday": "9:00-17:00",
+          "sunday": "不開放",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "多媒體中心",
+          "weekday": "10:00-17:00",
+          "saturday": "10:00-17:00",
+          "sunday": "不開放",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "興閱坊",
+          "weekday": "8:30-16:30",
+          "saturday": "9:00-17:00",
+          "sunday": "不開放",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "自習室",
+          "weekday": "8:00-24:00",
+          "saturday": "9:00-24:00",
+          "sunday": "9:00-24:00",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "行政單位",
+          "weekday": "8:00-17:00",
+          "saturday": "不開放",
+          "sunday": "不開放",
+          "holiday": "不開放"
+        }
+      ]
+    },
+    "暑假 (115/6/15 ~115/9/?)": {
+      "headers": [
+        "各區域服務時間",
+        "週一～週五",
+        "週六",
+        "週日",
+        "國定假日"
+      ],
+      "data": [
+        {
+          "space_name": "閱覽",
+          "weekday": "8:00-17:00",
+          "saturday": "9:00-17:00",
+          "sunday": "不開放",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "借還書櫃檯",
+          "weekday": "8:00-17:00",
+          "saturday": "9:00-17:00",
+          "sunday": "不開放",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "參考諮詢櫃檯",
+          "weekday": "8:00-17:00",
+          "saturday": "9:00-17:00",
+          "sunday": "不開放",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "多媒體中心",
+          "weekday": "10:00-17:00",
+          "saturday": "10:00-17:00",
+          "sunday": "不開放",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "興閱坊",
+          "weekday": "8:30-16:30",
+          "saturday": "9:00-17:00",
+          "sunday": "不開放",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "自習室",
+          "weekday": "8:00-22:00",
+          "saturday": "9:00-22:00",
+          "sunday": "9:00-22:00",
+          "holiday": "不開放"
+        },
+        {
+          "space_name": "行政單位",
+          "weekday": "8:00-17:00",
+          "saturday": "不開放",
+          "sunday": "不開放",
+          "holiday": "不開放"
+        }
+      ]
+    }
+  },
+  "department_library": [
+    {
+      "college": "理學院",
+      "name": "應數系",
+      "connected_to_main": "是",
+      "phone": "22840421＃316",
+      "location": "資訊科學大樓3樓",
+      "hours_regular": "週一～週五0800～1700",
+      "hours_vacation": "週一～週五0800～1700",
+      "borrowing_method": "與總圖電腦連線，直接用本校學生證、職員證即可前往借書。"
+    },
+    {
+      "college": "理學院",
+      "name": "化學系",
+      "connected_to_main": "是",
+      "phone": "22840406",
+      "location": "理學大樓4樓",
+      "hours_regular": "週一～週五0800～1700",
+      "hours_vacation": "週一～週五0800～1700",
+      "borrowing_method": "與總圖電腦連線，直接用本校學生證、職員證即可前往借書。"
+    },
+    {
+      "college": "理學院",
+      "name": "物理系",
+      "connected_to_main": "是",
+      "phone": "22840407",
+      "location": "理學大樓4樓",
+      "hours_regular": "週一～週五0800～1700",
+      "hours_vacation": "週一～週五0800～1700",
+      "borrowing_method": "與總圖電腦連線，直接用本校學生證、職員證即可前往借書。"
+    },
+    {
+      "college": "文學院",
+      "name": "語言中心",
+      "connected_to_main": "否",
+      "phone": "22840114＃14",
+      "location": "語言中心萬年樓1樓109室",
+      "hours_regular": "週一～週五0800～1700",
+      "hours_vacation": "不開放",
+      "borrowing_method": "不可外借，僅限現場觀看。"
+    },
+    {
+      "college": "農資院",
+      "name": "植病系",
+      "connected_to_main": "否",
+      "phone": "22840780＃321",
+      "location": "農環科學大樓5樓(系辦公室內)",
+      "hours_regular": "0800～1700中午休息",
+      "hours_vacation": "0800～1700中午休息",
+      "borrowing_method": "沒有電腦連線，要先到總圖書館借還書櫃檯借用\"系所借書證\"才可前往借書。"
+    },
+    {
+      "college": "農資院",
+      "name": "昆蟲系",
+      "connected_to_main": "否",
+      "phone": "22840361＃519",
+      "location": "農環科學大樓8樓(西C區) 8C09室",
+      "hours_regular": "0800～1700中午休息",
+      "hours_vacation": "0800～1700中午休息",
+      "borrowing_method": "沒有電腦連線，要先到總圖書館借還書櫃檯借用\"系所借書證\"才可前往借書。"
+    },
+    {
+      "college": "農資院",
+      "name": "土環系",
+      "connected_to_main": "否",
+      "phone": "22840373＃3309",
+      "location": "農環科學大樓3樓3309室",
+      "hours_regular": "0800～1645",
+      "hours_vacation": "0800～1645",
+      "borrowing_method": "沒有電腦連線，要先到總圖書館借還書櫃檯借用\"系所借書證\"才可前往借書。"
+    },
+    {
+      "college": "農資院",
+      "name": "園藝系",
+      "connected_to_main": "否",
+      "phone": "22840340#210",
+      "location": "作物科學大樓2樓H201室",
+      "hours_regular": "0800~1730",
+      "hours_vacation": "0830~1700",
+      "borrowing_method": "沒有電腦連線，要先到總圖書館借還書櫃檯借用\"系所借書證\"才可前往借書。"
+    },
+    {
+      "college": "生科院",
+      "name": "分生所",
+      "connected_to_main": "否",
+      "phone": "22840485＃222",
+      "location": "生科大樓9樓909",
+      "hours_regular": "0900～12001400～1700",
+      "hours_vacation": "0900～1200",
+      "borrowing_method": "沒有電腦連線，要先到總圖書館借還書櫃檯借用\"系所借書證\"才可前往借書。"
+    },
+    {
+      "college": "其他單位",
+      "name": "藝術中心",
+      "connected_to_main": "否",
+      "phone": "22840449",
+      "location": "圖書館7樓",
+      "hours_regular": "0900～1700",
+      "hours_vacation": "0900～1700",
+      "borrowing_method": "沒有電腦連線，要先到總圖書館借還書櫃檯借用\"系所借書證\"才可前往借書。"
+    }
+  ]
+}

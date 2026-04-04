@@ -1,10 +1,7 @@
-import os
 import re
 import time
 import urllib.parse
 import requests
-import xml.etree.ElementTree as ET
-from pathlib import Path
 from typing import List, Dict
 from mcp.server.fastmcp import FastMCP
 
@@ -79,91 +76,6 @@ def library_search_books(query: str) -> List[Dict]:
             results.append({"error": str(e), "offset": offset})
 
     return results
-
-
-@mcp.tool()
-def library_get_loan_history(user_id: str) -> List[Dict]:
-    """Get a user's Alma loan history.
-
-    Args:
-        user_id (str): User identifier in the library system,  The `user_id` field is automatically provided by the backend.
-
-    Returns:
-        List[Dict]: Loan records with fields:
-            Index, User Name, Department, User Group, User ID,
-            Author, Barcode, Loan Date, Return Date, Title, email
-    """
-    base_url = "https://api-ap.hosted.exlibrisgroup.com/almaws/v1/analytics/reports"
-    report_path = "/shared/National Chung Hsing University 886NCHU_INST/Reports/API/Patron_Loan_History_Records"
-    report_path_encoded = urllib.parse.quote(report_path)
-
-    api_key = os.getenv("ALMA_ANALYTICS_API_KEY")
-    if not api_key:
-        key_file = Path(__file__).with_name(".alma_analytics_api_key")
-        if key_file.exists():
-            api_key = key_file.read_text().strip()
-    if not api_key:
-        raise RuntimeError(
-            "ALMA_ANALYTICS_API_KEY environment variable not set and .alma_analytics_api_key file missing"
-        )
-
-    filter_xml = f"""
-<sawx:expr xsi:type="sawx:comparison" op="equal"
-    xmlns:saw="com.siebel.analytics.web/report/v1.1"
-    xmlns:sawx="com.siebel.analytics.web/expression/v1.1"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <sawx:expr xsi:type="sawx:sqlExpression">"Borrower Details"."User Primary Identifier"</sawx:expr>
-    <sawx:expr xsi:type="xsd:string">{user_id}</sawx:expr>
-</sawx:expr>
-"""
-    encoded_filter = urllib.parse.quote(filter_xml)
-    headers = {"Accept": "application/json"}
-
-    records: List[Dict] = []
-    resumption_token = None
-
-    while True:
-        if resumption_token:
-            url = f"{base_url}?apikey={api_key}&resumptionToken={resumption_token}"
-        else:
-            url = f"{base_url}?path={report_path_encoded}&apikey={api_key}&limit=100&col_names=true&filter={encoded_filter}"
-
-        response = requests.get(url, headers=headers)
-        if response.status_code != 200:
-            raise RuntimeError(f"API request failed: {response.status_code} - {response.text}")
-
-        data = response.json()
-        xml_str = data.get("anies", [None])[0]
-        if not xml_str:
-            break
-
-        root = ET.fromstring(xml_str)
-        ns = {"ns": "urn:schemas-microsoft-com:xml-analysis:rowset"}
-
-        field_names = [
-            "Index", "User Name", "Department", "User Group", "User ID",
-            "Author", "Barcode", "Loan Date", "Return Date", "Title", "email",
-        ]
-
-        for row in root.find(".//ns:rowset", ns).findall("ns:Row", ns):
-            record = {}
-            for i, field in enumerate(field_names):
-                value = row.find(f"ns:Column{i}", ns)
-                record[field] = value.text if value is not None else None
-            records.append(record)
-
-        token_el = root.find(".//ResumptionToken")
-        is_finished_el = root.find(".//IsFinished")
-        if is_finished_el is not None and is_finished_el.text == "true":
-            break
-
-        if token_el is not None and token_el.text:
-            resumption_token = token_el.text
-        else:
-            break
-
-    return records
 
 
 if __name__ == "__main__":

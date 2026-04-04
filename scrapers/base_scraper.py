@@ -119,9 +119,11 @@ class BaseScraper(ABC):
             網頁 HTML 內容
         """
         try:
+            import urllib3
+            urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
             logger.info(f"正在抓取: {url}")
             response = self.session.get(
-                url, headers=self.headers, timeout=timeout)
+                url, headers=self.headers, timeout=timeout, verify=False)
             response.raise_for_status()
             response.encoding = 'utf-8'
             return response.text

@@ -145,24 +145,6 @@
     ],
     "optional_parameters": []
   },
-  "confirm_then_answer": {
-    "description": "描述回答前的身份驗證流程（驗證圖書館讀者證後再回答借閱規則問題）。",
-    "required_parameters": [
-      {
-        "name": "question",
-        "type": "STRING",
-        "description": "關於借閱規則的問題"
-      }
-    ],
-    "optional_parameters": [
-      {
-        "name": "user_id",
-        "type": "STRING",
-        "description": "使用者的圖書館讀者證號",
-        "default": null
-      }
-    ]
-  },
   "library_activities_search": {
     "description": "搜尋圖書館舉辦的活動與講座。",
     "required_parameters": [],
@@ -231,116 +213,6 @@
         "description": "搜尋關鍵字（支援中文）"
       }
     ],
-    "optional_parameters": []
-  },
-  "library_get_loan_history": {
-    "description": "取得使用者在圖書館的借閱歷史紀錄。",
-    "required_parameters": [
-      {
-        "name": "user_id",
-        "type": "STRING",
-        "description": "圖書館系統中的使用者識別碼（由後端自動帶入）"
-      }
-    ],
-    "optional_parameters": []
-  },
-  "library_elearning_list": {
-    "description": "列出圖書館提供的電子學習課程（可依關鍵字或來源篩選）。",
-    "required_parameters": [],
-    "optional_parameters": [
-      {
-        "name": "limit",
-        "type": "NUMBER",
-        "description": "回傳結果上限",
-        "default": 20
-      },
-      {
-        "name": "search",
-        "type": "STRING",
-        "description": "課程標題搜尋關鍵字",
-        "default": ""
-      },
-      {
-        "name": "source",
-        "type": "STRING",
-        "description": "依來源地點名稱篩選",
-        "default": ""
-      }
-    ]
-  },
-  "library_elearning_get_by_id": {
-    "description": "依 ID 取得特定電子學習課程的詳細資訊。",
-    "required_parameters": [
-      {
-        "name": "course_id",
-        "type": "NUMBER",
-        "description": "課程 ID 編號"
-      }
-    ],
-    "optional_parameters": []
-  },
-  "library_elearning_categories": {
-    "description": "取得所有電子學習課程的分類清單及各分類課程數量。",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
-  "library_elearning_popular": {
-    "description": "取得瀏覽次數最多的熱門電子學習課程。",
-    "required_parameters": [],
-    "optional_parameters": [
-      {
-        "name": "limit",
-        "type": "NUMBER",
-        "description": "回傳結果上限",
-        "default": 10
-      }
-    ]
-  },
-  "library_elearning_stats": {
-    "description": "取得電子學習課程的統計資訊。",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
-  "library_guide_get_title": {
-    "description": "取得圖書館使用指南的標題。",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
-  "library_guide_list_sections": {
-    "description": "列出圖書館使用指南的所有第一層章節。",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
-  "library_guide_get_section": {
-    "description": "依章節標題取得圖書館使用指南中特定章節的內容。",
-    "required_parameters": [
-      {
-        "name": "heading",
-        "type": "STRING",
-        "description": "第一層章節標題，例如「借閱服務SO sweet」"
-      }
-    ],
-    "optional_parameters": []
-  },
-  "library_guide_search": {
-    "description": "在圖書館使用指南中搜尋包含指定關鍵字的內容。",
-    "required_parameters": [
-      {
-        "name": "keyword",
-        "type": "STRING",
-        "description": "搜尋關鍵字"
-      }
-    ],
-    "optional_parameters": []
-  },
-  "library_guide_get_tables": {
-    "description": "取得圖書館使用指南中的所有表格資料。",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
-  "library_guide_stats": {
-    "description": "取得圖書館使用指南的統計資訊。",
-    "required_parameters": [],
     "optional_parameters": []
   },
   "get_library_hours": {
@@ -472,166 +344,1384 @@
       }
     ]
   },
-  "nchu_dual_degree_get_info": {
-    "description": "取得中興大學雙聯學位計畫的締約說明與相關法規連結。",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
-  "nchu_dual_degree_list_continents": {
-    "description": "列出各洲雙聯學位締約學校數量，作為查詢締約學校的入口。",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
-  "nchu_dual_degree_search": {
-    "description": "搜尋中興大學雙聯學位締約學校（支援關鍵字、洲別、國家、學位類型、有效期篩選）。",
+  "school_calendar_search": {
+    "description": "搜尋中興大學行事曆事件",
     "required_parameters": [],
     "optional_parameters": [
       {
         "name": "keyword",
         "type": "STRING",
-        "description": "關鍵字，搜尋學校名稱、國家、系所",
+        "description": "搜尋關鍵字（在事件名稱中搜尋）",
         "default": ""
       },
       {
-        "name": "continent",
+        "name": "date_range",
         "type": "STRING",
-        "description": "洲別，例如「亞洲」、「歐洲」、「美洲」",
+        "description": "日期範圍，格式為 \"YYYY-MM-DD,YYYY-MM-DD\"",
         "default": ""
       },
       {
-        "name": "country",
+        "name": "category",
         "type": "STRING",
-        "description": "國家名稱，例如「日本」、「美國」",
+        "description": "事件類別（開學、放假、考試、選課、註冊、畢業、活動、行政、其他）",
         "default": ""
       },
       {
-        "name": "degree",
-        "type": "STRING",
-        "description": "學位類型，例如「學士」、「碩士」、「博士」",
-        "default": ""
-      },
-      {
-        "name": "active_only",
-        "type": "BOOLEAN",
-        "description": "是否只顯示未過期的有效合約",
-        "default": false
-      },
-      {
-        "name": "program_type",
-        "type": "STRING",
-        "description": "計畫類型：dual_degree（雙聯學位）或 3_plus_x（3+X 學位）",
-        "default": ""
-      }
-    ]
-  },
-  "nchu_partner_universities_overview": {
-    "description": "取得中興大學全球締約學校的統計概覽（各洲別與合作項目的學校數與合作筆數）。",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
-  "nchu_partner_universities_search": {
-    "description": "搜尋中興大學全球締約學校（支援關鍵字、洲別、國家、合作項目篩選，分頁回傳）。",
-    "required_parameters": [],
-    "optional_parameters": [
-      {
-        "name": "keyword",
-        "type": "STRING",
-        "description": "關鍵字，搜尋學校名稱（中英文）或國家名稱",
-        "default": ""
-      },
-      {
-        "name": "continent",
-        "type": "STRING",
-        "description": "洲別篩選，例如「亞洲」或「Asia」",
-        "default": ""
-      },
-      {
-        "name": "country",
-        "type": "STRING",
-        "description": "國家篩選，例如「日本」或「Japan」",
-        "default": ""
-      },
-      {
-        "name": "program",
-        "type": "STRING",
-        "description": "合作項目篩選，例如「交換學生」、「雙聯」",
-        "default": ""
+        "name": "month",
+        "type": "NUMBER",
+        "description": "月份篩選（1-12，0表示不篩選）",
+        "default": 0
       },
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "每頁回傳筆數上限",
-        "default": 5
-      },
-      {
-        "name": "offset",
-        "type": "NUMBER",
-        "description": "從第幾筆開始（用於翻頁）",
-        "default": 0
+        "description": "最多回傳幾筆結果",
+        "default": 50
       }
     ]
   },
-  "nchu_uibp_faq_search": {
-    "description": "語意搜尋中興大學校學士（校務規劃處）常見問答 FAQ。",
+  "school_calendar_get_upcoming": {
+    "description": "取得即將到來的行事曆事件（未來N天內）",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "days",
+        "type": "NUMBER",
+        "description": "往後查詢幾天",
+        "default": 30
+      },
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "最多回傳幾筆結果",
+        "default": 20
+      }
+    ]
+  },
+  "school_calendar_get_by_category": {
+    "description": "依類別篩選行事曆事件",
     "required_parameters": [
       {
-        "name": "query",
+        "name": "category",
         "type": "STRING",
-        "description": "搜尋問題，例如「誰可以申請校學士」、「校學士會延畢嗎」"
+        "description": "事件類別（開學、放假、考試、選課、註冊、畢業、活動、行政、其他）"
       }
     ],
     "optional_parameters": [
       {
-        "name": "top_k",
+        "name": "limit",
         "type": "NUMBER",
-        "description": "回傳最相關的 FAQ 數量（1-10）",
-        "default": 5
+        "description": "最多回傳幾筆結果",
+        "default": 50
       }
     ]
   },
-  "nchu_uibp_faq_list_all": {
-    "description": "列出所有校學士 FAQ 問答項目的完整清單。",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
-  "nchu_uibp_faq_stats": {
-    "description": "取得校學士 FAQ 資料集的統計資訊（問題總數、更新時間等）。",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
-  "nchu_uibp_get_apply_process": {
-    "description": "取得校學士學位的完整申請流程（含所有步驟、時程與聯絡方式）。",
-    "required_parameters": [],
-    "optional_parameters": []
-  },
-  "nchu_uibp_get_apply_step": {
-    "description": "取得校學士申請流程中特定步驟的詳細資訊。",
+  "school_calendar_get_month": {
+    "description": "取得特定月份的所有行事曆事件",
     "required_parameters": [
       {
-        "name": "step_number",
+        "name": "year",
         "type": "NUMBER",
-        "description": "步驟編號（1-4）"
+        "description": "年份（例如：2025）"
+      },
+      {
+        "name": "month",
+        "type": "NUMBER",
+        "description": "月份（1-12）"
       }
     ],
     "optional_parameters": []
   },
-  "nchu_uibp_get_apply_timeline": {
-    "description": "取得校學士申請的重要時程（文件繳交期間、結果公告日期等）。",
+  "school_calendar_get_holidays": {
+    "description": "取得所有放假日",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "最多回傳幾筆結果",
+        "default": 50
+      }
+    ]
+  },
+  "school_calendar_get_exams": {
+    "description": "取得所有考試相關日期",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "最多回傳幾筆結果",
+        "default": 50
+      }
+    ]
+  },
+  "school_calendar_get_registration": {
+    "description": "取得所有選課和註冊相關日期",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "最多回傳幾筆結果",
+        "default": 50
+      }
+    ]
+  },
+  "school_calendar_get_today": {
+    "description": "取得今天的行事曆事件",
     "required_parameters": [],
     "optional_parameters": []
   },
-  "nchu_uibp_get_apply_contact": {
-    "description": "取得校學士申請承辦單位的聯絡資訊（電話、信箱、地址等）。",
+  "nchu_cross_program_search_by_keyword": {
+    "description": "依關鍵字搜尋中興大學學分學程（跨領域學程）課程，支援指定學期與學制（大學部/研究生）。",
+    "required_parameters": [
+      {
+        "name": "keyword",
+        "type": "STRING",
+        "description": "搜尋關鍵字"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "回傳結果上限",
+        "default": 10
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼（如 1142）",
+        "default": null
+      },
+      {
+        "name": "degree_type",
+        "type": "STRING",
+        "description": "學制：U=大學部, G=研究生",
+        "default": null
+      },
+      {
+        "name": "include_syllabus_search",
+        "type": "BOOLEAN",
+        "description": "是否同時搜尋大綱內容",
+        "default": false
+      }
+    ]
+  },
+  "nchu_cross_program_search_across_semesters": {
+    "description": "跨學期搜尋學分學程課程，可指定多個學期或搜尋全部歷史學期。",
+    "required_parameters": [
+      {
+        "name": "keyword",
+        "type": "STRING",
+        "description": "搜尋關鍵字"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semesters",
+        "type": "STRING",
+        "description": "逗號分隔的學年期代碼（如 1142,1141）",
+        "default": null
+      },
+      {
+        "name": "degree_type",
+        "type": "STRING",
+        "description": "學制：U=大學部, G=研究生",
+        "default": null
+      }
+    ]
+  },
+  "nchu_cross_program_get_available_semesters": {
+    "description": "取得學分學程課程資料庫中所有可用的學期清單。",
     "required_parameters": [],
     "optional_parameters": []
   },
-  "nchu_uibp_list_apply_steps": {
-    "description": "列出校學士申請所有步驟的摘要標題，快速概覽整個申請流程。",
+  "nchu_cross_program_search_by_program": {
+    "description": "依學程名稱查詢學分學程課程（如永續環境學分學程、人工智慧學分學程）。",
+    "required_parameters": [
+      {
+        "name": "program_name",
+        "type": "STRING",
+        "description": "學程名稱（支援部分比對）"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      },
+      {
+        "name": "degree_type",
+        "type": "STRING",
+        "description": "學制：U=大學部, G=研究生",
+        "default": null
+      }
+    ]
+  },
+  "nchu_cross_program_get_all_programs": {
+    "description": "取得所有學分學程清單及其課程數量。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      },
+      {
+        "name": "degree_type",
+        "type": "STRING",
+        "description": "學制：U=大學部, G=研究生",
+        "default": null
+      }
+    ]
+  },
+  "nchu_cross_program_get_program_courses": {
+    "description": "取得指定學分學程的所有課程。",
+    "required_parameters": [
+      {
+        "name": "program_name",
+        "type": "STRING",
+        "description": "學程名稱"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      },
+      {
+        "name": "degree_type",
+        "type": "STRING",
+        "description": "學制",
+        "default": null
+      }
+    ]
+  },
+  "nchu_cross_program_search_by_department": {
+    "description": "查詢特定系所所開設的學分學程課程。",
+    "required_parameters": [
+      {
+        "name": "department",
+        "type": "STRING",
+        "description": "開課系所名稱"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      },
+      {
+        "name": "degree_type",
+        "type": "STRING",
+        "description": "學制",
+        "default": null
+      }
+    ]
+  },
+  "nchu_cross_program_search_by_teacher": {
+    "description": "依授課教師查詢學分學程課程。",
+    "required_parameters": [
+      {
+        "name": "teacher_name",
+        "type": "STRING",
+        "description": "教師姓名"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      },
+      {
+        "name": "degree_type",
+        "type": "STRING",
+        "description": "學制",
+        "default": null
+      }
+    ]
+  },
+  "nchu_cross_program_search_by_time": {
+    "description": "依上課時間查詢學分學程課程（星期幾、第幾節）。",
+    "required_parameters": [
+      {
+        "name": "weekday",
+        "type": "STRING",
+        "description": "星期（1=一, 2=二, ..., 7=日）"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "period",
+        "type": "STRING",
+        "description": "節次（1-9 日間, A-D 夜間）",
+        "default": null
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_cross_program_get_stats": {
+    "description": "取得學分學程課程資料庫的統計資訊。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      },
+      {
+        "name": "degree_type",
+        "type": "STRING",
+        "description": "學制",
+        "default": null
+      }
+    ]
+  },
+  "nchu_cross_program_get_detail": {
+    "description": "根據選課號碼取得學分學程課程的完整詳細資訊（含大綱）。",
+    "required_parameters": [
+      {
+        "name": "course_id",
+        "type": "STRING",
+        "description": "選課號碼"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "include_syllabus",
+        "type": "BOOLEAN",
+        "description": "是否包含大綱",
+        "default": true
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_cross_program_get_all_teachers": {
+    "description": "取得所有學分學程授課教師及其開課數量。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_cross_program_get_all_departments": {
+    "description": "取得所有開設學分學程課程的系所及其課程數量。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_cross_program_time_format_help": {
+    "description": "取得學分學程課程上課時間代碼格式說明（星期+節次對照表）。",
     "required_parameters": [],
     "optional_parameters": []
   },
-  "nchu_uibp_apply_stats": {
-    "description": "取得校學士申請資料的統計資訊（步驟數、最後更新時間等）。",
+  "nchu_cross_program_search_syllabus": {
+    "description": "搜尋學分學程課程大綱內容（課程簡述、課程目標、每週授課內容等）。",
+    "required_parameters": [
+      {
+        "name": "keyword",
+        "type": "STRING",
+        "description": "搜尋關鍵字"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      },
+      {
+        "name": "degree_type",
+        "type": "STRING",
+        "description": "學制",
+        "default": null
+      }
+    ]
+  },
+  "nchu_cross_program_get_weekly_content": {
+    "description": "取得指定學分學程課程的每週授課內容。",
+    "required_parameters": [
+      {
+        "name": "course_id",
+        "type": "STRING",
+        "description": "選課號碼"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_education_search_by_keyword": {
+    "description": "依關鍵字搜尋中興大學教育學程課程。",
+    "required_parameters": [
+      {
+        "name": "keyword",
+        "type": "STRING",
+        "description": "搜尋關鍵字"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "回傳結果上限",
+        "default": 10
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼（如 1142）",
+        "default": null
+      },
+      {
+        "name": "include_syllabus_search",
+        "type": "BOOLEAN",
+        "description": "是否同時搜尋大綱內容",
+        "default": false
+      }
+    ]
+  },
+  "nchu_education_search_across_semesters": {
+    "description": "跨學期搜尋教育學程課程。",
+    "required_parameters": [
+      {
+        "name": "keyword",
+        "type": "STRING",
+        "description": "搜尋關鍵字"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semesters",
+        "type": "STRING",
+        "description": "逗號分隔的學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_education_get_available_semesters": {
+    "description": "取得教育學程課程資料庫中所有可用的學期清單。",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_education_search_by_program": {
+    "description": "依學程名稱查詢教育學程課程。",
+    "required_parameters": [
+      {
+        "name": "program_name",
+        "type": "STRING",
+        "description": "學程名稱"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_education_get_all_programs": {
+    "description": "取得所有教育學程清單及其課程數量。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_education_get_program_courses": {
+    "description": "取得指定教育學程的所有課程。",
+    "required_parameters": [
+      {
+        "name": "program_name",
+        "type": "STRING",
+        "description": "學程名稱"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_education_search_by_department": {
+    "description": "查詢特定系所開設的教育學程課程。",
+    "required_parameters": [
+      {
+        "name": "department",
+        "type": "STRING",
+        "description": "開課系所名稱"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_education_search_by_teacher": {
+    "description": "依授課教師查詢教育學程課程。",
+    "required_parameters": [
+      {
+        "name": "teacher_name",
+        "type": "STRING",
+        "description": "教師姓名"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_education_search_by_time": {
+    "description": "依上課時間查詢教育學程課程。",
+    "required_parameters": [
+      {
+        "name": "weekday",
+        "type": "STRING",
+        "description": "星期（1=一...7=日）"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "period",
+        "type": "STRING",
+        "description": "節次",
+        "default": null
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_education_get_stats": {
+    "description": "取得教育學程課程資料庫的統計資訊。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_education_get_detail": {
+    "description": "根據選課號碼取得教育學程課程的完整詳細資訊（含大綱）。",
+    "required_parameters": [
+      {
+        "name": "course_id",
+        "type": "STRING",
+        "description": "選課號碼"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "include_syllabus",
+        "type": "BOOLEAN",
+        "description": "是否包含大綱",
+        "default": true
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_education_get_all_teachers": {
+    "description": "取得所有教育學程授課教師及其開課數量。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_education_get_all_departments": {
+    "description": "取得所有開設教育學程課程的系所及其課程數量。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_education_time_format_help": {
+    "description": "取得教育學程課程上課時間代碼格式說明。",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_education_search_syllabus": {
+    "description": "搜尋教育學程課程大綱內容（課程簡述、課程目標、每週授課內容等）。",
+    "required_parameters": [
+      {
+        "name": "keyword",
+        "type": "STRING",
+        "description": "搜尋關鍵字"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_education_get_weekly_content": {
+    "description": "取得指定教育學程課程的每週授課內容。",
+    "required_parameters": [
+      {
+        "name": "course_id",
+        "type": "STRING",
+        "description": "選課號碼"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_ge_course_search_by_keyword": {
+    "description": "依關鍵字搜尋中興大學通識課程，可指定通識領域與學期。",
+    "required_parameters": [
+      {
+        "name": "keyword",
+        "type": "STRING",
+        "description": "搜尋關鍵字"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "回傳結果上限",
+        "default": 10
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼（如 1142）",
+        "default": null
+      },
+      {
+        "name": "include_syllabus_search",
+        "type": "BOOLEAN",
+        "description": "是否同時搜尋大綱內容",
+        "default": false
+      }
+    ]
+  },
+  "nchu_ge_course_search_across_semesters": {
+    "description": "跨學期搜尋通識課程。",
+    "required_parameters": [
+      {
+        "name": "keyword",
+        "type": "STRING",
+        "description": "搜尋關鍵字"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semesters",
+        "type": "STRING",
+        "description": "逗號分隔的學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_ge_course_get_available_semesters": {
+    "description": "取得通識課程資料庫中所有可用的學期清單。",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_ge_course_search_by_department": {
+    "description": "查詢特定系所開設的通識課程。",
+    "required_parameters": [
+      {
+        "name": "department",
+        "type": "STRING",
+        "description": "開課系所名稱"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_ge_course_search_by_type": {
+    "description": "依通識類型（領域）查詢通識課程（人文、社會、自然、統合、核心素養等）。",
+    "required_parameters": [
+      {
+        "name": "course_type",
+        "type": "STRING",
+        "description": "通識類型代碼或名稱（E=人文, F=社會, G=自然, K=統合, M=核心素養, L=資訊素養）"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_ge_course_search_by_teacher": {
+    "description": "依授課教師查詢通識課程。",
+    "required_parameters": [
+      {
+        "name": "teacher_name",
+        "type": "STRING",
+        "description": "教師姓名"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_ge_course_search_by_time": {
+    "description": "依上課時間查詢通識課程。",
+    "required_parameters": [
+      {
+        "name": "weekday",
+        "type": "STRING",
+        "description": "星期（1=一...7=日）"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "period",
+        "type": "STRING",
+        "description": "節次",
+        "default": null
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_ge_course_get_stats": {
+    "description": "取得通識課程資料庫的統計資訊（各領域課程數、開課系所等）。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_ge_course_get_detail": {
+    "description": "根據選課號碼取得通識課程的完整詳細資訊（含大綱）。",
+    "required_parameters": [
+      {
+        "name": "course_id",
+        "type": "STRING",
+        "description": "選課號碼"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "include_syllabus",
+        "type": "BOOLEAN",
+        "description": "是否包含大綱",
+        "default": true
+      },
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_ge_course_get_teacher_courses": {
+    "description": "取得指定教師本學期開設的所有通識課程。",
+    "required_parameters": [
+      {
+        "name": "teacher_name",
+        "type": "STRING",
+        "description": "教師姓名"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_ge_course_get_teacher_history": {
+    "description": "取得指定教師跨學期的通識授課歷史。",
+    "required_parameters": [
+      {
+        "name": "teacher_name",
+        "type": "STRING",
+        "description": "教師姓名"
+      }
+    ],
+    "optional_parameters": []
+  },
+  "nchu_ge_course_get_all_teachers": {
+    "description": "取得所有通識授課教師及其開課數量。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_ge_course_get_all_departments": {
+    "description": "取得所有開設通識課程的系所及其課程數量。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_ge_course_time_format_help": {
+    "description": "取得通識課程上課時間代碼格式說明。",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_ge_course_search_syllabus": {
+    "description": "搜尋通識課程大綱內容（課程簡述、課程目標、每週授課內容等）。",
+    "required_parameters": [
+      {
+        "name": "keyword",
+        "type": "STRING",
+        "description": "搜尋關鍵字"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_ge_course_search_by_teaching_method": {
+    "description": "依教學方法搜尋通識課程（如翻轉教室、問題導向學習等）。",
+    "required_parameters": [
+      {
+        "name": "method",
+        "type": "STRING",
+        "description": "教學方法關鍵字"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_ge_course_search_by_assessment_method": {
+    "description": "依評量方法搜尋通識課程。",
+    "required_parameters": [
+      {
+        "name": "method",
+        "type": "STRING",
+        "description": "評量方法關鍵字"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_ge_course_search_by_sdg": {
+    "description": "依 SDG（聯合國永續發展目標）搜尋相關通識課程。",
+    "required_parameters": [
+      {
+        "name": "sdg",
+        "type": "STRING",
+        "description": "SDG 編號或關鍵字（如 SDG4, 優質教育）"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_ge_course_get_weekly_content": {
+    "description": "取得指定通識課程的每週授課內容。",
+    "required_parameters": [
+      {
+        "name": "course_id",
+        "type": "STRING",
+        "description": "選課號碼"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_ge_course_search_by_domain": {
+    "description": "依通識領域（人文/社會/自然/統合/核心素養）查詢通識課程。",
+    "required_parameters": [
+      {
+        "name": "domain",
+        "type": "STRING",
+        "description": "領域名稱（如 人文領域、自然領域）"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_ge_course_search_by_group": {
+    "description": "依通識學群查詢通識課程。",
+    "required_parameters": [
+      {
+        "name": "group",
+        "type": "STRING",
+        "description": "學群名稱"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_ge_course_get_all_domains": {
+    "description": "取得所有通識領域及其課程數量。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_ge_course_get_all_groups": {
+    "description": "取得所有通識學群及其課程數量。",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "學年期代碼",
+        "default": null
+      }
+    ]
+  },
+  "nchu_teacher_search_by_name": {
+    "description": "Search for NCHU teachers by name.",
+    "required_parameters": [
+      {
+        "name": "name",
+        "type": "STRING",
+        "description": "Teacher name to search for (Chinese or English)"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "exact_match",
+        "type": "BOOLEAN",
+        "description": "Whether to use exact match (default: False)",
+        "default": false
+      },
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 20)",
+        "default": 20
+      }
+    ]
+  },
+  "nchu_teacher_search_by_department": {
+    "description": "Search for NCHU teachers by department.",
+    "required_parameters": [
+      {
+        "name": "department",
+        "type": "STRING",
+        "description": "Department name to search for (supports partial match)"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "title",
+        "type": "STRING",
+        "description": "Optional title filter (e.g., \"教授\", \"副教授\", \"助理教授\")",
+        "default": null
+      },
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 50)",
+        "default": 50
+      }
+    ]
+  },
+  "nchu_teacher_search_by_college": {
+    "description": "Search for NCHU teachers by college.",
+    "required_parameters": [
+      {
+        "name": "college",
+        "type": "STRING",
+        "description": "College name to search for (supports partial match)"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 100)",
+        "default": 100
+      }
+    ]
+  },
+  "nchu_teacher_search_by_research_area": {
+    "description": "Search for NCHU teachers by research area/expertise.",
+    "required_parameters": [
+      {
+        "name": "keywords",
+        "type": "STRING",
+        "description": "Research area keywords to search for (space-separated)"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 30)",
+        "default": 30
+      }
+    ]
+  },
+  "nchu_teacher_search": {
+    "description": "General search for NCHU teachers.",
+    "required_parameters": [
+      {
+        "name": "keywords",
+        "type": "STRING",
+        "description": "Search keywords (space-separated)"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "department",
+        "type": "STRING",
+        "description": "Optional department filter",
+        "default": null
+      },
+      {
+        "name": "college",
+        "type": "STRING",
+        "description": "Optional college filter",
+        "default": null
+      },
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 30)",
+        "default": 30
+      }
+    ]
+  },
+  "nchu_teacher_get_detail": {
+    "description": "Get detailed information about a specific NCHU teacher.",
+    "required_parameters": [
+      {
+        "name": "teacher_id",
+        "type": "STRING",
+        "description": "Teacher ID (from search results)"
+      }
+    ],
+    "optional_parameters": []
+  },
+  "nchu_teacher_list_departments": {
+    "description": "List all departments with teacher counts.",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_teacher_list_colleges": {
+    "description": "List all colleges with teacher counts.",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_teacher_list_research_areas": {
+    "description": "List research areas with teacher counts.",
+    "required_parameters": [],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 100)",
+        "default": 100
+      }
+    ]
+  },
+  "nchu_course_teachers_search_by_name": {
+    "description": "Search NCHU teachers from course data by name.",
+    "required_parameters": [
+      {
+        "name": "name",
+        "type": "STRING",
+        "description": "Teacher name to search for (Chinese or English)"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "exact_match",
+        "type": "BOOLEAN",
+        "description": "Whether to use exact match (default: False)",
+        "default": false
+      },
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 30)",
+        "default": 30
+      }
+    ]
+  },
+  "nchu_course_teachers_search_by_department": {
+    "description": "Search NCHU teachers by department from course data.",
+    "required_parameters": [
+      {
+        "name": "department",
+        "type": "STRING",
+        "description": "Department name (supports partial match)"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 50)",
+        "default": 50
+      }
+    ]
+  },
+  "nchu_course_teachers_search_by_course": {
+    "description": "Search NCHU teachers by course name they teach.",
+    "required_parameters": [
+      {
+        "name": "course_name",
+        "type": "STRING",
+        "description": "Course name to search for (supports partial match)"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 30)",
+        "default": 30
+      }
+    ]
+  },
+  "nchu_course_teachers_search_by_semester": {
+    "description": "Search NCHU teachers who taught in a specific semester.",
+    "required_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "Semester code (e.g., \"1131\" for 113學年度第1學期)"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 100)",
+        "default": 100
+      }
+    ]
+  },
+  "nchu_course_teachers_search": {
+    "description": "General search for NCHU teachers in course data.",
+    "required_parameters": [
+      {
+        "name": "keywords",
+        "type": "STRING",
+        "description": "Search keywords (space-separated)"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "department",
+        "type": "STRING",
+        "description": "Optional department filter",
+        "default": null
+      },
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of results to return (default: 30)",
+        "default": 30
+      }
+    ]
+  },
+  "nchu_course_teachers_get_detail": {
+    "description": "Get detailed information about a specific teacher.",
+    "required_parameters": [
+      {
+        "name": "teacher_id",
+        "type": "STRING",
+        "description": "Teacher ID (from search results)"
+      }
+    ],
+    "optional_parameters": []
+  },
+  "nchu_course_teachers_get_courses": {
+    "description": "Get course teaching records for a specific teacher.",
+    "required_parameters": [
+      {
+        "name": "teacher_id",
+        "type": "STRING",
+        "description": "Teacher ID (from search results)"
+      }
+    ],
+    "optional_parameters": [
+      {
+        "name": "semester",
+        "type": "STRING",
+        "description": "Optional semester filter (e.g., \"1131\")",
+        "default": null
+      },
+      {
+        "name": "limit",
+        "type": "NUMBER",
+        "description": "Maximum number of courses to return (default: 50)",
+        "default": 50
+      }
+    ]
+  },
+  "nchu_course_teachers_list_departments": {
+    "description": "List all departments with teacher counts.",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_course_teachers_list_semesters": {
+    "description": "List all semesters with teacher counts.",
+    "required_parameters": [],
+    "optional_parameters": []
+  },
+  "nchu_course_teachers_get_stats": {
+    "description": "Get course teachers database statistics.",
     "required_parameters": [],
     "optional_parameters": []
   }

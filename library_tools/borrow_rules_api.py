@@ -149,23 +149,6 @@ def answer_borrow_rules(question: str) -> str:
     return call_ollama(OLLAMA_MODEL, prompt)
 
 
-@mcp.tool()
-def confirm_then_answer(question: str, user_id: str | None = None) -> str:
-    """Describe the confirmation process before answering.
-
-    The returned message is an instruction to later agents. It explains
-    that they should first verify the user's NCHU library ID, confirm that
-    the question relates to borrowing regulations, and only then invoke
-    :func:`answer_borrow_rules` to produce the final reply.
-    """
-
-    return (
-        "在回答此問題之前，請依序執行下列步驟：\n"
-        "1. 回答問題時，必要時請確認使用者身份。\n"
-        "2. 完成上述確認後，呼叫 `answer_borrow_rules` 取得正式回應。"
-    )
-
-
 if __name__ == "__main__":
     mcp.run(transport="stdio")
 

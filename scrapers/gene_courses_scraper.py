@@ -22,7 +22,10 @@ from pathlib import Path
 from typing import List, Dict
 from datetime import datetime
 
+import urllib3
 import requests
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 
@@ -136,6 +139,7 @@ class GeneCoursesScraper:
         self.session.headers.update({
             'user-agent': os.getenv('USER_AGENT', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36')
         })
+        self.session.verify = False
         self.session.cookies.set('stud_pass', '1493')
 
         # 通識課程查詢 API URL

@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 class SchoolActivitiesScheduler:
     """Scraper for NCHU news."""
 
-    def __init__(self, data_file_path="data/activities/school_activities_news.json", auto_init=True):
+    def __init__(self, data_file_path="data/news/school_news.json", auto_init=True):
         """Initialize the NCHU news scraper."""
         self.base_url = "https://www2.nchu.edu.tw/news/id/7"
         self.parent_dir = Path(__file__).parent.parent
@@ -95,12 +95,14 @@ class SchoolActivitiesScheduler:
 
     def fetch_news(self) -> List[Dict]:
         """Scrape news data from NCHU news website."""
+        import urllib3
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         try:
             headers = {
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                               "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
             }
-            response = requests.get(self.base_url, headers=headers, timeout=30)
+            response = requests.get(self.base_url, headers=headers, timeout=30, verify=False)
             response.raise_for_status()
             response.encoding = 'utf-8'
             soup = BeautifulSoup(response.text, "html.parser")
@@ -120,7 +122,7 @@ class SchoolActivitiesScheduler:
                     images = []
                     if link != "No Link":
                         try:
-                            article_response = requests.get(link, headers=headers, timeout=30)
+                            article_response = requests.get(link, headers=headers, timeout=30, verify=False)
                             article_response.raise_for_status()
                             article_response.encoding = 'utf-8'
                             article_soup = BeautifulSoup(article_response.text, "html.parser")

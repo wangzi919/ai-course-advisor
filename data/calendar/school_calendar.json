@@ -1,0 +1,639 @@
+{
+  "metadata": {
+    "last_updated": "2026-04-02T15:10:36.947065",
+    "total_count": 90,
+    "data_source": "https://www.nchu.edu.tw/calendar/"
+  },
+  "data": [
+    {
+      "semester": "114-1",
+      "start_date": "2025-07-25",
+      "end_date": "2025-08-04",
+      "event": "學士班新生報到(第一梯次)、學士班新生辦理各類學雜費減免。Undergraduate freshmen registration (first batch) and application for tuition & miscellaneous fee exemption",
+      "category": "註冊"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-08-01",
+      "end_date": null,
+      "event": "學期開始。Fall semester begins",
+      "category": "開學"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-08-11",
+      "end_date": "2025-08-12",
+      "event": "進修學士班2-5年級網路初選。Online course selection for Continuing Education Bachelor Program (for second-to-fifth-year students)",
+      "category": "選課"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-08-11",
+      "end_date": "2025-08-15",
+      "event": "研究所新生辦理學雜費減免。New graduate students apply for tuition & miscellaneous fee exemption",
+      "category": "註冊"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-08-18",
+      "end_date": "2025-08-25",
+      "event": "學士班新生報到(第二梯次：限分科測驗生)、辦理各類學雜費減免(限分科測驗生)。Undergraduate freshmen registration (second batch: limited to Subject-Specific Test students) and application for tuition & miscellaneous fee exemption (limited to Subject-Specific Test students)",
+      "category": "註冊"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-08-21",
+      "end_date": "2025-08-22",
+      "event": "學士班及進修學士班通識第1階段選課。1st online selection of General Education courses for undergraduates and Continuing Bachelor Program students",
+      "category": "選課"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-08-25",
+      "end_date": null,
+      "event": "開放學雜費繳費(除學士班新生)。Start accepting payments: tuition & miscellaneous fees (except for undergraduate freshmen)",
+      "category": "註冊"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-08-25",
+      "end_date": "2025-09-10",
+      "event": "全部學制學生(大一新生除外)就學貸款網站開放登錄及收件期間。On-line student loan application and document submission open for all students (except undergraduate freshmen)",
+      "category": "註冊"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-08-27",
+      "end_date": null,
+      "event": "學士班通識第2階段選課。2nd online selection of undergraduate General Education courses,",
+      "category": "選課"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-08-29",
+      "end_date": null,
+      "event": "研究生畢業離校截止日。Deadline for graduate students to complete graduation procedures and leave school process",
+      "category": "畢業"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-08-30",
+      "end_date": "2025-08-31",
+      "event": "新生進住宿舍。New students move-in day (Residence halls open for new students)",
+      "category": "新生"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-09-01",
+      "end_date": "2025-09-19",
+      "event": "輔系雙主修及跨域專長申請。Application for minor studies, double major, and cross-disciplinary expertise development program",
+      "category": "行政"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-09-01",
+      "end_date": "2025-09-03",
+      "event": "新生入學指導、新生入學-興鮮人成長營、研究生(含碩專、產專生)網路初選。New Student Orientation, Freshman Growth Camp, online course selection for graduate students (including In-Service & Industry-Academia Collaboration programs)",
+      "category": "選課"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-09-01",
+      "end_date": "2025-09-05",
+      "event": "學士班各年級(含新生、轉學生)網路初選。Online course selection for all undergraduate students (including freshmen and transfer students)",
+      "category": "選課"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-09-03",
+      "end_date": "2025-09-23",
+      "event": "學士班新生就學貸款網站開放登錄及收件期間。Registration and document submissions for Student Loan Application System available for undergraduate freshmen",
+      "category": "註冊"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-09-04",
+      "end_date": "2025-09-05",
+      "event": "新生健康檢查、進修學士班新生(含轉學生)網路初選。New student health check, online course selection for new Continuing Bachelor Program students (including transfer students)",
+      "category": "選課"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-09-05",
+      "end_date": null,
+      "event": "開放學士班新生繳費。Payments for undergraduate freshmen tuition & miscellaneous fees begin",
+      "category": "註冊"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-09-08",
+      "end_date": null,
+      "event": "全校學生開學、開始上課(註冊日)。Classes begin (Enrollment Day)",
+      "category": "開學"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-09-08",
+      "end_date": "2025-09-09",
+      "event": "新生健康檢查。New student health check",
+      "category": "新生"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-09-08",
+      "end_date": "2025-09-12",
+      "event": "學士班、進修學士班網路加退選。Online course add/drop for undergraduate and Continuing Bachelor Program students",
+      "category": "選課"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-09-08",
+      "end_date": "2025-09-14",
+      "event": "研究生(含碩專、產專生)網路加退選。Online course add/drop for graduate students (including In-Service & Industry-Academia Collaboration programs)",
+      "category": "選課"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-09-08",
+      "end_date": "2025-09-19",
+      "event": "全校抵免學分及領域模組申請。University-wide application for credit transfer and modular courses",
+      "category": "行政"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-09-08",
+      "end_date": "2025-09-26",
+      "event": "跨領域學分學程及微學分學程申請。Applications for interdisciplinary credit, micro-credit programs",
+      "category": "行政"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-09-12",
+      "end_date": null,
+      "event": "國家防災日地震避難預演。Rehearsal of “National Disaster Prevention Day earthquake evacuation and sheltering drill”",
+      "category": "活動"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-09-19",
+      "end_date": null,
+      "event": "國家防災日地震避難演練。National Disaster Prevention Day earthquake evacuation and sheltering drill",
+      "category": "活動"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-09-23",
+      "end_date": null,
+      "event": "全校學生繳費截止。Tuition payment deadline for all students",
+      "category": "註冊"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-09-28",
+      "end_date": "2025-09-29",
+      "event": "9/28孔子誕辰紀念日/教師節、9/29調整放假。9/28Teachers Day, 9/29Adjusted holiday",
+      "category": "放假"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-10-01",
+      "end_date": "2025-10-20",
+      "event": "學士班應屆畢業生逕修讀博士學位申請、弱勢學生助學計畫助學金網路開放申請。Application for undergraduate students direct-entry doctoral degree opens, Online application for The Disadvantaged Student Aid Project opens",
+      "category": "畢業"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-10-06",
+      "end_date": null,
+      "event": "中秋節(放假)。10/6 Mid-Autumn Festival (holiday)",
+      "category": "放假"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-10-10",
+      "end_date": null,
+      "event": "國慶日(放假)。10/10 National Day (holiday)",
+      "category": "放假"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-10-15",
+      "end_date": null,
+      "event": "加退選學分費開放繳費。Course add/drop credit fee payments begin",
+      "category": "選課"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-10-17",
+      "end_date": null,
+      "event": "課程退選截止。Application for course withdrawal ends",
+      "category": "行政"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-10-18",
+      "end_date": null,
+      "event": "上課達1/3(第6週止)。One-third of the semester (end of Week 6)",
+      "category": "其他"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-10-24",
+      "end_date": "2025-10-25",
+      "event": "10/24調整放假、10/25臺灣光復暨金門古寧頭大捷紀念日。10/24Adjusted holiday, 10/25Taiwan Restoration and Kinmen Guningtou Great Victory Memorial Day (holiday)",
+      "category": "放假"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-10-31",
+      "end_date": null,
+      "event": "校園路跑、舞蹈性比賽。Campus Run and Dance Competition",
+      "category": "活動"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-11-01",
+      "end_date": null,
+      "event": "上課達1/2 (第8週止)、校慶、加退選繳費截止。Half of the semester (end of Week 8), University’s Anniversary Celebration, Payment deadline for course add/drop fees",
+      "category": "選課"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-11-01",
+      "end_date": "2025-11-02",
+      "event": "全校運動會。Annual Sports Meet",
+      "category": "活動"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-11-10",
+      "end_date": "2025-12-05",
+      "event": "停修申請期間。Application period for course withdrawal",
+      "category": "行政"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-11-17",
+      "end_date": "2025-11-28",
+      "event": "學士班及進修學士班提前畢業申請。Early graduation application for undergraduate and Continuing Bachelor Program students opens",
+      "category": "畢業"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-11-22",
+      "end_date": null,
+      "event": "上課達2/3 (第11週止)。Two-thirds of the semester (end of Week 11)",
+      "category": "其他"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-12-15",
+      "end_date": "2025-12-26",
+      "event": "受理在校生114學年度第2學期各類學雜費減免。Application for 2nd-semester tuition & miscellaneous fees exemption open for current students",
+      "category": "註冊"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-12-19",
+      "end_date": null,
+      "event": "休學申請截止日。Application deadline for temporary suspension",
+      "category": "行政"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-12-22",
+      "end_date": "2025-12-26",
+      "event": "學期考試(期末考試)。End-of-Semester exams (Final Exams)",
+      "category": "考試"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-12-25",
+      "end_date": null,
+      "event": "行憲紀念日(放假)(排定星期四課程之期末考試請老師另擇期考試)。Constitution Day (holiday) Please reschedule the final exam for the Thursday class to another date.",
+      "category": "放假"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2025-12-29",
+      "end_date": null,
+      "event": "寒假開始。Winter Break Begins",
+      "category": "其他"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2026-01-01",
+      "end_date": null,
+      "event": "元旦(放假)。 1/1 New Years Day (holiday)",
+      "category": "放假"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2026-01-09",
+      "end_date": null,
+      "event": "研究生論文口試申請截止。Application deadline for thesis/dissertation defense",
+      "category": "畢業"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2026-01-18",
+      "end_date": null,
+      "event": "全校停電檢驗日。Campus-wide power outage inspection",
+      "category": "其他"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2026-01-21",
+      "end_date": "2026-01-22",
+      "event": "學士班及進修學士班通識第1階段選課。1st online selection of General Education courses for undergraduates and Continuing Bachelor Program students",
+      "category": "選課"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2026-01-27",
+      "end_date": null,
+      "event": "學士班通識第2階段選課。 2nd online selection of undergraduate General Education courses",
+      "category": "選課"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2026-01-27",
+      "end_date": "2026-01-28",
+      "event": "進修學士班1-5年級網路初選。Online course selection for Continuing Bachelor Program (Grade 1-5) students",
+      "category": "選課"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2026-01-30",
+      "end_date": "2026-02-25",
+      "event": "全部學制學生(含轉學生)就學貸款網站開放登錄及收件期間。Registration and document submissions for Student Loan Application System available for all students (including transfer students)",
+      "category": "註冊"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2026-01-30",
+      "end_date": null,
+      "event": "學雜費開放繳費。Payments for tuition & miscellaneous fees begin",
+      "category": "註冊"
+    },
+    {
+      "semester": "114-1",
+      "start_date": "2026-01-31",
+      "end_date": null,
+      "event": "研究生論文口試截止、學期結束。Deadline for thesis/dissertation defense, Fall semester ends",
+      "category": "畢業"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-02-01",
+      "end_date": null,
+      "event": "學期開始。Spring semester begins",
+      "category": "開學"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-02-09",
+      "end_date": "2026-03-06",
+      "event": "輔系雙主修及跨域專長申請。Application for minor studies, double major, and cross-disciplinary expertise development program",
+      "category": "行政"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-02-09",
+      "end_date": "2026-02-11",
+      "event": "研究生(含碩專、產專生)網路初選。Online course selection for graduate students (including In-Service & Industry-Academia Collaboration programs)",
+      "category": "選課"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-02-09",
+      "end_date": "2026-02-13",
+      "event": "學士班各年級網路初選。Online course selection for all undergraduate students",
+      "category": "選課"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-02-13",
+      "end_date": null,
+      "event": "研究生畢業離校截止日Deadline for graduate students to complete graduation procedures and leave school process",
+      "category": "畢業"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-02-15",
+      "end_date": "2026-02-20",
+      "event": "除夕及春節(2/15-2/19除夕前一日至初三)(放假)、2/20調整放假。Lunar New Year holiday (2/15-2/19 the day before Lunar New Year s Eve to the 3rd day of the Lunar New Year), 2/20 Adjusted holiday",
+      "category": "放假"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-02-23",
+      "end_date": null,
+      "event": "全校學生開學、開始上課(註冊日)、全校學生繳費截止。Classes begin (Enrollment Date)/ Tuition payment deadline for all students",
+      "category": "開學"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-02-23",
+      "end_date": "2026-02-27",
+      "event": "學士班及進修學士班網路加退選。Online course add/drop for undergraduate and Continuing Bachelor Program students",
+      "category": "選課"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-02-23",
+      "end_date": "2026-03-01",
+      "event": "研究生(含碩專、產專生)網路加退選。Online course add/drop for graduate students (including In-Service & Industry-Academia Collaboration programs)",
+      "category": "選課"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-02-23",
+      "end_date": "2026-03-06",
+      "event": "寒假轉學生抵免學分及領域模組申請。Applications for Credit Transfer (Winter Transfer Students), modular courses",
+      "category": "行政"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-02-23",
+      "end_date": "2026-03-13",
+      "event": "跨領域學分學程及微學分學程申請。Applications for interdisciplinary credit, and micro-credit Programs open",
+      "category": "行政"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-02-27",
+      "end_date": "2026-02-28",
+      "event": "2/27調整放假、2/28和平紀念日(放假)。2/27 Adjusted holiday, 2/28Peace Memorial Day (holiday)",
+      "category": "放假"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-03-16",
+      "end_date": "2026-03-20",
+      "event": "轉系申請。Application for department transfer opens",
+      "category": "行政"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-03-16",
+      "end_date": null,
+      "event": "學雜費加退選開放繳費。Payments for adjusted tuition & fees (due to course add/drop) begin",
+      "category": "選課"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-04-01",
+      "end_date": null,
+      "event": "加退選繳費截止。Payment deadline for course add/drop fees",
+      "category": "選課"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-04-03",
+      "end_date": "2026-04-04",
+      "event": "4/3兒童節、4/4民族掃墓節。4/3 Adjusted holiday, 4/4 Childrens Day,",
+      "category": "其他"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-04-03",
+      "end_date": null,
+      "event": "課程退選截止。Application for course withdrawal ends",
+      "category": "行政"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-04-04",
+      "end_date": null,
+      "event": "上課達1/3(第6週止)。One-third of the semester (end of Week 6)",
+      "category": "其他"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-04-05",
+      "end_date": "2026-04-06",
+      "event": "4/5民族掃墓節(放假)、4/6調整放假。4/5 Tomb Sweeping Festival (holiday), 4/6 Adjusted holiday",
+      "category": "放假"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-04-07",
+      "end_date": "2026-04-08",
+      "event": "校慶及運動會補假。Make-up holiday for University Anniversary and Annual Sports Meet",
+      "category": "放假"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-04-18",
+      "end_date": null,
+      "event": "上課達1/2(第8週止)。Half of the semester (end of Week 8)",
+      "category": "其他"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-04-20",
+      "end_date": null,
+      "event": "性別平等教育日。Gender Equality Education Day",
+      "category": "其他"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-04-27",
+      "end_date": "2026-05-22",
+      "event": "停修申請期間。Application period for course withdrawal",
+      "category": "行政"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-04-30",
+      "end_date": null,
+      "event": "公告暑期授課班開班事宜。Summer courses and schedule announcements",
+      "category": "其他"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-05-01",
+      "end_date": null,
+      "event": "勞動節(放假)。International Workers Day (holiday)",
+      "category": "放假"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-05-04",
+      "end_date": "2026-05-15",
+      "event": "學士班及進修學士班提前畢業申請。Early graduation application for undergraduate and Continuing Bachelor Program students opens",
+      "category": "畢業"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-05-09",
+      "end_date": null,
+      "event": "上課達2/3(第11週止)。Two-thirds of the semester (end of Week 11)",
+      "category": "其他"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-05-30",
+      "end_date": null,
+      "event": "畢業典禮。Graduation ceremony",
+      "category": "畢業"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-06-01",
+      "end_date": "2026-06-12",
+      "event": "受理在校生115學年度第1學期各類學雜費減免。Applications for fall semester tuition & miscellaneous fees exemption open for current students",
+      "category": "註冊"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-06-05",
+      "end_date": null,
+      "event": "休學申請截止日。Application deadline for temporary suspension",
+      "category": "行政"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-06-08",
+      "end_date": "2026-06-12",
+      "event": "學期考試(期末考試)。End-of-Semester exams (Final Exams)",
+      "category": "考試"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-06-15",
+      "end_date": null,
+      "event": "暑假開始。Summer Break Begins",
+      "category": "其他"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-06-19",
+      "end_date": null,
+      "event": "6/19端午節放假。Dragon Boat Festival holiday",
+      "category": "放假"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-07-01",
+      "end_date": "2026-07-15",
+      "event": "碩士班研究生逕修讀博士學位申請。Application for master’s students direct-entry doctoral degree opens",
+      "category": "行政"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-07-10",
+      "end_date": null,
+      "event": "研究生論文口試申請截止。Application deadline for thesis/dissertation defense",
+      "category": "畢業"
+    },
+    {
+      "semester": "114-2",
+      "start_date": "2026-07-31",
+      "end_date": null,
+      "event": "研究生論文口試截止、學期結束、學年結束。Deadline for thesis/dissertation defense, Spring semester ends, End of the academic year",
+      "category": "畢業"
+    }
+  ]
+}
