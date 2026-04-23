@@ -57,12 +57,16 @@ class TeacherSearcher:
         self.metadata = data.get("metadata", {})
         self._loaded = True
 
-        # 建立 ID 索引
         self._id_index: Dict[str, Dict] = {}
+        self._name_index: Dict[str, Dict] = {}
         for teacher in self.teachers:
             tid = teacher.get("id", "")
             if tid:
                 self._id_index[tid] = teacher
+            
+            tname = teacher.get("name", "")
+            if tname:
+                self._name_index[tname] = teacher
 
     def reload(self):
         """重新載入資料"""
@@ -368,18 +372,20 @@ class TeacherSearcher:
             "metadata": self._get_query_metadata(),
         }
 
-    def get_teacher_detail(self, teacher_id: str) -> Dict[str, Any]:
+    def get_teacher_detail(self, identifier: str) -> Dict[str, Any]:
         """取得教師詳細資訊
 
         Args:
-            teacher_id: 教師 ID
-
-        Returns:
-            Dict: 教師詳細資訊
+            identifier: 教師 ID 或 姓名
         """
         self._ensure_loaded()
 
-        teacher = self._id_index.get(teacher_id)
+        # 優先嘗試按 ID 查詢
+        teacher = self._id_index.get(identifier)
+        
+        # 若找不到且不像是 ID（例如不包含數字），則嘗試按姓名查詢
+        if not teacher:
+            teacher = self._name_index.get(identifier)
 
         if teacher:
             return {
@@ -390,7 +396,7 @@ class TeacherSearcher:
         else:
             return {
                 "found": False,
-                "message": f"找不到教師: {teacher_id}",
+                "message": f"找不到教師: {identifier}",
                 "metadata": self._get_query_metadata(),
             }
 
@@ -701,17 +707,14 @@ def nchu_teacher_search(
 
 
 @mcp.tool()
-def nchu_teacher_get_detail(teacher_id: str) -> str:
-    """Get detailed information about a specific NCHU teacher.
+def nchu_teacher_get_detail(teacher_name: str) -> str:
+    """Get detailed information about a specific NCHU teacher by name or ID.
 
     Args:
-        teacher_id: Teacher ID (from search results)
-
-    Returns:
-        JSON string containing detailed teacher information
+        teacher_name: Teacher name (e.g., "范耀中") or Teacher ID
     """
     try:
-        results = searcher.get_teacher_detail(teacher_id)
+        results = searcher.get_teacher_detail(teacher_name)
         return json.dumps(results, ensure_ascii=False, indent=2)
     except Exception as e:
         return json.dumps({

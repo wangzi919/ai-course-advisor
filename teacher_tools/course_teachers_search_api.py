@@ -57,12 +57,16 @@ class CourseTeacherSearcher:
         self.metadata = data.get("metadata", {})
         self._loaded = True
 
-        # 建立 ID 索引
+        # 建立索引
         self._id_index: Dict[str, Dict] = {}
+        self._name_index: Dict[str, Dict] = {}
         for teacher in self.teachers:
             tid = teacher.get("id", "")
+            name = teacher.get("name", "")
             if tid:
                 self._id_index[tid] = teacher
+            if name:
+                self._name_index[name] = teacher
 
     def reload(self):
         """重新載入資料"""
@@ -345,18 +349,19 @@ class CourseTeacherSearcher:
             "metadata": self._get_query_metadata(),
         }
 
-    def get_teacher_detail(self, teacher_id: str) -> Dict[str, Any]:
+    def get_teacher_detail(self, teacher_name: str) -> Dict[str, Any]:
         """取得教師詳細資訊
 
         Args:
-            teacher_id: 教師 ID
+            teacher_name: 教師姓名
 
         Returns:
             Dict: 教師詳細資訊
         """
         self._ensure_loaded()
 
-        teacher = self._id_index.get(teacher_id)
+        # 優先從名稱索引找，找不到再從 ID 索引找
+        teacher = self._name_index.get(teacher_name) or self._id_index.get(teacher_name)
 
         if teacher:
             return {
@@ -367,20 +372,20 @@ class CourseTeacherSearcher:
         else:
             return {
                 "found": False,
-                "message": f"找不到教師: {teacher_id}",
+                "message": f"找不到教師: {teacher_name}",
                 "metadata": self._get_query_metadata(),
             }
 
     def get_teacher_courses(
         self,
-        teacher_id: str,
+        teacher_name: str,
         semester: Optional[str] = None,
         limit: int = 50
     ) -> Dict[str, Any]:
         """取得教師開課記錄
 
         Args:
-            teacher_id: 教師 ID
+            teacher_name: 教師姓名
             semester: 學期篩選（可選）
             limit: 結果數量限制
 
@@ -389,12 +394,13 @@ class CourseTeacherSearcher:
         """
         self._ensure_loaded()
 
-        teacher = self._id_index.get(teacher_id)
+        # 優先從名稱索引找，找不到再從 ID 索引找（相容舊格式）
+        teacher = self._name_index.get(teacher_name) or self._id_index.get(teacher_name)
 
         if not teacher:
             return {
                 "found": False,
-                "message": f"找不到教師: {teacher_id}",
+                "message": f"找不到教師: {teacher_name}",
                 "metadata": self._get_query_metadata(),
             }
 
@@ -406,6 +412,7 @@ class CourseTeacherSearcher:
         return {
             "found": True,
             "teacher_name": teacher.get("name", ""),
+            "teacher_id": teacher.get("id", ""),
             "courses": courses[:limit],
             "total_courses": len(courses),
             "showing": min(limit, len(courses)),
@@ -667,17 +674,17 @@ def nchu_course_teachers_search(
 
 
 @mcp.tool()
-def nchu_course_teachers_get_detail(teacher_id: str) -> str:
-    """Get detailed information about a specific teacher.
+def nchu_course_teachers_get_detail(teacher_name: str) -> str:
+    """Get detailed information about a specific teacher by name.
 
     Args:
-        teacher_id: Teacher ID (from search results)
+        teacher_name: Teacher name (from search results or known name)
 
     Returns:
         JSON string containing detailed teacher information
     """
     try:
-        results = searcher.get_teacher_detail(teacher_id)
+        results = searcher.get_teacher_detail(teacher_name)
         return json.dumps(results, ensure_ascii=False, indent=2)
     except Exception as e:
         return json.dumps({
@@ -688,14 +695,14 @@ def nchu_course_teachers_get_detail(teacher_id: str) -> str:
 
 @mcp.tool()
 def nchu_course_teachers_get_courses(
-    teacher_id: str,
+    teacher_name: str,
     semester: str | None = None,
     limit: int = 50
 ) -> str:
-    """Get course teaching records for a specific teacher.
+    """Get course teaching records for a specific teacher by name.
 
     Args:
-        teacher_id: Teacher ID (from search results)
+        teacher_name: Teacher name (from search results or known name)
         semester: Optional semester filter (e.g., "1131")
         limit: Maximum number of courses to return (default: 50)
 
@@ -703,7 +710,7 @@ def nchu_course_teachers_get_courses(
         JSON string containing teacher's course records
     """
     try:
-        results = searcher.get_teacher_courses(teacher_id, semester, limit)
+        results = searcher.get_teacher_courses(teacher_name, semester, limit)
         return json.dumps(results, ensure_ascii=False, indent=2)
     except Exception as e:
         return json.dumps({

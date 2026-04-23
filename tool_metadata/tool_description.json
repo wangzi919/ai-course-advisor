@@ -554,7 +554,7 @@
       {
         "name": "course_id",
         "type": "STRING",
-        "description": "選課號碼"
+        "description": "選課號碼(例如：1384)"
       }
     ],
     "optional_parameters": [
@@ -1000,7 +1000,7 @@
       {
         "name": "teacher_name",
         "type": "STRING",
-        "description": "教師姓名"
+        "description": "教師姓名(例如：徐川皓)"
       }
     ],
     "optional_parameters": [
@@ -1078,7 +1078,7 @@
       {
         "name": "teacher_name",
         "type": "STRING",
-        "description": "教師姓名"
+        "description": "教師姓名(例如：徐川皓)"
       }
     ],
     "optional_parameters": [
@@ -1096,7 +1096,7 @@
       {
         "name": "teacher_name",
         "type": "STRING",
-        "description": "教師姓名"
+        "description": "教師姓名(例如：徐川皓)"
       }
     ],
     "optional_parameters": []
@@ -1208,7 +1208,7 @@
       {
         "name": "course_id",
         "type": "STRING",
-        "description": "選課號碼"
+        "description": "選課號碼(例如：0424)"
       }
     ],
     "optional_parameters": [
@@ -1286,7 +1286,7 @@
       {
         "name": "name",
         "type": "STRING",
-        "description": "欲搜尋的教師姓名（中英文皆可）"
+        "description": "欲搜尋的教師姓名(例如：范耀中、吳俊霖、陳煥) (中英文皆可)"
       }
     ],
     "optional_parameters": [
@@ -1398,9 +1398,9 @@
     "description": "取得特定中興大學教師的詳細資訊。",
     "required_parameters": [
       {
-        "name": "teacher_id",
+        "name": "teacher_name",
         "type": "STRING",
-        "description": "教師 ID（來自搜尋結果）"
+        "description": "教師姓名(例如：范耀中、吳俊霖、陳煥) 或 教師 ID"
       }
     ],
     "optional_parameters": []
@@ -1433,7 +1433,7 @@
       {
         "name": "name",
         "type": "STRING",
-        "description": "欲搜尋的教師姓名（中英文皆可）"
+        "description": "欲搜尋的教師姓名(例如：范耀中、吳俊霖、陳煥)"
       }
     ],
     "optional_parameters": [
@@ -1511,7 +1511,7 @@
       {
         "name": "keywords",
         "type": "STRING",
-        "description": "搜尋關鍵字（以空白分隔）"
+        "description": "搜尋關鍵字（以空白分隔，例如：范耀中、吳俊霖、陳煥）"
       }
     ],
     "optional_parameters": [
@@ -1533,9 +1533,9 @@
     "description": "取得特定教師的詳細資訊。",
     "required_parameters": [
       {
-        "name": "teacher_id",
+        "name": "teacher_name",
         "type": "STRING",
-        "description": "教師 ID（來自搜尋結果）"
+        "description": "教師姓名(例如：范耀中、吳俊霖、陳煥)"
       }
     ],
     "optional_parameters": []
@@ -1544,9 +1544,9 @@
     "description": "取得特定教師的課程授課紀錄。",
     "required_parameters": [
       {
-        "name": "teacher_id",
+        "name": "teacher_name",
         "type": "STRING",
-        "description": "教師 ID（來自搜尋結果）"
+        "description": "教師姓名(例如：范耀中、吳俊霖、陳煥)"
       }
     ],
     "optional_parameters": [
@@ -1693,7 +1693,7 @@
       {
         "name": "course_id",
         "type": "STRING",
-        "description": "課程 ID（選課號碼）"
+        "description": "課程 ID（選課號碼，例如：2294）"
       }
     ],
     "optional_parameters": [
@@ -2021,7 +2021,7 @@
       {
         "name": "course_id",
         "type": "STRING",
-        "description": "課程 ID（選課號碼）"
+        "description": "課程 ID（選課號碼，例如：2294）"
       }
     ],
     "optional_parameters": [

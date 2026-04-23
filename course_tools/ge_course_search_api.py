@@ -249,7 +249,7 @@ class GECourseSearcher:
             "科目名稱": course.get("科目名稱", ""),
             "領域": course.get("領域", ""),
             "學群": course.get("學群", ""),
-            "上課教師": course.get("上課教師", ""),
+            "上課教師": course.get("上課教師") or course.get("授課教師", ""),
             "開課單位": course.get("開課單位", ""),
             "必選別": course.get("必選別", ""),
             "學分數": course.get("學分數", course.get("學分", "")),
@@ -334,7 +334,7 @@ class GECourseSearcher:
                 # 科目名稱和教師權重較高
                 if field == "科目名稱":
                     score += 3
-                elif field == "上課教師":
+                elif field in ["上課教師", "授課教師"]:
                     score += 2.5
                 elif field == "開課單位":
                     score += 2
@@ -415,7 +415,7 @@ class GECourseSearcher:
             搜尋結果字典
         """
         if search_fields is None:
-            search_fields = ['科目名稱', '上課教師', '開課單位', '系所名稱', '備註']
+            search_fields = ['科目名稱', '上課教師', '授課教師', '開課單位', '系所名稱', '備註']
 
         if not keyword.strip():
             return {
@@ -480,7 +480,7 @@ class GECourseSearcher:
             按學期分組的搜尋結果
         """
         if search_fields is None:
-            search_fields = ['科目名稱', '上課教師', '開課單位']
+            search_fields = ['科目名稱', '上課教師', '授課教師', '開課單位']
 
         if not keyword.strip():
             return {
@@ -572,7 +572,7 @@ class GECourseSearcher:
         return self.search_courses(
             teacher_name,
             limit=limit,
-            search_fields=['上課教師'],
+            search_fields=['上課教師', '授課教師'],
             semester=semester
         )
 
@@ -644,7 +644,7 @@ class GECourseSearcher:
         matching_courses = []
 
         for course in courses:
-            teacher = course.get('上課教師', '')
+            teacher = course.get('上課教師') or course.get('授課教師', '')
 
             is_match = False
             if exact_match:
@@ -682,7 +682,7 @@ class GECourseSearcher:
         return self.search_across_semesters(
             keyword=teacher_name,
             limit=limit_per_semester,
-            search_fields=['上課教師']
+            search_fields=['上課教師', '授課教師']
         )
 
     def get_all_teachers(self, semester: Optional[str] = None):
@@ -698,7 +698,7 @@ class GECourseSearcher:
         teacher_courses = {}
 
         for course in courses:
-            teacher = course.get('上課教師', '').strip()
+            teacher = (course.get('上課教師') or course.get('授課教師', '')).strip()
 
             if teacher and teacher != '':
                 if teacher not in teacher_stats:
@@ -1574,7 +1574,7 @@ def nchu_ge_course_get_weekly_content(course_id: str, semester: str | None = Non
                     'found': True,
                     'course_id': course_id,
                     'course_name': course.get("科目名稱", ""),
-                    'teacher': course.get("上課教師", ""),
+                    'teacher': course.get("上課教師") or course.get("授課教師", ""),
                     '每週授課內容': syllabus.get("每週授課內容", {}),
                     'metadata': searcher._get_metadata(sem)
                 }, ensure_ascii=False, indent=2)
