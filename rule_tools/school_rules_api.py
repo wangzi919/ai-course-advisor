@@ -132,7 +132,12 @@ class DenseRetriever:
         if not self.documents:
             return []
 
-        query_embedding = self.embedding_provider.get_embedding(query)
+        try:
+            query_embedding = self.embedding_provider.get_embedding(query)
+        except Exception:
+            # Embedding API 無法連線時，回傳空結果而非拋出例外
+            return []
+
         scores = [(i, self._cosine_similarity(query_embedding, doc_emb))
                   for i, doc_emb in enumerate(self.document_embeddings)]
         scores.sort(key=lambda x: x[1], reverse=True)
@@ -200,22 +205,39 @@ def rule_search_by_query(query: str, top_k: int = 5) -> Dict[str, Any]:
     Returns:
         Dictionary containing retrieved documents and metadata.
     """
-    top_k = max(1, min(10, top_k))
-    results = RETRIEVER.retrieve(query, top_k=top_k)
-    return {
-        "query": query,
-        "results": [
-            {
-                "rank": r.rank,
-                "doc_id": r.document.id,
-                "title": r.document.title,
-                "score": round(r.score, 4),
-                "content": r.document.content,
+    try:
+        top_k = max(1, min(10, top_k))
+        results = RETRIEVER.retrieve(query, top_k=top_k)
+
+        if not results:
+            return {
+                "query": query,
+                "results": [],
+                "total_documents": len(RETRIEVER.documents),
+                "message": "Embedding 服務暫時無法連線，無法執行語意搜尋。請稍後再試。"
             }
-            for r in results
-        ],
-        "total_documents": len(RETRIEVER.documents)
-    }
+
+        return {
+            "query": query,
+            "results": [
+                {
+                    "rank": r.rank,
+                    "doc_id": r.document.id,
+                    "title": r.document.title,
+                    "score": round(r.score, 4),
+                    "content": r.document.content,
+                }
+                for r in results
+            ],
+            "total_documents": len(RETRIEVER.documents)
+        }
+    except Exception as e:
+        return {
+            "query": query,
+            "results": [],
+            "total_documents": 0,
+            "error": f"搜尋時發生錯誤：{type(e).__name__}: {e}"
+        }
 
 
 @mcp.tool()
@@ -228,16 +250,32 @@ def rule_list_all(limit: int = 20) -> Dict[str, Any]:
     Returns:
         Dictionary with document metadata and counts.
     """
-    limit = max(1, min(100, limit))
-    documents = [
-        {"id": doc.id, "title": doc.title, "content_length": len(doc.content)}
-        for doc in RETRIEVER.documents[:limit]
-    ]
-    return {
-        "documents": documents,
-        "total": len(RETRIEVER.documents),
-        "showing": len(documents)
-    }
+    try:
+        if not RETRIEVER.documents:
+            return {
+                "documents": [],
+                "total": 0,
+                "showing": 0,
+                "message": "校規文件尚未載入或載入失敗，請確認資料檔案是否存在。"
+            }
+
+        limit = max(1, min(100, limit))
+        documents = [
+            {"id": doc.id, "title": doc.title, "content_length": len(doc.content)}
+            for doc in RETRIEVER.documents[:limit]
+        ]
+        return {
+            "documents": documents,
+            "total": len(RETRIEVER.documents),
+            "showing": len(documents)
+        }
+    except Exception as e:
+        return {
+            "documents": [],
+            "total": 0,
+            "showing": 0,
+            "error": f"列出文件時發生錯誤：{type(e).__name__}: {e}"
+        }
 
 
 if __name__ == "__main__":

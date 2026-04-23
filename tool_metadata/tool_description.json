@@ -1188,9 +1188,9 @@
     "description": "依 SDG（聯合國永續發展目標）搜尋相關通識課程。",
     "required_parameters": [
       {
-        "name": "sdg",
+        "name": "sdg_keyword",
         "type": "STRING",
-        "description": "SDG 編號或關鍵字（如 SDG4, 優質教育）"
+        "description": "SDG 關鍵字（如 氣候, 永續, 健康, 教育）"
       }
     ],
     "optional_parameters": [

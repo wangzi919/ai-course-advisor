@@ -135,7 +135,13 @@ class EducationCourseSearcher:
 
         try:
             with open(json_path, 'r', encoding='utf-8') as f:
-                courses = json.load(f)
+                raw = json.load(f)
+            # 支援帶 metadata 的新格式 {"metadata": {...}, "data": [...]}
+            # 也相容舊格式（直接是 list）
+            if isinstance(raw, dict):
+                courses = raw.get('data', [])
+            else:
+                courses = raw
             self.loaded_data[semester] = courses
             return courses
         except FileNotFoundError:

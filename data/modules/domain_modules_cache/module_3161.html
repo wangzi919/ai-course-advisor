@@ -1,0 +1,781 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7" />
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="zh-tw">
+    <meta name="keywords" content="" />
+    <meta name="Description" content="" />
+    <meta name="author" content="國立中興大學教務處" />
+    <meta name="copyright" content="國立中興大學教務處" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>選課與課程 - 選課/課程資訊專區 - 國立中興大學教務處</title>
+	<!-- CSS -->
+    <link href="https://oaa.nchu.edu.tw/tem/tw/css/style.css?v20240517" rel="stylesheet" type="text/css">
+	<!-- favicon 16x16 -->
+    <link rel="shortcut icon" href="https://oaa.nchu.edu.tw/tem/tw/images/favicon.ico">
+    <!-- apple touch icon 57x57 -->
+    <link rel="apple-touch-icon" href="https://oaa.nchu.edu.tw/tem/tw/images/apple-touch-icon.png">
+    <!-- IE設定,新增html5標籤 -->
+    <!--[if lt IE 9]>
+    <script src="https://oaa.nchu.edu.tw/inc/js/html5.js"></script>
+    <script src="https://oaa.nchu.edu.tw/inc/js/css3-mediaqueries.js"></script> 
+    <![endif]-->
+	</head>
+<body>
+	<div id="container">
+		<!-- 頁首 START -->
+		<header id="header">
+	<div class="header-sec01">
+		<div class="sec-inner">
+			<div class="group header-group01">
+				<div class="group-item group-item01">
+					<!-- 選單一 START -->
+					<nav class="nav-wrap nav-skin01">
+						<ul class="nav-list">
+							<li><a href="https://www.nchu.edu.tw/index" title="NCHU首頁">NCHU首頁</a></li>
+							<li><a href="https://oaa.nchu.edu.tw/zh-tw/sitemap" title="網站導覽">網站導覽</a></li>
+							<li><a href="mailto:oaaweb@nchu.edu.tw" title="聯絡我們" target="_blank">聯絡我們</a></li>
+						</ul>
+					</nav>
+					<!-- 選單一 END -->
+				</div>
+				<div class="group-item group-item02">
+					<div class="item-inner node-pc" data-child="dyn-node01">
+						<div class="dyn-node" data-node="dyn-node01">
+							<!-- GOOGLE搜尋 START -->
+							<div class="google-search">
+								<gcse:search></gcse:search>
+							</div>
+							<!-- GOOGLE搜尋 END -->
+                                                        <a class="figure" href="https://oias.nchu.edu.tw/asknchu-ch/" title="ASK NCHU" target="_blank">
+								<img src="https://oaa.nchu.edu.tw/tem/tw/images/ask_nchu.png" width="120" height="" alt="" />
+							</a>
+                            						</div>
+					</div>
+					<div class="item-inner node-pc" data-child="dyn-node02">
+						<nav class="nav-wrap nav-lang dyn-node" data-node="dyn-node02">
+							<ul class="nav-list">
+																<li><a href="https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3161" title="中文版">中文版</a></li>
+																<li><a href="https://oaa.nchu.edu.tw/en-us/unit-page-p.342/page-detail.3161" title="English">English</a></li>
+															</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="group-item group-item03">
+					<a id="nav-btn" class="btn btn-thumb"
+						 href="#main-nav" title="選單鈕"
+						 data-off="MENU" data-on="CLOSE">
+						<div class="thumb-wrap">
+							<span class="thumb thumb-1"></span>
+							<span class="thumb thumb-2"></span>
+							<span class="thumb thumb-3"></span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="header-sec02">
+		<div class="sec-inner">
+			<div class="group header-group02">
+				<div class="group-item group-item01">
+					<h1 id="logo"><!-- 標籤:首頁h1，內頁div -->
+						<a href="https://oaa.nchu.edu.tw/zh-tw/index" title="國立中興大學教務處">
+							<img src="https://oaa.nchu.edu.tw/tem/tw/images/logo.png" width="390" height="59" alt="國立中興大學教務處" />
+						</a>
+					</h1>
+				</div>
+				<div class="group-item group-item02 node-pc" data-child="dyn-node03">
+					<!-- 選單二 START -->
+					<nav class="nav-wrap second-nav dyn-node" data-node="dyn-node03">
+						<ul class="nav-list">
+														<li><a class="icon-nav02" href="https://oaa.nchu.edu.tw/zh-tw/rule" title="法規章則" target="">法規章則</a></li>
+														<li><a class="icon-nav03" href="https://oaa.nchu.edu.tw/zh-tw/statistics" title="統計資料" target="">統計資料</a></li>
+														<li><a class="icon-nav04" href="https://oaa.nchu.edu.tw/zh-tw/form" title="表單下載" target="">表單下載</a></li>
+														<li><a class="icon-nav05" href="https://oaa.nchu.edu.tw/zh-tw/faq" title="常見問題" target="">常見問題</a></li>
+														<li><a class="icon-nav04" href="https://oaa.nchu.edu.tw/zh-tw/minutes" title="會議紀錄" target="">會議紀錄</a></li>
+														<li><a class="icon-nav04" href="https://oaa.nchu.edu.tw/zh-tw/sop" title="作業流程" target="">作業流程</a></li>
+														<li><a class="icon-nav06" href="https://oaa.nchu.edu.tw/zh-tw/links" title="常用連結" target="">常用連結</a></li>
+														<li><a class="icon-nav07" href="https://oaa.nchu.edu.tw/zh-tw/activity" title="活動花絮" target="">活動花絮</a></li>
+													</ul>
+					</nav>
+					<!-- 選單二 END -->
+				</div>
+				<div class="group-item group-item03 mobile-side">
+					<div class="mobile-inner">
+						<div class="item-inner node-mobile" data-child="dyn-node02"></div>
+						<div class="item-inner">
+							<!-- 選單三 START，目前單元li加class:on -->
+							<nav id="main-nav" class="nav-wrap main-nav">
+								<ul class="nav-list">
+																		<li class="">
+										<a href="https://oaa.nchu.edu.tw/zh-tw/dean" title="教務長室" target="">教務長室</a>
+										<div class="sub-nav">
+																						<ul>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/dean" title="教務長室" target="">教務長室</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/dean-news" title="最新消息" target="">最新消息</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/daen-intro" title="單位介紹" target="">單位介紹</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/daen-intro2" title="歷任教務長" target="">歷任教務長</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/dean-staff" title="業務職掌" target="">業務職掌</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/dean-form" title="表格下載" target="">表格下載</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/dean-download" title="資料下載" target="">資料下載</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/dean-service" title="業務項目" target="">業務項目</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/dean-zone01" title="系所評鑑" target="">系所評鑑</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/nchutae" title="教學成果展" target="">教學成果展</a></li>
+																							</ul>
+																					</div>
+									</li>
+																		<li class="">
+										<a href="https://oaa.nchu.edu.tw/zh-tw/rs" title="註冊組" target="">註冊組</a>
+										<div class="sub-nav">
+																						<ul>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/rs" title="註冊組" target="">註冊組</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/rs-news" title="最新消息" target="">最新消息</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/rs-intro" title="單位介紹" target="">單位介紹</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/rs-staff" title="業務職掌" target="">業務職掌</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/rs-form" title="表格下載" target="">表格下載</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/rs-down" title="資料下載" target="">資料下載</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/rs-freshman" title="新生專區" target="">新生專區</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/rs-student" title="在校生專區" target="">在校生專區</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/rs-alumnus" title="各類證明申請專區" target="">各類證明申請專區</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/rs-adm" title="行政專區" target="">行政專區</a></li>
+																							</ul>
+																					</div>
+									</li>
+																		<li class="on">
+										<a href="https://oaa.nchu.edu.tw/zh-tw/course" title="課務組" target="">課務組</a>
+										<div class="sub-nav">
+																						<ul>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/course" title="課務組" target="">課務組</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/course-news" title="最新消息" target="">最新消息</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/course-intro" title="單位介紹" target="">單位介紹</a></li>
+																								<li class="on"><a href="https://oaa.nchu.edu.tw/zh-tw/article_01-p.341" title="選課/課程資訊專區" target="">選課/課程資訊專區</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/course-summer" title="暑修/先修課程專區" target="">暑修/先修課程專區</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/course-zone02" title="課務相關業務專區" target="">課務相關業務專區</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/course-room" title="綜大教室管理與借用" target="">綜大教室管理與借用</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/course-form" title="表格下載" target="">表格下載</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/course-download" title="會議/統計資料" target="">會議/統計資料</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/course-staff" title="業務職掌" target="">業務職掌</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/course-other" title="相關連結" target="">相關連結</a></li>
+																							</ul>
+																					</div>
+									</li>
+																		<li class="">
+										<a href="https://oaa.nchu.edu.tw/zh-tw/recruit" title="招生組" target="">招生組</a>
+										<div class="sub-nav">
+																						<ul>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/recruit" title="招生組" target="">招生組</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/recruit-news" title="最新消息" target="">最新消息</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/recruit-intro" title="單位介紹" target="">單位介紹</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/recruit-staff" title="業務職掌" target="">業務職掌</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/recruit-form" title="表格下載" target="">表格下載</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/recruit-download" title="資料下載" target="">資料下載</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/recruit-admission" title="入學招生" target="">入學招生</a></li>
+																								<li class=""><a href="http://recruit.nchu.edu.tw/present/index.aspx" title="未來學生專區" target="_blank">未來學生專區</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/大陸學歷甄試及查證" title="大陸學歷甄試及查證" target="">大陸學歷甄試及查證</a></li>
+																							</ul>
+																					</div>
+									</li>
+																		<li class="">
+										<a href="https://oaa.nchu.edu.tw/zh-tw/cdtl" title="教發中心" target="">教發中心</a>
+										<div class="sub-nav">
+																						<ul>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/cdtl" title="教發中心" target="">教發中心</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/online_teaching" title="線上教學" target="">線上教學</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/cdtl-news" title="最新消息" target="">最新消息</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/CenterIntro" title="單位介紹" target="">單位介紹</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/cdtl-staff" title="業務職掌" target="">業務職掌</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/teachers" title="教師專業發展" target="">教師專業發展</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/students" title="學生學習促進" target="">學生學習促進</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/teach-tech" title="教學科技應用" target="">教學科技應用</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/cdtl-application" title="計畫申請" target="">計畫申請</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/cdtl-form" title="表格下載" target="">表格下載</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/cdtl-data" title="資料下載" target="">資料下載</a></li>
+																							</ul>
+																					</div>
+									</li>
+																		<li class="">
+										<a href="https://oaa.nchu.edu.tw/zh-tw/ge" title="通識中心" target="">通識中心</a>
+										<div class="sub-nav">
+																						<ul>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/ge" title="通識中心" target="">通識中心</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/ge-news" title="最新消息" target="">最新消息</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/ge-Introduction" title="單位介紹" target="">單位介紹</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/ge-staff" title="業務職掌" target="">業務職掌</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/ge-courses-CI" title="通識課程" target="">通識課程</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/ge-forms" title="表格下載" target="">表格下載</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/ge-download" title="資料下載" target="">資料下載</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/ge-speech" title="惠蓀講座" target="">惠蓀講座</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/ge-teachera_assistant" title="教學助理" target="">教學助理</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/unit-page-p.299" title="自主學習" target="">自主學習</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/Bachelor" title="校學士學位" target="">校學士學位</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/ge-link" title="常用連結" target="">常用連結</a></li>
+																								<li class=""><a href="https://www.instagram.com/nchucah?igsh=MXU2OHl4eXJ3YW11Zw==" title="粉絲專頁" target="_blank">粉絲專頁</a></li>
+																							</ul>
+																					</div>
+									</li>
+																		<li class="">
+										<a href="https://oaa.nchu.edu.tw/zh-tw/EMI" title="雙語中心" target="">雙語中心</a>
+										<div class="sub-nav">
+																						<ul>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/EMI" title="雙語中心" target="">雙語中心</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/eml-news" title="最新消息" target="">最新消息</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/emi-intro" title="單位介紹" target="">單位介紹</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/emi-staff" title="業務職掌" target="">業務職掌</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/emi-form" title="表格下載" target="">表格下載</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/emi-download" title="資料下載" target="">資料下載</a></li>
+																								<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/emi-service" title="業務項目" target="">業務項目</a></li>
+																								<li class=""><a href="https://emitlc.nchu.edu.tw/" title="EMI 教學資源中心" target="_blank">EMI 教學資源中心</a></li>
+																							</ul>
+																					</div>
+									</li>
+																	</ul>
+							</nav>
+							<!-- 選單三 END -->
+						</div>
+						<div class="item-inner node-mobile" data-child="dyn-node03"></div>
+						<div class="item-inner node-mobile" data-child="dyn-node01"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>        <!-- 頁首 END -->
+		<!-- 各單元內容 START -->
+		<main id="content">
+			<div class="intro-section unit-page">
+				<div class="banner banner-skin03" style="background-image:url(https://oaa.nchu.edu.tw/tem/tw/images/banner-unit02.jpg);">
+					<div class="sec-inner">
+						<h1 class="title t01">選課與課程</h1>
+					</div>
+				</div>
+				<div class="path wow fadeInDown" data-wow-duration="1s" data-wow-delay=".3s">
+					<div class="sec-inner">
+						<ul>
+														<li><a href="https://oaa.nchu.edu.tw/zh-tw/index" title="首頁">首頁</a></li>
+														<li><a href="https://oaa.nchu.edu.tw/zh-tw/course" title="課務組">課務組</a></li>
+														<li><a href="https://oaa.nchu.edu.tw/zh-tw/article_01-p.341" title="選課/課程資訊專區">選課/課程資訊專區</a></li>
+														<li><a href="https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342" title="選課與課程">選課與課程</a></li>
+														<li><a href="https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2117" title="輔系/雙主修/跨領域專長課程資訊">輔系/雙主修/跨領域專長課程資訊</a></li>
+														<li><a href="https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2760" title="領域模組">領域模組</a></li>
+														<li><a href="https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2803" title="領域模組相關資訊">領域模組相關資訊</a></li>
+														<li><a href="https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2923" title="現有領域模組列表">現有領域模組列表</a></li>
+														<li><a href="https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2943" title="文學院">文學院</a></li>
+														<li><span>歷史學系-U13-E01歐洲文化領域模組</span></li>
+													</ul>
+					</div>
+				</div>
+				<div class="detail-wrap">
+					<div class="template01">
+						<div class="sec-inner">
+							<div class="grid-group grid-group01">
+								<div class="grid-item grid-item01">
+									<div class="intro-nav">
+										<nav class="nav-wrap nav-skin04 toggle-nav">
+											<button type="button" class="btn nav-title">歷史學系-U13-E01歐洲文化領域模組</button>
+											<div class="nav-list">
+												<ul>
+																										<li class="on"><a href="https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2943" title="文學院" target="">文學院</a></li>
+																										<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2944" title="農資學院" target="">農資學院</a></li>
+																										<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2945" title="理學院" target="">理學院</a></li>
+																										<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2946" title="工學院" target="">工學院</a></li>
+																										<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2947" title="生命科學院" target="">生命科學院</a></li>
+																										<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.3169" title="獸醫學院" target="">獸醫學院</a></li>
+																										<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.3105" title="管理學院" target="">管理學院</a></li>
+																										<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2948" title="法政學院" target="">法政學院</a></li>
+																										<li class=""><a href="https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2949" title="電機資訊學院" target="">電機資訊學院</a></li>
+																									</ul>
+											</div>
+										</nav>
+									</div>
+								</div>
+								<div class="grid-item grid-item02">
+									<div class="intro-sec">
+										<div class="intro-head intro-head02">
+											<h2 class="title t04">歷史學系-U13-E01歐洲文化領域模組</h2>
+										</div>
+																				<div class="intro-detail">
+											<div class="editor">
+												<table align="center" border="1" cellpadding="0" cellspacing="0">
+	<tbody>
+		<tr>
+			<td colspan="13" style="width:697px;height:19px;">領域模組名稱</td>
+		</tr>
+		<tr>
+			<td style="width:113px;height:38px;">中文</td>
+			<td colspan="12" style="width:584px;height:38px;">歐洲文化領域模組</td>
+		</tr>
+		<tr>
+			<td style="width:113px;height:38px;">英文</td>
+			<td colspan="12" style="width:584px;height:38px;">European Culture Module</td>
+		</tr>
+		<tr>
+			<td colspan="3" style="width:325px;height:30px;">領域模組預計開始施行時間</td>
+			<td colspan="10" style="width:372px;height:30px;">114學年度第1學期</td>
+		</tr>
+		<tr>
+			<td style="width:113px;height:38px;">主責教學單位</td>
+			<td colspan="2" style="width:212px;height:38px;">歷史學系</td>
+			<td colspan="5" style="width:128px;height:38px;">召集人</td>
+			<td colspan="5" style="width:245px;height:38px;">許朝祺</td>
+		</tr>
+		<tr>
+			<td style="width:113px;">學習目標與<br />
+			預期學習效益</td>
+			<td colspan="12" style="width:584px;">
+			<ol>
+				<li>拓展學生視野，理解歐洲各地區不同的文化。</li>
+				<li>培養思辨歐洲文化內涵的能力，同時提升相關英文史料與學術專著閱讀。</li>
+				<li>以歐洲文化為範例與素材，學習歷史解釋與思辨，具備人文與現實社會的關懷。</li>
+			</ol>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:113px;height:1px;">課程架構圖</td>
+			<td colspan="12" style="width:584px;height:1px;"><img alt="" src="data:image/png;base64,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" /></td>
+		</tr>
+		<tr>
+			<td style="width:113px;">修課指引</td>
+			<td colspan="12" style="width:584px;">本課程模組之基礎課程為「史學導論」與「世界通史」，屬於歷史系一年級必修課程，學生修習其中三學分後，預期獲得歷史學基本概念、歷史思維的運用、資料收集能力、與資料庫相關資源的基礎認識。<br />
+			&nbsp;<br />
+			核心課程為「西洋上古史」、「歐洲中古史」及「世界現代史」，屬於歷史系二年級選修課，主要提供學生理解並掌握歐洲文化的整體發展脈絡，以及訓練學生對於歐洲文化資料的收集、閱讀、與解釋能力。歐洲文化的主要元素，源自兩河流域文明與埃及文明、古希臘羅馬精神、與基督教信仰，它們呈現在上述課程裡；另外，歐洲與地中海世界周邊地區不同文化的互動，也有相當程度的引導說明與討論。學生得依照個人興趣，選擇修習其中4學分，預期對歐洲文明的主要元素與整體流變有一定程度了解。<br />
+			&nbsp;<br />
+			總整課程為「西方醫學與身體史」、「羅馬帝國：從創建、極盛到轉型」、「拜占庭早期史」、「英國史」與「大英國協史」，屬於歷史系二年級與三年級選修課程。學生得依照個人興趣，選擇修習其中6學分，更深入的理解歐洲各地區之文化，同時深化歷史研究、教學、與應用創造能力，以接軌個人未來職涯發展。<br />
+			&nbsp;<br />
+			完成本模組後，預期將對史學研究、數位研究工具、歐洲文化及其與地中海周邊文明互動的情況，具備相當程度的認識。未來從事中等學校教師工作，可活潑運用各式歐洲文化素材與工具，引導學生進行有趣且實用的討論。再者，往後從事各項文化產業工作、國際交流活動、影視遊戲開發或文史旅遊工作，皆能具備歐洲文化與相關知識的涵養，以傳統素材配合個人創意、靈活運用於實務工作裡，增加就業競爭力。</td>
+		</tr>
+		<tr>
+			<td colspan="13" style="width:697px;height:19px;">所有相關課程列表</td>
+		</tr>
+		<tr>
+			<td colspan="4" rowspan="2" style="width:353px;">課程名稱</td>
+			<td colspan="7" style="width:156px;">規劃要點(附註)</td>
+			<td rowspan="2" style="width:102px;">開課單位</td>
+			<td rowspan="2" style="width:86px;">備註</td>
+		</tr>
+		<tr>
+			<td style="width:26px;height:1px;">1</td>
+			<td style="width:26px;height:1px;">2</td>
+			<td style="width:26px;height:1px;">3</td>
+			<td colspan="2" style="width:26px;height:1px;">4</td>
+			<td style="width:26px;height:1px;">5</td>
+			<td style="width:26px;height:1px;">6</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(中文)史學導論</td>
+			<td rowspan="2" style="width:26px;height:1px;">U</td>
+			<td rowspan="2" style="width:26px;height:1px;">A</td>
+			<td rowspan="2" style="width:26px;height:1px;">R</td>
+			<td colspan="2" rowspan="2" style="width:26px;height:1px;">Ｓ</td>
+			<td rowspan="2" style="width:26px;height:1px;">3</td>
+			<td rowspan="2" style="width:26px;height:1px;">1</td>
+			<td rowspan="2" style="width:102px;height:1px;">歷史學系</td>
+			<td rowspan="4" style="width:86px;height:1px;">基礎課程<br />
+			須修習其中3學分</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(英文)Introduction to History</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(中文)世界通史</td>
+			<td rowspan="2" style="width:26px;height:1px;">U</td>
+			<td rowspan="2" style="width:26px;height:1px;">A</td>
+			<td rowspan="2" style="width:26px;height:1px;">R</td>
+			<td colspan="2" rowspan="2" style="width:26px;height:1px;">Y</td>
+			<td rowspan="2" style="width:26px;height:1px;">6</td>
+			<td rowspan="2" style="width:26px;height:1px;">1</td>
+			<td rowspan="2" style="width:102px;height:1px;">歷史學系</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(英文)General World History</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(中文)西洋上古史（一）</td>
+			<td rowspan="2" style="width:26px;height:1px;">U</td>
+			<td rowspan="2" style="width:26px;height:1px;">A</td>
+			<td rowspan="2" style="width:26px;height:1px;">R</td>
+			<td colspan="2" rowspan="2" style="width:26px;height:1px;">Ｓ</td>
+			<td rowspan="2" style="width:26px;height:1px;">3</td>
+			<td rowspan="2" style="width:26px;height:1px;">2</td>
+			<td rowspan="2" style="width:102px;height:1px;">歷史學系</td>
+			<td rowspan="12" style="width:86px;height:1px;">核心課程<br />
+			須修習其中4學分</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(英文)Ancient Western History(I)</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(中文)西洋上古史（二）</td>
+			<td rowspan="2" style="width:26px;height:1px;">U</td>
+			<td rowspan="2" style="width:26px;height:1px;">A</td>
+			<td rowspan="2" style="width:26px;height:1px;">R</td>
+			<td colspan="2" rowspan="2" style="width:26px;height:1px;">Ｓ</td>
+			<td rowspan="2" style="width:26px;height:1px;">3</td>
+			<td rowspan="2" style="width:26px;height:1px;">2</td>
+			<td rowspan="2" style="width:102px;height:1px;">歷史學系</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(英文)Ancient Western History(II)</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(中文)世界現代史(一)</td>
+			<td rowspan="2" style="width:26px;height:1px;">U</td>
+			<td rowspan="2" style="width:26px;height:1px;">A</td>
+			<td rowspan="2" style="width:26px;height:1px;">R</td>
+			<td colspan="2" rowspan="2" style="width:26px;height:1px;">Ｓ</td>
+			<td rowspan="2" style="width:26px;height:1px;">2</td>
+			<td rowspan="2" style="width:26px;height:1px;">2</td>
+			<td rowspan="2" style="width:102px;height:1px;">歷史學系</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(英文)Contemporary World History (I)</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(中文)世界現代史(二)</td>
+			<td rowspan="2" style="width:26px;height:1px;">U</td>
+			<td rowspan="2" style="width:26px;height:1px;">A</td>
+			<td rowspan="2" style="width:26px;height:1px;">R</td>
+			<td colspan="2" rowspan="2" style="width:26px;height:1px;">Ｓ</td>
+			<td rowspan="2" style="width:26px;height:1px;">2</td>
+			<td rowspan="2" style="width:26px;height:1px;">2</td>
+			<td rowspan="2" style="width:102px;height:1px;">歷史學系</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(英文)Contemporary World History (II)</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(中文)歐洲中古史(一)</td>
+			<td rowspan="2" style="width:26px;height:1px;">U</td>
+			<td rowspan="2" style="width:26px;height:1px;">A</td>
+			<td rowspan="2" style="width:26px;height:1px;">R</td>
+			<td colspan="2" rowspan="2" style="width:26px;height:1px;">Ｓ</td>
+			<td rowspan="2" style="width:26px;height:1px;">2</td>
+			<td rowspan="2" style="width:26px;height:1px;">2</td>
+			<td rowspan="2" style="width:102px;height:1px;">歷史學系</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(英文)European Medieval History(II)</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(中文)歐洲中古史(二)</td>
+			<td rowspan="2" style="width:26px;height:1px;">U</td>
+			<td rowspan="2" style="width:26px;height:1px;">A</td>
+			<td rowspan="2" style="width:26px;height:1px;">R</td>
+			<td colspan="2" rowspan="2" style="width:26px;height:1px;">Ｓ</td>
+			<td rowspan="2" style="width:26px;height:1px;">2</td>
+			<td rowspan="2" style="width:26px;height:1px;">2</td>
+			<td rowspan="2" style="width:102px;height:1px;">歷史學系</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(英文)European Medieval History(II)</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(中文)西方醫學與身體史</td>
+			<td rowspan="2" style="width:26px;height:1px;">U</td>
+			<td rowspan="2" style="width:26px;height:1px;">A</td>
+			<td rowspan="2" style="width:26px;height:1px;">R</td>
+			<td colspan="2" rowspan="2" style="width:26px;height:1px;">Ｓ</td>
+			<td rowspan="2" style="width:26px;height:1px;">2</td>
+			<td rowspan="2" style="width:26px;height:1px;">3</td>
+			<td rowspan="2" style="width:102px;height:1px;">歷史學系</td>
+			<td rowspan="10" style="width:86px;height:1px;">總整課程<br />
+			須修習其中6學分</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(英文)History of Western Medicine and Body</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(中文)羅馬帝國：從創建、極盛到轉型</td>
+			<td rowspan="2" style="width:26px;height:1px;">U</td>
+			<td rowspan="2" style="width:26px;height:1px;">A</td>
+			<td rowspan="2" style="width:26px;height:1px;">R</td>
+			<td colspan="2" rowspan="2" style="width:26px;height:1px;">Ｓ</td>
+			<td rowspan="2" style="width:26px;height:1px;">3</td>
+			<td rowspan="2" style="width:26px;height:1px;">3</td>
+			<td rowspan="2" style="width:102px;height:1px;">歷史學系</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(英文)The Roman Empire: 31 BCE-284 CE</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(中文)拜占庭早期史</td>
+			<td rowspan="2" style="width:26px;height:1px;">U</td>
+			<td rowspan="2" style="width:26px;height:1px;">A</td>
+			<td rowspan="2" style="width:26px;height:1px;">R</td>
+			<td colspan="2" rowspan="2" style="width:26px;height:1px;">Ｓ</td>
+			<td rowspan="2" style="width:26px;height:1px;">2</td>
+			<td rowspan="2" style="width:26px;height:1px;">3</td>
+			<td rowspan="2" style="width:102px;height:1px;">歷史學系</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(英文)Early Byzantine Empire</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(中文)英國史</td>
+			<td rowspan="2" style="width:26px;height:1px;">U</td>
+			<td rowspan="2" style="width:26px;height:1px;">A</td>
+			<td rowspan="2" style="width:26px;height:1px;">R</td>
+			<td colspan="2" rowspan="2" style="width:26px;height:1px;">Ｓ</td>
+			<td rowspan="2" style="width:26px;height:1px;">2</td>
+			<td rowspan="2" style="width:26px;height:1px;">3</td>
+			<td rowspan="2" style="width:102px;height:1px;">歷史學系</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(英文)History of England</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:1px;">(中文)大英國協史</td>
+			<td rowspan="2" style="width:26px;height:1px;">U</td>
+			<td rowspan="2" style="width:26px;height:1px;">A</td>
+			<td rowspan="2" style="width:26px;height:1px;">R</td>
+			<td colspan="2" rowspan="2" style="width:26px;height:1px;">Ｓ</td>
+			<td rowspan="2" style="width:26px;height:1px;">2</td>
+			<td rowspan="2" style="width:26px;height:1px;">3</td>
+			<td rowspan="2" style="width:102px;height:1px;">歷史學系</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="width:353px;height:23px;">(英文)History of Britain: Empire and Commonwealth</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:173px;">取得認證需修習總課程數</td>
+			<td colspan="2" style="width:180px;">6</td>
+			<td colspan="7" style="width:156px;">取得認證需修習總學分數</td>
+			<td colspan="2" style="width:188px;">13</td>
+		</tr>
+		<tr>
+			<td colspan="13" style="width:697px;">附註：規劃要點填表說明：（１到４各欄位請填正確代表字母）<br />
+			１：U-學士課程、M-碩士課程。<br />
+			２：A-正課、B-實習課、C-台下指導之科目如學生講述或邀請演講之專題討論、專題研究&hellip;&hellip;等。<br />
+			３：Ｒ-必修、Ｅ-選修。<br />
+			４：Ｓ-學期課、Ｙ-學年課。<br />
+			５：科目（學期或全年）總學分數（請填阿拉伯數字）。<br />
+			６：Level：1-基礎課程、2-核心(理論/方法)課程、3-應用(總整/實務)課程(請填阿拉伯數字)。</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="clear:both;">&nbsp;</div>
+											</div>
+										</div>
+																			</div>
+																											<div class="intro-sec">
+										<div class="list-group list-group02">
+											<ul>
+																						</ul>
+										</div>
+									</div>
+																											<div class="intro-sec">
+										<div class="btn-wrap btn-wrap06">
+											<a class="btn btn-back01" href="https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2943" title="回上一頁">回上一頁</a>
+										</div>
+									</div>
+																	</div>
+							</div>
+						</div>
+					</div>
+				</div>
+							</div>
+		</main>
+		<!-- 各單元內容 END -->
+		<!-- 頁尾 START-->
+		<footer id="footer">
+	<div class="footer-sec01">
+		<div class="sec-inner">
+			<!-- 頁尾選單 START -->
+			<nav class="nav-wrap footer-nav">
+				<ul class="nav-list">
+										<li>
+						<a href="#" title="組室/中心" target="">組室/中心</a>
+						<div class="sub-nav">
+														<ul>
+																<li><a href="https://oaa.nchu.edu.tw/dean" title="教務長室" target="">教務長室</a></li>
+																<li><a href="https://oaa.nchu.edu.tw/rs" title="註冊組" target="">註冊組</a></li>
+																<li><a href="https://oaa.nchu.edu.tw/course" title="課務組" target="">課務組</a></li>
+																<li><a href="https://oaa.nchu.edu.tw/recruit" title="招生組" target="">招生組</a></li>
+																<li><a href="https://oaa.nchu.edu.tw/cdtl" title="教發中心" target="">教發中心</a></li>
+																<li><a href="https://oaa.nchu.edu.tw/ge" title="通識中心" target="">通識中心</a></li>
+																<li><a href="https://oaa.nchu.edu.tw/EMI" title="雙語中心" target="">雙語中心</a></li>
+															</ul>
+													</div>
+					</li>
+										<li>
+						<a href="#" title="專區連結" target="">專區連結</a>
+						<div class="sub-nav">
+														<ul>
+																<li><a href="https://secret.nchu.edu.tw/info/03plan.html" title="校務資訊公開(學雜費專區)" target="_blank">校務資訊公開(學雜費專區)</a></li>
+																<li><a href="https://oaa.nchu.edu.tw/zh-tw/dean-zone01" title="系所評鑑專區" target="_blank">系所評鑑專區</a></li>
+																<li><a href="http://www.nchunight.nchu.edu.tw" title="進修學士班教務專區" target="_blank">進修學士班教務專區</a></li>
+																<li><a href="https://uibp.nchu.edu.tw/" title="校學士專區" target="_blank">校學士專區</a></li>
+															</ul>
+													</div>
+					</li>
+										<li>
+						<a href="#" title="系統平台" target="">系統平台</a>
+						<div class="sub-nav">
+														<ul>
+																<li><a href="https://portal.nchu.edu.tw/" title="興大入口(教務系統)" target="_blank">興大入口(教務系統)</a></li>
+																<li><a href="https://onepiece.nchu.edu.tw/cofsys/plsql/crseqry_home" title="課程查詢系統" target="_blank">課程查詢系統</a></li>
+																<li><a href="https://lms2020.nchu.edu.tw/" title="iLearning 3.0" target="_blank">iLearning 3.0</a></li>
+																<li><a href="https://cdtl.video.nchu.edu.tw/" title="興學堂影音網" target="_blank">興學堂影音網</a></li>
+															</ul>
+													</div>
+					</li>
+										<li>
+						<a href="#" title="常用服務" target="">常用服務</a>
+						<div class="sub-nav">
+														<ul>
+																<li><a href="http://oaa.nchu.edu.tw/form" title="表單下載" target="">表單下載</a></li>
+																<li><a href="http://oaa.nchu.edu.tw/rule" title="法規章則" target="">法規章則</a></li>
+																<li><a href="https://onepiece.nchu.edu.tw/cofsys/plsql/crseqry_room_map" title="大樓配置教室查詢" target="_blank">大樓配置教室查詢</a></li>
+																<li><a href="http://oaa.nchu.edu.tw/zh-tw/dean-service/page-list.352" title="隨班附讀課程" target="">隨班附讀課程</a></li>
+															</ul>
+													</div>
+					</li>
+										<li>
+						<a href="#" title="招生資訊" target="">招生資訊</a>
+						<div class="sub-nav">
+														<ul>
+																<li><a href="http://oaa.nchu.edu.tw/recruit-admission" title="招生入學管道" target="">招生入學管道</a></li>
+																<li><a href="http://recruit.nchu.edu.tw" title="招生資訊網" target="_blank">招生資訊網</a></li>
+																<li><a href="http://recruit.nchu.edu.tw/present/index.aspx" title="未來學生專區" target="_blank">未來學生專區</a></li>
+																<li><a href="https://www.osa.nchu.edu.tw/osa/laa/freshman/sys/" title="新生入學服務網" target="_blank">新生入學服務網</a></li>
+															</ul>
+													</div>
+					</li>
+										<li>
+						<a href="#" title="網站資訊" target="">網站資訊</a>
+						<div class="sub-nav">
+														<ul>
+																<li><a href="https://oaa.nchu.edu.tw/zh-tw/privacy" title="隱私權聲明" target="">隱私權聲明</a></li>
+																<li><a href="https://ipo.nchu.edu.tw/" title="智慧財產權聲明" target="_blank">智慧財產權聲明</a></li>
+															</ul>
+													</div>
+					</li>
+									</ul>
+			</nav>
+			<!-- 頁尾選單 END -->
+		</div>
+	</div>
+	<div class="footer-sec02">
+<div class="sec-inner">
+<div class="group footer-group">
+<div class="group-item">
+<div class="item-inner">
+<dl>
+	<dt>教務長室</dt>
+	<dd><a class="icon icon-mail01" href="mailto:oaaweb@nchu.edu.tw" title="教務長室">04-22840208（行政大樓３樓）</a></dd>
+</dl>
+</div>
+</div>
+
+<div class="group-item">
+<div class="item-inner">
+<dl>
+	<dt>註冊組</dt>
+	<dd><a class="icon icon-mail01" href="mailto:registra@nchu.edu.tw" title="註冊組">04-22840212（行政大樓１樓）</a></dd>
+</dl>
+</div>
+</div>
+
+<div class="group-item">
+<div class="item-inner">
+<dl>
+	<dt>課務組</dt>
+	<dd><a class="icon icon-mail01" href="mailto:course@nchu.edu.tw" title="課務組">04-22840215（行政大樓１樓）</a></dd>
+</dl>
+</div>
+</div>
+
+<div class="group-item">
+<div class="item-inner">
+<dl>
+	<dt>招生組</dt>
+	<dd><a class="icon icon-mail01" href="mailto:recruit@nchu.edu.tw" title="招生組">04-22840216（行政大樓１樓）</a></dd>
+</dl>
+</div>
+</div>
+
+<div class="group-item">
+<div class="item-inner">
+<dl>
+	<dt>教發中心</dt>
+	<dd><a class="icon icon-mail01" href="mailto:dir@nchu.edu.tw" title="教發中心">04-22840218（行政大樓 2 樓）</a></dd>
+</dl>
+</div>
+</div>
+
+<div class="group-item">
+<div class="item-inner">
+<dl>
+	<dt>通識中心</dt>
+	<dd><a class="icon icon-mail01" href="mailto:cah@nchu.edu.tw" title="通識中心">04-22840597（綜合教學大樓 6 樓）</a></dd>
+</dl>
+</div>
+</div>
+
+<div class="group-item">
+<div class="item-inner">
+<dl>
+	<dt>雙語中心</dt>
+	<dd><a class="icon icon-mail01" href="mailto:emi@nchu.edu.tw" title="雙語中心">04-22840153（萬年樓 1 樓）</a></dd>
+</dl>
+</div>
+</div>
+
+<div class="group-item group-item-last">
+<dl>
+	<dt>地址</dt>
+	<dd>402台中市南區興大路 145 號</dd>
+</dl>
+
+<dl>
+	<dt>傳真</dt>
+	<dd>04-22871530</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-sec03">
+<div class="sec-inner">
+<div class="corp-wrap"><!-- 頁尾公司資訊 START -->
+<nav class="nav-wrap nav-skin02">
+<ul class="nav-list">
+	<li><a href="http://oaa.nchu.edu.tw/newadmin/" target="_blank" title="管理者登入">管理者登入</a></li>
+	<li><a class="icon icon-facebook01" href="https://www.facebook.com/%E5%9C%8B%E7%AB%8B%E4%B8%AD%E8%88%88%E5%A4%A7%E5%AD%B8%E6%95%99%E5%8B%99%E8%99%95-525258160883924/" title="Facebook"><span>Facebook</span></a></li>
+</ul>
+</nav>
+
+<div class="copyright"><strong>&copy; 版權所有 國立中興大學教務處</strong></div>
+<!-- 頁尾公司資訊 END -->
+
+<div class="design">Designed by <a href="https://www.da-vinci.com.tw" target="_blank" title="Da-vinci">Da-vinci</a></div>
+</div>
+</div>
+</div>
+</footer>
+<a id="go-top" class="btn btn-top" href="#" title="Go Top">TOP</a>
+<div id="mask-bg"></div><!-- 行動裝置遮罩 -->
+		<!-- 頁尾 END -->
+	</div>
+	<!-- 各單元JS、CSS加載設定 START -->
+	<script type="text/javascript" src="https://oaa.nchu.edu.tw/inc/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://oaa.nchu.edu.tw/inc/js/comm.js"></script>	<script type="text/javascript" src="https://oaa.nchu.edu.tw/inc/js/swiper/swiper.jquery.min.js"></script>
+	<!-- 各單元JS、CSS加載設定 END -->
+	<!-- google search -->
+	<script>
+		(function() {
+		  var cx = '012063386960987241443:dhppl-0boss';
+		  var gcse = document.createElement('script');
+		  gcse.type = 'text/javascript';
+		  gcse.async = true;
+		  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+		  var s = document.getElementsByTagName('script')[0];
+		  s.parentNode.insertBefore(gcse, s);
+		})();
+	</script>
+</body>
+</html>

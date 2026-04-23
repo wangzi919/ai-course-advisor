@@ -1,0 +1,283 @@
+2026-04-23 16:23:23,284 - INFO - 開始更新領域模組資料...
+2026-04-23 16:23:23,285 - INFO - 強制更新模式
+2026-04-23 16:23:23,286 - INFO - ✓ 已清除 HTML 快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache
+2026-04-23 16:23:23,286 - INFO - ==================================================
+2026-04-23 16:23:23,286 - INFO - 開始爬取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2923
+2026-04-23 16:23:23,286 - INFO - ==================================================
+2026-04-23 16:23:23,287 - INFO - 正在爬取領域模組實施要點...
+2026-04-23 16:23:23,294 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/rule/download-list.0.0.L3%EF%BC%8D28
+2026-04-23 16:23:24,070 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\rules.html
+2026-04-23 16:23:24,571 - INFO - 正在爬取 [文學院] 模組列表...
+2026-04-23 16:23:24,571 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2943
+2026-04-23 16:23:24,755 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_文學院_p0.html
+2026-04-23 16:23:25,326 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2943.0
+2026-04-23 16:23:25,493 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_文學院_p1.html
+2026-04-23 16:23:26,018 - INFO - [文學院] 找到 10 個模組
+2026-04-23 16:23:26,019 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2950
+2026-04-23 16:23:26,201 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2950.html
+2026-04-23 16:23:26,703 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2951
+2026-04-23 16:23:26,865 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2951.html
+2026-04-23 16:23:27,367 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3055
+2026-04-23 16:23:27,533 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3055.html
+2026-04-23 16:23:28,035 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2952
+2026-04-23 16:23:28,206 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2952.html
+2026-04-23 16:23:28,708 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3103
+2026-04-23 16:23:28,906 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3103.html
+2026-04-23 16:23:29,408 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3104
+2026-04-23 16:23:29,571 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3104.html
+2026-04-23 16:23:30,074 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3161
+2026-04-23 16:23:30,244 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3161.html
+2026-04-23 16:23:30,746 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3162
+2026-04-23 16:23:30,898 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3162.html
+2026-04-23 16:23:31,401 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2953
+2026-04-23 16:23:31,570 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2953.html
+2026-04-23 16:23:32,071 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3160
+2026-04-23 16:23:32,266 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3160.html
+2026-04-23 16:23:32,767 - INFO - 正在爬取 [農資學院] 模組列表...
+2026-04-23 16:23:32,768 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2944
+2026-04-23 16:23:32,940 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_農資學院_p0.html
+2026-04-23 16:23:33,491 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2944.0
+2026-04-23 16:23:33,669 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_農資學院_p1.html
+2026-04-23 16:23:34,193 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2944.10
+2026-04-23 16:23:34,366 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_農資學院_p2.html
+2026-04-23 16:23:34,904 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2944.20
+2026-04-23 16:23:35,074 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_農資學院_p3.html
+2026-04-23 16:23:35,618 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2944.30
+2026-04-23 16:23:35,810 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_農資學院_p4.html
+2026-04-23 16:23:36,355 - INFO - [農資學院] 找到 36 個模組
+2026-04-23 16:23:36,356 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2954
+2026-04-23 16:23:36,532 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2954.html
+2026-04-23 16:23:37,034 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2955
+2026-04-23 16:23:37,206 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2955.html
+2026-04-23 16:23:37,708 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3073
+2026-04-23 16:23:37,890 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3073.html
+2026-04-23 16:23:38,392 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3266
+2026-04-23 16:23:38,551 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3266.html
+2026-04-23 16:23:39,054 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2956
+2026-04-23 16:23:39,214 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2956.html
+2026-04-23 16:23:39,716 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2957
+2026-04-23 16:23:39,878 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2957.html
+2026-04-23 16:23:40,379 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2958
+2026-04-23 16:23:40,542 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2958.html
+2026-04-23 16:23:41,044 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2959
+2026-04-23 16:23:41,209 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2959.html
+2026-04-23 16:23:41,710 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2960
+2026-04-23 16:23:41,869 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2960.html
+2026-04-23 16:23:42,371 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2961
+2026-04-23 16:23:42,531 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2961.html
+2026-04-23 16:23:43,033 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3155
+2026-04-23 16:23:43,206 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3155.html
+2026-04-23 16:23:43,707 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3074
+2026-04-23 16:23:43,861 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3074.html
+2026-04-23 16:23:44,363 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2962
+2026-04-23 16:23:44,552 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2962.html
+2026-04-23 16:23:45,054 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3057
+2026-04-23 16:23:45,216 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3057.html
+2026-04-23 16:23:45,718 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3058
+2026-04-23 16:23:45,874 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3058.html
+2026-04-23 16:23:46,376 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3059
+2026-04-23 16:23:46,569 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3059.html
+2026-04-23 16:23:47,071 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3060
+2026-04-23 16:23:47,245 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3060.html
+2026-04-23 16:23:47,747 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3267
+2026-04-23 16:23:47,908 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3267.html
+2026-04-23 16:23:48,410 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3061
+2026-04-23 16:23:48,564 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3061.html
+2026-04-23 16:23:49,066 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3062
+2026-04-23 16:23:49,232 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3062.html
+2026-04-23 16:23:49,734 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3063
+2026-04-23 16:23:49,900 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3063.html
+2026-04-23 16:23:50,402 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3064
+2026-04-23 16:23:50,557 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3064.html
+2026-04-23 16:23:51,058 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3065
+2026-04-23 16:23:51,214 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3065.html
+2026-04-23 16:23:51,718 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3066
+2026-04-23 16:23:51,871 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3066.html
+2026-04-23 16:23:52,373 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3067
+2026-04-23 16:23:52,557 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3067.html
+2026-04-23 16:23:53,060 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3068
+2026-04-23 16:23:53,238 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3068.html
+2026-04-23 16:23:53,740 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3069
+2026-04-23 16:23:53,893 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3069.html
+2026-04-23 16:23:54,394 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3070
+2026-04-23 16:23:54,557 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3070.html
+2026-04-23 16:23:55,059 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3075
+2026-04-23 16:23:55,254 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3075.html
+2026-04-23 16:23:55,756 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3076
+2026-04-23 16:23:55,924 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3076.html
+2026-04-23 16:23:56,425 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3077
+2026-04-23 16:23:56,606 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3077.html
+2026-04-23 16:23:57,107 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3078
+2026-04-23 16:23:57,592 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3078.html
+2026-04-23 16:23:58,095 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3079
+2026-04-23 16:23:58,273 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3079.html
+2026-04-23 16:23:58,775 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3082
+2026-04-23 16:23:58,935 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3082.html
+2026-04-23 16:23:59,438 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3080
+2026-04-23 16:23:59,594 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3080.html
+2026-04-23 16:24:00,095 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3268
+2026-04-23 16:24:00,251 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3268.html
+2026-04-23 16:24:00,752 - INFO - 正在爬取 [理學院] 模組列表...
+2026-04-23 16:24:00,754 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2945
+2026-04-23 16:24:00,924 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_理學院_p0.html
+2026-04-23 16:24:01,481 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2945.0
+2026-04-23 16:24:01,644 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_理學院_p1.html
+2026-04-23 16:24:02,187 - INFO - [理學院] 找到 6 個模組
+2026-04-23 16:24:02,188 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2963
+2026-04-23 16:24:02,386 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2963.html
+2026-04-23 16:24:02,887 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2964
+2026-04-23 16:24:03,119 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2964.html
+2026-04-23 16:24:03,620 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2965
+2026-04-23 16:24:03,794 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2965.html
+2026-04-23 16:24:04,296 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2966
+2026-04-23 16:24:04,503 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2966.html
+2026-04-23 16:24:05,005 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3163
+2026-04-23 16:24:05,181 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3163.html
+2026-04-23 16:24:05,682 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3164
+2026-04-23 16:24:05,857 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3164.html
+2026-04-23 16:24:06,358 - INFO - 正在爬取 [工學院] 模組列表...
+2026-04-23 16:24:06,359 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2946
+2026-04-23 16:24:06,553 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_工學院_p0.html
+2026-04-23 16:24:07,106 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2946.0
+2026-04-23 16:24:07,311 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_工學院_p1.html
+2026-04-23 16:24:07,835 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2946.10
+2026-04-23 16:24:08,024 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_工學院_p2.html
+2026-04-23 16:24:08,547 - INFO - [工學院] 找到 16 個模組
+2026-04-23 16:24:08,547 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2967
+2026-04-23 16:24:08,739 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2967.html
+2026-04-23 16:24:09,240 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3156
+2026-04-23 16:24:09,441 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3156.html
+2026-04-23 16:24:09,942 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2968
+2026-04-23 16:24:10,113 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2968.html
+2026-04-23 16:24:10,615 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3157
+2026-04-23 16:24:10,786 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3157.html
+2026-04-23 16:24:11,287 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2969
+2026-04-23 16:24:11,445 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2969.html
+2026-04-23 16:24:11,946 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2970
+2026-04-23 16:24:12,099 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2970.html
+2026-04-23 16:24:12,600 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2971
+2026-04-23 16:24:12,745 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2971.html
+2026-04-23 16:24:13,246 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2972
+2026-04-23 16:24:13,412 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2972.html
+2026-04-23 16:24:13,913 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2973
+2026-04-23 16:24:14,096 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2973.html
+2026-04-23 16:24:14,598 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3056
+2026-04-23 16:24:14,759 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3056.html
+2026-04-23 16:24:15,261 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3158
+2026-04-23 16:24:15,418 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3158.html
+2026-04-23 16:24:15,919 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3159
+2026-04-23 16:24:16,097 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3159.html
+2026-04-23 16:24:16,599 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3110
+2026-04-23 16:24:16,779 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3110.html
+2026-04-23 16:24:17,281 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3111
+2026-04-23 16:24:17,470 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3111.html
+2026-04-23 16:24:17,973 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3112
+2026-04-23 16:24:18,142 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3112.html
+2026-04-23 16:24:18,645 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3168
+2026-04-23 16:24:18,800 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3168.html
+2026-04-23 16:24:19,301 - INFO - 正在爬取 [生命科學院] 模組列表...
+2026-04-23 16:24:19,301 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2947
+2026-04-23 16:24:19,458 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_生命科學院_p0.html
+2026-04-23 16:24:20,001 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2947.0
+2026-04-23 16:24:20,233 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_生命科學院_p1.html
+2026-04-23 16:24:20,800 - INFO - [生命科學院] 找到 6 個模組
+2026-04-23 16:24:20,801 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2974
+2026-04-23 16:24:20,974 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2974.html
+2026-04-23 16:24:21,477 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2975
+2026-04-23 16:24:21,645 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2975.html
+2026-04-23 16:24:22,147 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2976
+2026-04-23 16:24:22,293 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2976.html
+2026-04-23 16:24:22,795 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3165
+2026-04-23 16:24:22,973 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3165.html
+2026-04-23 16:24:23,474 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3166
+2026-04-23 16:24:23,666 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3166.html
+2026-04-23 16:24:24,167 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3167
+2026-04-23 16:24:24,366 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3167.html
+2026-04-23 16:24:24,868 - INFO - 正在爬取 [獸醫學院] 模組列表...
+2026-04-23 16:24:24,869 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.3169
+2026-04-23 16:24:25,069 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_獸醫學院_p0.html
+2026-04-23 16:24:25,634 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.3169.0
+2026-04-23 16:24:25,782 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_獸醫學院_p1.html
+2026-04-23 16:24:26,315 - INFO - [獸醫學院] 找到 1 個模組
+2026-04-23 16:24:26,316 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3170
+2026-04-23 16:24:26,486 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3170.html
+2026-04-23 16:24:26,987 - INFO - 正在爬取 [管理學院] 模組列表...
+2026-04-23 16:24:26,989 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.3105
+2026-04-23 16:24:27,149 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_管理學院_p0.html
+2026-04-23 16:24:27,732 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.3105.0
+2026-04-23 16:24:27,891 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_管理學院_p1.html
+2026-04-23 16:24:28,456 - INFO - [管理學院] 找到 5 個模組
+2026-04-23 16:24:28,457 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3106
+2026-04-23 16:24:28,713 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3106.html
+2026-04-23 16:24:29,215 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3107
+2026-04-23 16:24:29,376 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3107.html
+2026-04-23 16:24:29,879 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3108
+2026-04-23 16:24:30,033 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3108.html
+2026-04-23 16:24:30,535 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3109
+2026-04-23 16:24:30,692 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3109.html
+2026-04-23 16:24:31,194 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3269
+2026-04-23 16:24:31,350 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3269.html
+2026-04-23 16:24:31,852 - INFO - 正在爬取 [法政學院] 模組列表...
+2026-04-23 16:24:31,853 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2948
+2026-04-23 16:24:32,017 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_法政學院_p0.html
+2026-04-23 16:24:32,585 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2948.0
+2026-04-23 16:24:32,755 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_法政學院_p1.html
+2026-04-23 16:24:33,347 - INFO - [法政學院] 找到 8 個模組
+2026-04-23 16:24:33,348 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2977
+2026-04-23 16:24:33,657 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2977.html
+2026-04-23 16:24:34,159 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2978
+2026-04-23 16:24:34,320 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2978.html
+2026-04-23 16:24:34,823 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2979
+2026-04-23 16:24:34,983 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2979.html
+2026-04-23 16:24:35,485 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2980
+2026-04-23 16:24:35,636 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2980.html
+2026-04-23 16:24:36,138 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2981
+2026-04-23 16:24:36,293 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2981.html
+2026-04-23 16:24:36,795 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2982
+2026-04-23 16:24:36,942 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2982.html
+2026-04-23 16:24:37,444 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2983
+2026-04-23 16:24:37,593 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2983.html
+2026-04-23 16:24:38,094 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.3081
+2026-04-23 16:24:38,250 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_3081.html
+2026-04-23 16:24:38,751 - INFO - 正在爬取 [電機資訊學院] 模組列表...
+2026-04-23 16:24:38,752 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2949
+2026-04-23 16:24:38,914 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_電機資訊學院_p0.html
+2026-04-23 16:24:39,472 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-list.2949.0
+2026-04-23 16:24:39,626 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\college_電機資訊學院_p1.html
+2026-04-23 16:24:40,171 - INFO - [電機資訊學院] 找到 5 個模組
+2026-04-23 16:24:40,172 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2984
+2026-04-23 16:24:40,333 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2984.html
+2026-04-23 16:24:40,834 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2985
+2026-04-23 16:24:41,020 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2985.html
+2026-04-23 16:24:41,522 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2986
+2026-04-23 16:24:41,716 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2986.html
+2026-04-23 16:24:42,218 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2987
+2026-04-23 16:24:42,378 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2987.html
+2026-04-23 16:24:42,880 - INFO - 正在抓取: https://oaa.nchu.edu.tw/zh-tw/unit-page-p.342/page-detail.2988
+2026-04-23 16:24:43,131 - INFO - HTML 已快取: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules_cache\module_2988.html
+2026-04-23 16:24:43,671 - INFO - 實施要點: L3-28國立中興大學領域模組實施要點
+2026-04-23 16:24:46,277 - INFO - 共解析 93 個領域模組
+2026-04-23 16:24:46,277 - WARNING - 找不到規章檔案: c:\Users\Peter\Desktop\ai-course-advisor\data\rules\oaa_regulations.json
+2026-04-23 16:24:46,297 - INFO - 資料已儲存至: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules.json
+2026-04-23 16:24:46,298 - INFO - Metadata - 最後更新: 2026-04-23T16:24:46.277770, 總數: 93
+2026-04-23 16:24:46,316 - INFO - 🔥 觸發熱重載機制...
+2026-04-23 16:24:46,316 - INFO - 
+2026-04-23 16:24:46,316 - INFO - ╔══════════════════════════════════════════════════════════╗
+2026-04-23 16:24:46,316 - INFO - ║                  熱重載流程開始                  ║
+2026-04-23 16:24:46,316 - INFO - ╚══════════════════════════════════════════════════════════╝
+2026-04-23 16:24:46,317 - INFO - 
+2026-04-23 16:24:46,317 - INFO - 📝 步驟 1/2: 更新資料檔案時間戳
+2026-04-23 16:24:46,318 - INFO - ✓ 已更新檔案時間戳記: c:\Users\Peter\Desktop\ai-course-advisor\data\modules\domain_modules.json
+2026-04-23 16:24:46,318 - INFO - 
+2026-04-23 16:24:46,318 - INFO - 🔄 步驟 2/2: 觸發 PM2 服務重載
+2026-04-23 16:24:46,322 - WARNING - PM2 reload 過程發生錯誤: [WinError 2] 系統找不到指定的檔案。
+2026-04-23 16:24:46,322 - INFO - 
+2026-04-23 16:24:46,323 - INFO - ╔══════════════════════════════════════════════════════════╗
+2026-04-23 16:24:46,323 - INFO - ║                  熱重載流程完成                  ║
+2026-04-23 16:24:46,323 - INFO - ╚══════════════════════════════════════════════════════════╝
+2026-04-23 16:24:46,323 - INFO - 
+2026-04-23 16:24:46,323 - INFO - ✅ 熱重載完成
+2026-04-23 16:24:46,324 - INFO - ==================================================
+2026-04-23 16:24:46,324 - INFO - 爬蟲完成! 共抓取 93 筆資料
+2026-04-23 16:24:46,324 - INFO - ==================================================
+2026-04-23 16:24:46,326 - INFO - 領域模組資料更新成功。
