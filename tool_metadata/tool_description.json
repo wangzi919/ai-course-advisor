@@ -1317,7 +1317,7 @@
       {
         "name": "title",
         "type": "STRING",
-        "description": "Optional title filter (e.g., \"教授\", \"副教授\", \"助理教授\")",
+        "description": "可選的職稱篩選（例如：「教授」、「副教授」、「助理教授」）",
         "default": null
       },
       {
@@ -1493,7 +1493,7 @@
       {
         "name": "semester",
         "type": "STRING",
-        "description": "Semester code (e.g., \"1131\" for 113學年度第1學期)"
+        "description": "學年期代碼（例如：「1131」代表 113學年度第1學期）"
       }
     ],
     "optional_parameters": [
@@ -1585,44 +1585,44 @@
       {
         "name": "keyword",
         "type": "STRING",
-        "description": "Search keyword"
+        "description": "搜尋關鍵字"
       }
     ],
     "optional_parameters": [
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 10)",
+        "description": "最多回傳幾筆結果（預設為 10）",
         "default": 10
       },
       {
         "name": "search_fields",
         "type": "STRING",
-        "description": "Comma-separated fields to search in (default: 科目名稱,上課教師,開課單位,系所名稱,備註)",
+        "description": "以逗號分隔的搜尋欄位（預設：科目名稱,上課教師,開課單位,系所名稱,備註）",
         "default": null
       },
       {
         "name": "case_sensitive",
         "type": "BOOLEAN",
-        "description": "Whether search is case sensitive (default: False)",
+        "description": "是否區分大小寫（預設為否）",
         "default": false
       },
       {
         "name": "include_syllabus_search",
         "type": "BOOLEAN",
-        "description": "Also search in syllabus content (課程簡述, 課程目標, 每週授課內容, etc.) (default: False)",
+        "description": "是否一併搜尋課程大綱內容（課程簡述、課程目標、每週授課內容等）（預設為否）",
         "default": false
       },
       {
         "name": "include_syllabus_in_result",
         "type": "BOOLEAN",
-        "description": "Include full syllabus in results (default: False)",
+        "description": "是否在結果中包含完整大綱（預設為否）",
         "default": false
       },
       {
         "name": "semester",
         "type": "STRING",
-        "description": "Semester code (e.g., \"1142\" for 113-2). If not specified, uses the latest semester.",
+        "description": "學年期代碼（例如「1142」代表 113-2）。若未指定，則使用最新學期。",
         "default": null
       }
     ]
@@ -1633,20 +1633,20 @@
       {
         "name": "department",
         "type": "STRING",
-        "description": "Department name to search for (e.g., 資工系, 文學院, 管理學院)"
+        "description": "欲搜尋的系所名稱（例如：資工系、文學院、管理學院）"
       }
     ],
     "optional_parameters": [
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 20)",
+        "description": "最多回傳幾筆結果（預設為 20）",
         "default": 20
       },
       {
         "name": "semester",
         "type": "STRING",
-        "description": "Semester code. If not specified, uses the latest semester.",
+        "description": "學年期代碼。若未指定，則使用最新學期。",
         "default": null
       }
     ]
@@ -1657,20 +1657,20 @@
       {
         "name": "course_type",
         "type": "STRING",
-        "description": "Course type to search for (e.g., 必修, 選修)"
+        "description": "欲搜尋的課程類別（例如：必修、選修）"
       }
     ],
     "optional_parameters": [
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 20)",
+        "description": "最多回傳幾筆結果（預設為 20）",
         "default": 20
       },
       {
         "name": "semester",
         "type": "STRING",
-        "description": "Semester code. If not specified, uses the latest semester.",
+        "description": "學年期代碼。若未指定，則使用最新學期。",
         "default": null
       }
     ]
@@ -1682,7 +1682,7 @@
       {
         "name": "semester",
         "type": "STRING",
-        "description": "Semester code. If not specified, uses the latest semester.",
+        "description": "學年期代碼。若未指定，則使用最新學期。",
         "default": null
       }
     ]
@@ -1693,20 +1693,20 @@
       {
         "name": "course_id",
         "type": "STRING",
-        "description": "Course ID (選課號碼)"
+        "description": "課程 ID（選課號碼）"
       }
     ],
     "optional_parameters": [
       {
         "name": "include_syllabus",
         "type": "BOOLEAN",
-        "description": "Include full syllabus content (課程簡述, 課程目標, 每週授課內容, 教學方法, 評量方法, etc.) (default: True)",
+        "description": "是否包含完整大綱內容（課程簡述、課程目標、每週授課內容、教學方法、評量方法等）（預設為是）",
         "default": true
       },
       {
         "name": "semester",
         "type": "STRING",
-        "description": "Semester code. If not specified, uses the latest semester.",
+        "description": "學年期代碼。若未指定，則使用最新學期。",
         "default": null
       }
     ]
@@ -1717,20 +1717,20 @@
       {
         "name": "teacher_name",
         "type": "STRING",
-        "description": "Teacher name to search for"
+        "description": "欲搜尋的教師姓名"
       }
     ],
     "optional_parameters": [
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 20)",
+        "description": "最多回傳幾筆結果（預設為 20）",
         "default": 20
       },
       {
         "name": "semester",
         "type": "STRING",
-        "description": "Semester code. If not specified, uses the latest semester.",
+        "description": "學年期代碼。若未指定，則使用最新學期。",
         "default": null
       }
     ]
@@ -1741,26 +1741,26 @@
       {
         "name": "teacher_name",
         "type": "STRING",
-        "description": "Teacher name"
+        "description": "教師姓名"
       }
     ],
     "optional_parameters": [
       {
         "name": "exact_match",
         "type": "BOOLEAN",
-        "description": "Whether to use exact match (default: False)",
+        "description": "是否使用完全比對（預設為否）",
         "default": false
       },
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 50)",
+        "description": "最多回傳幾筆結果（預設為 50）",
         "default": 50
       },
       {
         "name": "semester",
         "type": "STRING",
-        "description": "Semester code. If not specified, uses the latest semester.",
+        "description": "學年期代碼。若未指定，則使用最新學期。",
         "default": null
       }
     ]
@@ -1772,263 +1772,263 @@
       {
         "name": "semester",
         "type": "STRING",
-        "description": "Semester code. If not specified, uses the latest semester.",
+        "description": "學年期代碼。若未指定，則使用最新學期。",
         "default": null
       }
     ]
   },
   "nchu_course_search_across_semesters": {
-    "description": "Search for courses across multiple semesters. Useful for finding historical course offerings. Note: This may be slow if searching all semesters as it loads data on demand. JSON string containing search results grouped by semester",
+    "description": "跨學期搜尋課程。適用於尋找歷史開課紀錄。注意：若搜尋所有學期，因採隨選載入資料，速度可能較慢。回傳包含依學期分組之搜尋結果的 JSON 字串",
     "required_parameters": [
       {
         "name": "keyword",
         "type": "STRING",
-        "description": "Search keyword (course name, teacher name, etc.)"
+        "description": "搜尋關鍵字（課程名稱、教師姓名等）"
       }
     ],
     "optional_parameters": [
       {
         "name": "limit_per_semester",
         "type": "NUMBER",
-        "description": "Maximum number of results per semester (default: 10)",
+        "description": "每學期最多回傳幾筆結果（預設為 10）",
         "default": 10
       },
       {
         "name": "search_fields",
         "type": "STRING",
-        "description": "Comma-separated fields to search in (default: 科目名稱,上課教師,開課單位)",
+        "description": "以逗號分隔的搜尋欄位（預設：科目名稱,上課教師,開課單位）",
         "default": null
       },
       {
         "name": "semesters",
         "type": "STRING",
-        "description": "Comma-separated semester codes to search (e.g., \"1142,1141,1132\"). If not specified, searches all available semesters.",
+        "description": "以逗號分隔的學年期代碼（例如：「1142,1141,1132」）。若未指定，則搜尋所有可用學期。",
         "default": null
       }
     ]
   },
   "nchu_course_get_available_semesters": {
-    "description": "Get all available semesters in the course database. JSON string containing list of available semesters with descriptions",
+    "description": "取得課程資料庫中所有可用的學年期。回傳包含可用學期列表與說明的 JSON 字串",
     "required_parameters": [],
     "optional_parameters": []
   },
   "nchu_course_search_selectable_courses": {
-    "description": "Search courses that students of a specific department and academic level CAN ENROLL in. This is different from nchu_course_search_by_department which only finds courses OFFERED by a department. This tool finds all courses that a department's students are eligible to enroll in, including: - Courses offered by the same department - Courses offered by OTHER departments but designated for this department's students Academic level rules: - 學士班 (Undergraduate): Can enroll in 學士班 + 碩士班 courses - 碩士班 (Master): Can enroll in 碩士班 + 博士班 courses (NOT undergraduate courses) - 博士班 (PhD): Can enroll in 博士班 courses only - 碩專班 (Executive Master): Can enroll in 碩專班 + 碩士班 + 博士班 courses JSON string containing: - results: List of selectable courses with enrollment info - summary: Count of same-dept vs other-dept courses - search_params: Parameters used for the search including selectable career levels",
+    "description": "搜尋特定系所與學制學生「可選修」的課程。這與 nchu_course_search_by_department（僅尋找由該系所開設的課程）不同。此工具會尋找該系所學生具備選修資格的所有課程，包含：- 該系所開設的課程 - 其他系所開設但指定開放給該系所學生的課程。學制規則：- 學士班：可選修學士班 + 碩士班課程 - 碩士班：可選修碩士班 + 博士班課程（不可選修學士班課程） - 博士班：僅可選修博士班課程 - 碩專班：可選修碩專班 + 碩士班 + 博士班課程。回傳 JSON 字串包含：- results: 可選修課程列表及選課資訊 - summary: 本系 vs 外系課程數量統計 - search_params: 搜尋使用的參數（含可選修之學制）",
     "required_parameters": [
       {
         "name": "department",
         "type": "STRING",
-        "description": "Department name keyword (e.g., \"資工\", \"電機\", \"中文\")"
+        "description": "系所名稱關鍵字（例如：「資工」、「電機」、「中文」）"
       }
     ],
     "optional_parameters": [
       {
         "name": "career",
         "type": "STRING",
-        "description": "Academic level - 學士班, 碩士班, 博士班, 碩專班, 進修學士班 (default: 學士班)",
+        "description": "學制 - 學士班、碩士班、博士班、碩專班、進修學士班（預設為學士班）",
         "default": "學士班"
       },
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 20)",
+        "description": "最多回傳幾筆結果（預設為 20）",
         "default": 20
       },
       {
         "name": "include_other_dept",
         "type": "BOOLEAN",
-        "description": "Include courses offered by other departments but selectable by this department (default: True)",
+        "description": "是否包含其他系所開設但該系所學生可選修的課程（預設為是）",
         "default": true
       },
       {
         "name": "semester",
         "type": "STRING",
-        "description": "Semester code. If not specified, uses the latest semester.",
+        "description": "學年期代碼。若未指定，則使用最新學期。",
         "default": null
       }
     ]
   },
   "nchu_course_search_by_time": {
-    "description": "Search courses by class time. JSON string containing search results",
+    "description": "依據上課時間搜尋課程。回傳包含搜尋結果的 JSON 字串",
     "required_parameters": [
       {
         "name": "weekday",
         "type": "STRING",
-        "description": "Day of week (1=Monday, 2=Tuesday, ..., 7=Sunday)"
+        "description": "星期幾（1=星期一, 2=星期二, ..., 7=星期日）"
       }
     ],
     "optional_parameters": [
       {
         "name": "period",
         "type": "STRING",
-        "description": "Class period (1-9 for day classes, A-D for evening classes), optional",
+        "description": "節次（日間部為 1-9，進修部為 A-D），為非必填",
         "default": null
       },
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 20)",
+        "description": "最多回傳幾筆結果（預設為 20）",
         "default": 20
       },
       {
         "name": "semester",
         "type": "STRING",
-        "description": "Semester code. If not specified, uses the latest semester.",
+        "description": "學年期代碼。若未指定，則使用最新學期。",
         "default": null
       }
     ]
   },
   "nchu_course_get_teacher_history": {
-    "description": "Get a teacher's course history across all semesters. This searches all available semesters to find courses taught by the specified teacher. Note: This may be slow as it loads data from all semesters. JSON string containing teacher's course history grouped by semester",
+    "description": "取得某位教師在所有學期的開課歷史紀錄。此工具會搜尋所有可用的學期以尋找該教師的授課課程。注意：此操作可能會比較慢，因為會載入所有學期的資料。回傳包含依學期分組之教師開課紀錄的 JSON 字串",
     "required_parameters": [
       {
         "name": "teacher_name",
         "type": "STRING",
-        "description": "Teacher name to search for"
+        "description": "欲搜尋的教師姓名"
       }
     ],
     "optional_parameters": [
       {
         "name": "limit_per_semester",
         "type": "NUMBER",
-        "description": "Maximum number of courses to show per semester (default: 10)",
+        "description": "每學期最多顯示幾筆課程（預設為 10）",
         "default": 10
       }
     ]
   },
   "nchu_course_get_all_departments": {
-    "description": "Get all departments and their course counts. JSON string containing all departments and their course counts",
+    "description": "取得所有開課單位（系所）及其開課數量。回傳包含所有開課單位及其開課數量的 JSON 字串",
     "required_parameters": [],
     "optional_parameters": [
       {
         "name": "semester",
         "type": "STRING",
-        "description": "Semester code. If not specified, uses the latest semester.",
+        "description": "學年期代碼。若未指定，則使用最新學期。",
         "default": null
       }
     ]
   },
   "nchu_course_time_format_help": {
-    "description": "Get help information about class time format codes. JSON string containing time format explanation",
+    "description": "取得上課時間格式代碼的說明資訊。回傳包含時間格式說明的 JSON 字串",
     "required_parameters": [],
     "optional_parameters": []
   },
   "nchu_course_search_syllabus": {
-    "description": "Search courses by syllabus content. This tool specifically searches within course syllabus fields including: - 課程簡述 (Course description) - 課程目標 (Course objectives) - 教學方法 (Teaching methods) - 評量方法 (Assessment methods) - 每週授課內容 (Weekly course content) - 教科書與參考書目 (Textbooks and references) - 核心能力與配比 (Core competencies and weightings) - 課程教材 (Course materials) JSON string containing courses with matching syllabus content",
+    "description": "依課程大綱內容搜尋課程。此工具會特別在課程大綱相關欄位中搜尋，包含：- 課程簡述 - 課程目標 - 教學方法 - 評量方法 - 每週授課內容 - 教科書與參考書目 - 核心能力與配比 - 課程教材。回傳包含符合大綱內容之課程的 JSON 字串",
     "required_parameters": [
       {
         "name": "keyword",
         "type": "STRING",
-        "description": "Search keyword to find in syllabus content"
+        "description": "欲在大綱內容中尋找的搜尋關鍵字"
       }
     ],
     "optional_parameters": [
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 10)",
+        "description": "最多回傳幾筆結果（預設為 10）",
         "default": 10
       },
       {
         "name": "include_syllabus_in_result",
         "type": "BOOLEAN",
-        "description": "Include full syllabus in results (default: False)",
+        "description": "是否在結果中包含完整大綱（預設為否）",
         "default": false
       },
       {
         "name": "semester",
         "type": "STRING",
-        "description": "Semester code. If not specified, uses the latest semester.",
+        "description": "學年期代碼。若未指定，則使用最新學期。",
         "default": null
       }
     ]
   },
   "nchu_course_search_by_teaching_method": {
-    "description": "Search courses by teaching method. Common teaching methods: 講授, 討論, 習作, 實習, 實驗, 專題, 報告, 演講, etc. JSON string containing courses using the specified teaching method",
+    "description": "依教學方法搜尋課程。常見教學方法：講授, 討論, 習作, 實習, 實驗, 專題, 報告, 演講 等。回傳包含使用指定教學方法之課程的 JSON 字串",
     "required_parameters": [
       {
         "name": "method",
         "type": "STRING",
-        "description": "Teaching method to search for (e.g., 實習, 討論, 專題)"
+        "description": "欲搜尋的教學方法（例如：實習、討論、專題）"
       }
     ],
     "optional_parameters": [
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 20)",
+        "description": "最多回傳幾筆結果（預設為 20）",
         "default": 20
       },
       {
         "name": "semester",
         "type": "STRING",
-        "description": "Semester code. If not specified, uses the latest semester.",
+        "description": "學年期代碼。若未指定，則使用最新學期。",
         "default": null
       }
     ]
   },
   "nchu_course_search_by_assessment_method": {
-    "description": "Search courses by assessment/evaluation method. Common assessment methods: 期中考, 期末考, 作業, 報告, 實作, 出席, 小考, 作品, etc. JSON string containing courses using the specified assessment method",
+    "description": "依評量方式搜尋課程。常見評量方式：期中考, 期末考, 作業, 報告, 實作, 出席, 小考, 作品 等。回傳包含使用指定評量方式之課程的 JSON 字串",
     "required_parameters": [
       {
         "name": "method",
         "type": "STRING",
-        "description": "Assessment method to search for (e.g., 實作, 報告, 期末考)"
+        "description": "欲搜尋的評量方式（例如：實作、報告、期末考）"
       }
     ],
     "optional_parameters": [
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 20)",
+        "description": "最多回傳幾筆結果（預設為 20）",
         "default": 20
       },
       {
         "name": "semester",
         "type": "STRING",
-        "description": "Semester code. If not specified, uses the latest semester.",
+        "description": "學年期代碼。若未指定，則使用最新學期。",
         "default": null
       }
     ]
   },
   "nchu_course_search_by_sdg": {
-    "description": "Search courses by UN Sustainable Development Goals (SDGs). JSON string containing courses related to the specified SDG",
+    "description": "依聯合國永續發展目標 (SDGs) 搜尋課程。回傳包含與指定 SDG 相關之課程的 JSON 字串",
     "required_parameters": [
       {
         "name": "sdg_keyword",
         "type": "STRING",
-        "description": "SDG keyword to search for (e.g., 氣候, 永續, 健康, 教育)"
+        "description": "欲搜尋的 SDG 關鍵字（例如：氣候、永續、健康、教育）"
       }
     ],
     "optional_parameters": [
       {
         "name": "limit",
         "type": "NUMBER",
-        "description": "Maximum number of results to return (default: 20)",
+        "description": "最多回傳幾筆結果（預設為 20）",
         "default": 20
       },
       {
         "name": "semester",
         "type": "STRING",
-        "description": "Semester code. If not specified, uses the latest semester.",
+        "description": "學年期代碼。若未指定，則使用最新學期。",
         "default": null
       }
     ]
   },
   "nchu_course_get_weekly_content": {
-    "description": "Get weekly course content for a specific course. JSON string containing weekly course content (每週授課內容)",
+    "description": "取得特定課程的每週授課內容。回傳包含每週授課內容的 JSON 字串",
     "required_parameters": [
       {
         "name": "course_id",
         "type": "STRING",
-        "description": "Course ID (選課號碼)"
+        "description": "課程 ID（選課號碼）"
       }
     ],
     "optional_parameters": [
       {
         "name": "semester",
         "type": "STRING",
-        "description": "Semester code. If not specified, uses the latest semester.",
+        "description": "學年期代碼。若未指定，則使用最新學期。",
         "default": null
       }
     ]
