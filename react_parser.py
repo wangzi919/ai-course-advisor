@@ -150,9 +150,13 @@ def parse_response(
     # 驗證 Thought 格式
     if proc_thought:
         if "Thought:" not in thought:
-            item['parse_successful'] = False
-            item['parse_error_msg'] = "Your thought should begin with \"Thought:\"."
-            return item
+            if thought.strip():
+                # 自動修復：如果模型有輸出內容但沒加關鍵字，幫它補上
+                thought = "Thought: " + thought
+            else:
+                item['parse_successful'] = False
+                item['parse_error_msg'] = "Your thought should begin with \"Thought:\"."
+                return item
 
         if thought.count("Thought:") > 1:
             item['parse_successful'] = False

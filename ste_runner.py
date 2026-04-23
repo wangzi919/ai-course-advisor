@@ -158,7 +158,7 @@ def main(
             )
             messages = chat_my(messages, prompt_a, model=model_ckpt)
             temp = messages[-1]["content"]
-            parsed = parse_response(temp, [api_name], api_info, proc_thought=True)
+            parsed = parse_response(strip_think(temp), [api_name], api_info, proc_thought=True)
 
             for turn in range(max_turn):
                 if not parsed["parse_successful"]:
@@ -189,7 +189,7 @@ def main(
 
                 messages = chat_my(messages, "Observation: " + obs, model=model_ckpt)
                 temp = messages[-1]["content"]
-                parsed = parse_response(temp, [api_name], api_info, proc_thought=True)
+                parsed = parse_response(strip_think(temp), [api_name], api_info, proc_thought=True)
 
             # ===== Step 3: Reflection =====
             chain_summary = json.dumps(
@@ -237,7 +237,7 @@ def main(
                 prompt_follow_a = template_a_follow.format(query=follow_query)
                 messages = chat_my(messages, prompt_follow_a, model=model_ckpt)
                 temp = messages[-1]["content"]
-                parsed = parse_response(temp, [api_name], api_info, proc_thought=True)
+                parsed = parse_response(strip_think(temp), [api_name], api_info, proc_thought=True)
 
                 for turn in range(max_turn):
                     if not parsed["parse_successful"]:
@@ -267,7 +267,7 @@ def main(
                     })
                     messages = chat_my(messages, "Observation: " + obs, model=model_ckpt)
                     temp = messages[-1]["content"]
-                    parsed = parse_response(temp, [api_name], api_info, proc_thought=True)
+                    parsed = parse_response(strip_think(temp), [api_name], api_info, proc_thought=True)
 
                 # Follow-up Reflection
                 chain_summary_f = json.dumps(
