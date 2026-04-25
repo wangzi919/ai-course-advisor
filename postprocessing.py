@@ -7,7 +7,7 @@ from my_llm import chat_my
 
 
 def main(
-    input_path: str = "results/ste/gpt_20251203-220811.json",
+    input_path: str = "results/ste/combined_results.json",
     filter_model_ckpt: str = "qwen3:32b",
     paraphrase_model_ckpt: str = "qwen3:32b",
     target_num_train_per_API: int = 150, #平均每個api產出量目標
