@@ -4,7 +4,44 @@ import ste_runner
 
 # 這是您指定要重新執行 STE 的 API 清單
 TARGET_APIS = [
-    "nchu_cross_program_get_all_programs"
+    "nchu_course_teachers_search_by_department",
+    "nchu_cross_program_get_program_courses",
+    "nchu_cross_program_get_stats",
+    "nchu_cross_program_get_weekly_content",
+    "nchu_cross_program_search_by_program",
+    "nchu_cross_program_search_by_keyword",
+    "nchu_cross_program_search_by_teacher",
+    "nchu_cross_program_search_by_time",
+    "nchu_education_get_all_departments",
+    "nchu_education_get_all_programs",
+    "nchu_education_get_all_teachers",
+    "nchu_education_get_detail",
+    "nchu_education_get_program_courses",
+    "nchu_education_get_stats",
+    "nchu_education_get_weekly_content",
+    "nchu_education_search_across_semesters",
+    "nchu_education_search_by_department",
+    "nchu_education_search_by_keyword",
+    "nchu_education_search_by_program",
+    "nchu_education_search_by_teacher",
+    "nchu_education_search_by_time",
+    "nchu_education_search_syllabus",
+    "nchu_ge_course_search_by_sdg",
+    "rule_list_all",
+    "rule_search_by_query",
+    "nchu_course_teachers_get_courses",
+    "nchu_course_teachers_get_detail",
+    "nchu_course_teachers_search",
+    "nchu_course_teachers_search_by_name",
+    "nchu_ge_course_get_teacher_courses",
+    "nchu_ge_course_get_teacher_history",
+    "nchu_ge_course_search_by_teacher",
+    "nchu_course_get_weekly_content",
+    "nchu_course_search_across_semesters",
+    "nchu_course_search_by_assessment_method",
+    "nchu_course_search_by_keyword",
+    "nchu_cross_program_get_detail",
+    "nchu_ge_course_get_weekly_content"
 ]
 
 def main():
