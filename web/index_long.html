@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="google-site-verification" content="OHu7qKXYiN4U6qc3plt_nwG27pEoX5b8ZUNwYqpym5I" />
+    <link rel="icon" type="image/png" href="/img/logo.png" />
+    <link rel="apple-touch-icon" href="/img/logo.png" />
+    <title>NCHU AI Learning Advisor</title>
+
+    <!-- Turnstile -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+
+    <!-- Modular CSS -->
+    <link rel="stylesheet" href="/css/variables.css" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/chat.css" />
+    <link rel="stylesheet" href="/css/sidebar.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+
+    <!-- Markdown parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
+
+    <!-- Code highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- i18next internationalization -->
+    <script src="https://cdn.jsdelivr.net/npm/i18next@23.7.6/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.4.2/i18nextHttpBackend.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.2.0/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="/js/i18n.js"></script>
+    <!-- 動態快速查詢按鈕相關 -->
+    <script src="/js/calendar-utils.js"></script>
+    <script src="/js/dynamic-questions.js"></script>
+</head>
+
+<body>
+    <!-- Language Selection Modal -->
+    <div id="languageSelectionModal" class="language-selection-modal">
+        <div class="language-selection-content">
+            <div class="language-selection-header">
+                <div class="language-selection-icon">🌍</div>
+                <h2 class="language-selection-title" data-i18n="languageSelection.title">
+                    選擇您的語言
+                </h2>
+                <p class="language-selection-subtitle" data-i18n="languageSelection.subtitle">
+                    Choose Your Language / 言語を選択 / Chọn ngôn ngữ / เลือกภาษา
+                </p>
+            </div>
+
+            <div class="language-options-grid">
+                <div class="language-option-card" onclick="selectInitialLanguage('zh-TW')">
+                    <div class="language-flag">🇹🇼</div>
+                    <div class="language-name">繁體中文</div>
+                    <div class="language-native-name">Traditional Chinese</div>
+                </div>
+                <div class="language-option-card" onclick="selectInitialLanguage('en')">
+                    <div class="language-flag">🇬🇧</div>
+                    <div class="language-name">English</div>
+                    <div class="language-native-name">English</div>
+                </div>
+                <div class="language-option-card" onclick="selectInitialLanguage('ja')">
+                    <div class="language-flag">🇯🇵</div>
+                    <div class="language-name">日本語</div>
+                    <div class="language-native-name">Japanese</div>
+                </div>
+                <div class="language-option-card" onclick="selectInitialLanguage('vi')">
+                    <div class="language-flag">🇻🇳</div>
+                    <div class="language-name">Tiếng Việt</div>
+                    <div class="language-native-name">Vietnamese</div>
+                </div>
+                <div class="language-option-card" onclick="selectInitialLanguage('th')">
+                    <div class="language-flag">🇹🇭</div>
+                    <div class="language-name">ภาษาไทย</div>
+                    <div class="language-native-name">Thai</div>
+                </div>
+            </div>
+
+            <button id="confirmLanguageButton" class="language-confirm-button" onclick="confirmLanguageSelection()"
+                data-i18n="languageSelection.confirm">
+                繼續 / Continue / 続ける / Tiếp tục / ดำเนินการต่อ
+            </button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="header-left">
+            <div onclick="window.location.reload()" style="cursor: pointer; display: inline-flex; align-items: center; gap: 10px;">
+                <img src="/img/AI興學辦_雙生鵝.gif" alt="AI興學伴" class="header-logo" />
+                <span class="logo-text">AI興學伴</span>
+            </div>
+        </div>
+        <div class="auth-section">
+            <!-- Language Selector -->
+            <div class="language-selector">
+                <button class="language-button" onclick="toggleLanguageDropdown()">
+                    🌐 <span id="currentLanguage">中文</span>
+                    <span style="font-size: 0.7rem">▼</span>
+                </button>
+                <div id="languageDropdown" class="language-dropdown">
+                    <button class="language-option" onclick="switchLanguage('zh-TW')">🇹🇼 繁體中文</button>
+                    <button class="language-option" onclick="switchLanguage('en')">🇬🇧 English</button>
+                    <button class="language-option" onclick="switchLanguage('ja')">🇯🇵 日本語</button>
+                    <button class="language-option" onclick="switchLanguage('vi')">🇻🇳 Tiếng Việt</button>
+                    <button class="language-option" onclick="switchLanguage('th')">🇹🇭 ภาษาไทย</button>
+                </div>
+            </div>
+
+            <!-- Not Logged In State -->
+            <div id="loginSection" class="login-dropdown">
+                <button class="login-button" onclick="toggleLoginDropdown()">
+                    <span data-i18n="auth.login">🔐 登入</span>
+                    <span style="font-size: 0.7rem">▼</span>
+                </button>
+                <div id="loginDropdown" class="dropdown-content">
+                    <button class="sso-option" onclick="loginWithSSO('nchu')">
+                        <div class="sso-icon nchu">中</div>
+                        <div>
+                            <div style="font-weight: 500" data-i18n="auth.nchu">中興大學</div>
+                            <div style="font-size: 0.8rem; color: #64748b" data-i18n="auth.nchuIdm">單一登入</div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Logged In State -->
+            <div id="userSection" class="login-dropdown" style="display: none">
+                <div class="user-info" onclick="toggleUserDropdown()" style="cursor: pointer">
+                    <div class="user-avatar" id="userAvatar">U</div>
+                    <div>
+                        <div style="font-weight: 500" id="userName">載入中...</div>
+                        <div style="font-size: 0.8rem; color: #16a34a" id="userProvider">NCHU</div>
+                    </div>
+                    <span style="font-size: 0.7rem">▼</span>
+                </div>
+                <div id="userDropdown" class="dropdown-content">
+                    <button class="sso-option logout-button" onclick="logout()">
+                        <div class="sso-icon" style="background: #ef4444; color: white">🚪</div>
+                        <div data-i18n="auth.logout">登出</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+        <!-- Sidebar Overlay (Mobile) -->
+        <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+        <!-- Sidebar - Conversation History -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button class="new-chat-button" onclick="startNewConversation()">
+                    <span data-i18n="sidebar.newChat">➕ 新對話</span>
+                </button>
+            </div>
+            <div class="conversation-list" id="conversationList">
+                <!-- Conversations loaded dynamically -->
+            </div>
+            <div class="sidebar-footer">
+                <div id="loadMoreContainer" style="display: none">
+                    <button class="load-more-button" onclick="loadMoreConversations()">
+                        <span data-i18n="sidebar.loadMore">載入更多</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toggle Sidebar Button -->
+        <button class="toggle-sidebar-button" id="toggleSidebar" onclick="toggleSidebar()">☰</button>
+
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <div class="quick-actions">
+                <h3 data-i18n="quickActions.title">💡 快速查詢</h3>
+                <div class="preset-buttons" id="quickQuestionsContainer">
+                    <!-- 快速查詢按鈕將從配置文件動態載入 -->
+                </div>
+            </div>
+
+            <div class="messages" id="messages">
+                <!-- Welcome message loaded dynamically -->
+            </div>
+
+            <div class="input-area">
+                <div class="input-container">
+                    <div class="autocomplete-container">
+                        <div id="autocompleteDropdown" class="autocomplete-dropdown"></div>
+                        <textarea id="messageInput" class="message-input" data-i18n-placeholder="chat.placeholder"
+                            placeholder="輸入訊息..." rows="1"></textarea>
+                    </div>
+                    <!-- Voice Input Button -->
+                    <div style="position: relative">
+                        <button id="voiceButton" class="voice-button"></button>
+                        <div id="recordingStatus" class="recording-status">
+                            <div class="recording-dot"></div>
+                            <span>錄音中</span>
+                            <span class="recording-time" id="recordingTime">0:00</span>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <!-- Character GIF -->
+                        <img id="inputCharacter" class="input-character" src="img/AI興學辦_魔法師.gif" alt="魔法師角色" />
+                        <button id="sendButton" class="send-button" onclick="sendMessage()">
+                            <span data-i18n="chat.send">📤 傳送</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Auth Section -->
+            <div class="mobile-auth-section" style="display: none">
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <button class="language-button" onclick="toggleMobileLanguageDropdown()">
+                        🌐 <span id="mobileCurrentLanguage">中文</span>
+                        <span style="font-size: 0.7rem">▼</span>
+                    </button>
+                    <div id="mobileLanguageDropdown" class="language-dropdown">
+                        <button class="language-option" onclick="switchLanguage('zh-TW')">🇹🇼 繁體中文</button>
+                        <button class="language-option" onclick="switchLanguage('en')">🇬🇧 English</button>
+                        <button class="language-option" onclick="switchLanguage('ja')">🇯🇵 日本語</button>
+                        <button class="language-option" onclick="switchLanguage('vi')">🇻🇳 Tiếng Việt</button>
+                        <button class="language-option" onclick="switchLanguage('th')">🇹🇭 ภาษาไทย</button>
+                    </div>
+                </div>
+
+                <!-- Login Button -->
+                <div id="mobileLoginSection" class="login-dropdown">
+                    <button class="login-button" onclick="toggleMobileLoginDropdown()">
+                        <span data-i18n="auth.login">🔐 登入</span>
+                        <span style="font-size: 0.7rem">▼</span>
+                    </button>
+                    <div id="mobileLoginDropdown" class="dropdown-content">
+                        <button class="sso-option" onclick="loginWithSSO('nchu')">
+                            <div class="sso-icon nchu">中</div>
+                            <div>
+                                <div style="font-weight: 500" data-i18n="auth.nchu">中興大學</div>
+                                <div style="font-size: 0.8rem; color: #64748b" data-i18n="auth.nchuIdm">單一登入</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Logged In State -->
+                <div id="mobileUserSection" class="login-dropdown" style="display: none">
+                    <div class="user-info" onclick="toggleMobileUserDropdown()" style="cursor: pointer">
+                        <div class="user-avatar" id="mobileUserAvatar">U</div>
+                        <div>
+                            <div style="font-weight: 500" id="mobileUserName">載入中...</div>
+                            <div style="font-size: 0.8rem; color: #16a34a" id="mobileUserProvider">NCHU</div>
+                        </div>
+                        <span style="font-size: 0.7rem">▼</span>
+                    </div>
+                    <div id="mobileUserDropdown" class="dropdown-content">
+                        <button class="sso-option logout-button" onclick="logout()">
+                            <div class="sso-icon" style="background: #ef4444; color: white">🚪</div>
+                            <div data-i18n="auth.logout">登出</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Disclaimer -->
+    <div class="bottom-disclaimer">
+        <span style="margin-right: 0.5rem">⚠️</span>
+        <span data-i18n="disclaimer.message">AI生成內容僅供參考，所有課程、學分、開課時間，請以教務處公告及圖書館官方資料為準</span>
+    </div>
+
+    <!-- Welcome Modal -->
+    <div id="welcomeModal" class="welcome-modal" style="display: none">
+        <div class="welcome-content">
+            <div class="welcome-header">
+                <div class="welcome-icon">
+                    <img src="/img/logo.png" alt="NCHU Logo" />
+                </div>
+                <div class="welcome-title" data-i18n="welcomeModal.title">歡迎來到 NCHU LearningHub</div>
+                <div class="welcome-subtitle" data-i18n="welcomeModal.subtitle">您的智慧學習夥伴</div>
+            </div>
+            <div class="welcome-body">
+                <p data-i18n="welcomeModal.intro">
+                    我是中興大學 AI 學習顧問，很高興為您服務！無論您是想找課程、查法規，還是需要圖書館資源，我都能協助您。
+                </p>
+            </div>
+            <div class="welcome-features">
+                <div class="welcome-feature">
+                    <span class="welcome-feature-icon">🔍</span>
+                    <span data-i18n="welcomeModal.features.courses">課程查詢</span>
+                </div>
+                <div class="welcome-feature">
+                    <span class="welcome-feature-icon">📚</span>
+                    <span data-i18n="welcomeModal.features.books">書籍推薦</span>
+                </div>
+                <div class="welcome-feature">
+                    <span class="welcome-feature-icon">📋</span>
+                    <span data-i18n="welcomeModal.features.regulations">法規查詢</span>
+                </div>
+                <div class="welcome-feature">
+                    <span class="welcome-feature-icon">💡</span>
+                    <span data-i18n="welcomeModal.features.personalized">個人化建議</span>
+                </div>
+            </div>
+            <div class="welcome-buttons">
+                <button class="welcome-button welcome-button-tour" onclick="startTour()">
+                    <span data-i18n="welcomeModal.startTour">✨ 開始導覽</span>
+                </button>
+                <button class="welcome-button welcome-button-skip" onclick="skipTour()">
+                    <span data-i18n="welcomeModal.skip">跳過導覽</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tour Elements -->
+    <div id="tourOverlay" class="tour-overlay"></div>
+    <div id="tourSpotlight" class="tour-spotlight" style="display: none"></div>
+    <div id="tourTooltip" class="tour-tooltip" style="display: none">
+        <div class="tour-tooltip-header">
+            <span class="tour-tooltip-icon" id="tourIcon">📍</span>
+            <span class="tour-tooltip-title" id="tourTitle">標題</span>
+        </div>
+        <div class="tour-tooltip-content" id="tourContent">內容</div>
+        <div class="tour-tooltip-footer">
+            <div class="tour-progress" id="tourProgress">1 / 5</div>
+            <div class="tour-buttons">
+                <button class="tour-button tour-button-skip" onclick="endTour()" data-i18n="tour.skip">跳過</button>
+                <button class="tour-button tour-button-next" onclick="nextTourStep()" data-i18n="tour.next">下一步</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Application Module -->
+    <script type="module" src="/js/main.js"></script>
+    <div id="turnstile-container" style="display: none;"></div>
+</body>
+
+</html>
