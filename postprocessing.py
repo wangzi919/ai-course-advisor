@@ -10,8 +10,8 @@ def main(
     input_path: str = "results/ste/combined_results.json",
     filter_model_ckpt: str = "qwen3:32b",
     paraphrase_model_ckpt: str = "qwen3:32b",
-    target_num_train_per_API: int = 150, #平均每個api產出量目標
-    num_para_train_max: int = 6, #每筆最多改寫幾次
+    target_num_train_per_API: int = 50, #平均每個api產出量目標
+    num_para_train_max: int = 4, #每筆最多改寫幾次
     dir_write: str = "results/ste/",
 ):
     os.makedirs(dir_write, exist_ok=True)
@@ -25,9 +25,42 @@ def main(
         prompt_filtering_template = f.read().strip()
 
     dataset = {}
-    print(f"🔍 Filtering data from {len(data_dict)} APIs")
+    
+    TARGET_APIS = {
+        "nchu_course_search_by_keyword",
+        "nchu_course_search_by_department",
+        "nchu_course_search_selectable_courses",
+        "nchu_course_search_by_time",
+        "nchu_course_get_detail",
+        "nchu_course_get_weekly_content",
+        "nchu_course_search_by_assessment_method",
+        "nchu_course_search_by_teaching_method",
+        "nchu_course_search_syllabus",
+        "nchu_ge_course_search_by_domain",
+        "nchu_ge_course_search_by_keyword",
+        "nchu_ge_course_search_by_time",
+        "nchu_ge_course_get_detail",
+        "nchu_teacher_search_by_name",
+        "nchu_course_get_teacher_history",
+        "nchu_course_get_teacher_courses",
+        "school_calendar_get_holidays",
+        "school_calendar_get_exams",
+        "school_calendar_get_registration",
+        "school_calendar_search",
+        "get_library_hours",
+        "get_24hour_spaces",
+        "library_search_books",
+        "rule_search_by_query",
+        "nchu_cross_program_search_by_program",
+        "modules_get_detail"
+    }
+
+    print(f"🔍 Filtering data from {len(data_dict)} APIs (Targeting {len(TARGET_APIS)} specific APIs)")
 
     for api_name, sessions in data_dict.items():
+        if api_name not in TARGET_APIS:
+            continue
+
         examples = []
         print(f"\n=== Processing {api_name} ===")
 
@@ -87,8 +120,30 @@ def main(
         print(f"✅ {api_name}: kept {len(examples)} examples")
 
     # === Paraphrase ===
-    dataset_paraphrased = {}
     print("\n🌀 Starting paraphrasing...")
+
+    # 先決定輸出的檔名，以便即時寫入
+    if paraphrase_model_ckpt == "gpt-oss:120b":
+        save_file_name = "gpt_tool_data_train.json"
+    elif paraphrase_model_ckpt == "llama3.1:8b-instruct-fp16":
+        save_file_name = "llama_tool_data_train.json"
+    else:
+        save_file_name = "tool_data_train.json"
+    out_path = os.path.join(dir_write, save_file_name)
+
+    # 讀取已存在的檔案以接續進度 (斷點續傳)
+    tool_data_train = []
+    processed_queries = set()
+    if os.path.exists(out_path):
+        try:
+            with open(out_path, "r", encoding="utf-8") as f:
+                tool_data_train = json.load(f)
+            # 建立已經處理過的 query 集合
+            for item in tool_data_train:
+                processed_queries.add(item["query"])
+            print(f"📥 Loaded {len(tool_data_train)} existing examples from {out_path} to resume.")
+        except Exception as e:
+            print(f"⚠️ Could not load existing file: {e}. Starting fresh.")
 
     for api_name, examples in dataset.items():
         if not examples:
@@ -99,9 +154,12 @@ def main(
             num_para_train_max,
         )
 
-        para_list = []
         for ex in examples:
             base_query = ex["query"]
+            # 如果這個 query 已經處理過，就跳過
+            if base_query in processed_queries:
+                continue
+
             ex_list = [ex]
 
             messages = [
@@ -124,36 +182,29 @@ Your paraphrase:"""
                 messages = chat_my(messages, follow_prompt, model=paraphrase_model_ckpt)
                 ex_list.append({"query": messages[-1]['content']})
 
-            para_list.append(ex_list)
-        dataset_paraphrased[api_name] = para_list
-
-    # === 組成最終訓練集 ===
-    tool_data_train = []
-    for api_name, para_group in dataset_paraphrased.items():
-        for ex_list in para_group:
-            if not ex_list:
-                continue
+            # === 即時加進最終訓練集並存檔 ===
             seed = ex_list[0]
             tool_data_train.append(seed)
+            processed_queries.add(seed["query"])
+            
             for i in range(1, len(ex_list)):
                 tmp = deepcopy(seed)
                 tmp["query"] = ex_list[i]["query"]
                 tool_data_train.append(tmp)
+                processed_queries.add(tmp["query"])
 
+            # 每次更新都直接以覆寫("w")模式存回檔案，保持 JSON 格式正確
+            with open(out_path, "w", encoding="utf-8") as f:
+                json.dump(tool_data_train, f, indent=2, ensure_ascii=False)
+            
+            print(f"💾 即時存檔：目前累積 {len(tool_data_train)} 筆資料寫入 {out_path}")
+
+    # 全部完成後，最後打亂順序再存一次
     random.shuffle(tool_data_train)
-
-    if paraphrase_model_ckpt == "gpt-oss:120b":
-        save_file_name = "gpt_tool_data_train.json"
-    elif paraphrase_model_ckpt == "llama3.1:8b-instruct-fp16":
-        save_file_name = "llama_tool_data_train.json"
-    else:
-        save_file_name = "tool_data_train.json"
-    out_path = os.path.join(dir_write, save_file_name)
-
-    with open(out_path, "a", encoding="utf-8") as f:
+    with open(out_path, "w", encoding="utf-8") as f:
         json.dump(tool_data_train, f, indent=2, ensure_ascii=False)
 
-    print(f"\n📦 Saved {len(tool_data_train)} examples to {out_path}")
+    print(f"\n📦 Finished! Final data shuffled. Total {len(tool_data_train)} examples saved to {out_path}")
 
 
 if __name__ == "__main__":
