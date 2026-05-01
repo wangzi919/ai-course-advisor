@@ -1,5 +1,7 @@
 Your task is to answer the user's query as best you can. You have access to the following tools which you can use via API call:
 
+IMPORTANT: You MUST always respond in Traditional Chinese (繁體中文). This applies to ALL parts of your response, including reasoning steps and the Final Answer. Do NOT use English in your response.
+
 {api_descriptions}
 
 The format you use the tools is by specifying 1) Action: the API function name you'd like to call 2) Action Input: the input parameters of the API call in a json string format. The result of the API call will be returned starting with "Observation:". Remember that you should only perform a SINGLE action at a time, do NOT return a list of multiple actions.
@@ -24,7 +26,7 @@ Action: the API function name
 Action Input: the input parameters of the API call in json string format
 Observation: the return result of the API call. This is what I will provide you with; you do not need to repeat it in your response.
 ... (this Action/Action Input/Observation can repeat N times)
-Final Answer: the final answer to the original input question
+Final Answer: the final answer to the original input question (MUST be in Traditional Chinese 繁體中文)
 
 In each turn, output only one Thought, one Action, and one Action Input, then stop and wait for the Observation before continuing.
 Once you have enough information, please immediately use \nFinal Answer:

@@ -59,6 +59,7 @@ def load_resources(
     tool_desc_path: str,
     tool_reg_path: str,
     prompt_path: str,
+    tool_errata_path: str = "results/tool_errata.json",
 ):
     """載入所有靜態資源到記憶體（只做一次）。"""
     print("[*] 載入資源中...")
@@ -75,6 +76,18 @@ def load_resources(
     with open(prompt_path, "r", encoding="utf-8") as f:
         prompt_template = f.read().strip()
 
+    # 載入 tool errata（可選）
+    tool_errata = {}
+    if os.path.exists(tool_errata_path):
+        try:
+            with open(tool_errata_path, "r", encoding="utf-8") as f:
+                tool_errata = json.load(f)
+            print(f"[OK] 已載入 {len(tool_errata)} 條 API 使用規則 (tool_errata)")
+        except Exception as e:
+            print(f"[WARN] 無法載入 tool_errata：{e}")
+    else:
+        print(f"[INFO] 未找到 {tool_errata_path}，不注入 API 使用規則。")
+
     valid_api_names = [
         n for n in allowed_apis
         if n in tool_description and n in tool_registry
@@ -82,11 +95,12 @@ def load_resources(
     print(f"[OK] 可用 API：{len(valid_api_names)} 個")
 
     _resources.update({
-        "train_items":     train_items,
-        "allowed_apis":    allowed_apis,
+        "train_items":      train_items,
+        "allowed_apis":     allowed_apis,
         "tool_description": tool_description,
-        "tool_registry":   tool_registry,
-        "prompt_template": prompt_template,
+        "tool_registry":    tool_registry,
+        "prompt_template":  prompt_template,
+        "tool_errata":      tool_errata,
     })
 
 
@@ -123,7 +137,8 @@ def chat():
                 tool_registry=_resources["tool_registry"],
                 prompt_template=_resources["prompt_template"],
                 model_ckpt=model_ckpt,
-                if_visualize=False,   # 伺服器模式不需要 stdout 輸出
+                tool_errata=_resources.get("tool_errata", {}),
+                if_visualize=False,
                 max_turns=max_turns,
                 top_k_demos=top_k_demos,
             )
@@ -172,7 +187,8 @@ def main():
     parser.add_argument("--train_data_path", type=str,   default="results/ste/tool_data_train.json")
     parser.add_argument("--tool_desc_path",  type=str,   default="tool_metadata/tool_description.json")
     parser.add_argument("--tool_reg_path",   type=str,   default="tool_metadata/tool_registry.json")
-    parser.add_argument("--prompt_path",     type=str,   default="prompts/prompt_template.txt")
+    parser.add_argument("--prompt_path",        type=str,   default="prompts/prompt_template.txt")
+    parser.add_argument("--tool_errata_path",   type=str,   default="results/tool_errata.json")
     args = parser.parse_args()
 
     # 存到 Flask config，讓端點讀取
@@ -186,6 +202,7 @@ def main():
         tool_desc_path=args.tool_desc_path,
         tool_reg_path=args.tool_reg_path,
         prompt_path=args.prompt_path,
+        tool_errata_path=args.tool_errata_path,
     )
 
     print(f"\n[START] ICL Server 啟動於 http://{args.host}:{args.port}")
