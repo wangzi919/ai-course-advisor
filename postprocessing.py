@@ -27,6 +27,7 @@ def main(
     dataset = {}
     
     TARGET_APIS = {
+        # ── 一般課程 ──────────────────────────────────
         "nchu_course_search_by_keyword",
         "nchu_course_search_by_department",
         "nchu_course_search_selectable_courses",
@@ -36,24 +37,46 @@ def main(
         "nchu_course_search_by_assessment_method",
         "nchu_course_search_by_teaching_method",
         "nchu_course_search_syllabus",
+        "nchu_course_get_teacher_history",
+        "nchu_course_get_teacher_courses",
+
+        # ── 通識課程 ──────────────────────────────────
         "nchu_ge_course_search_by_domain",
         "nchu_ge_course_search_by_keyword",
         "nchu_ge_course_search_by_time",
         "nchu_ge_course_get_detail",
+        "nchu_ge_course_search_by_teacher",       # NEW
+        "nchu_ge_course_get_teacher_courses",     # NEW
+
+        # ── 教師查詢 ──────────────────────────────────
         "nchu_teacher_search_by_name",
-        "nchu_course_get_teacher_history",
-        "nchu_course_get_teacher_courses",
+        "nchu_teacher_get_detail",                # NEW
+        "nchu_teacher_search_by_research_area",   # NEW
+
+        # ── 跨域學程 ──────────────────────────────────
+        "nchu_cross_program_search_by_program",
+        "nchu_cross_program_search_by_keyword",   # NEW
+        "nchu_cross_program_get_program_courses", # NEW
+
+        # ── 行事曆 ────────────────────────────────────
         "school_calendar_get_holidays",
-        "school_calendar_get_exams",
+        "school_calendar_get_exams",              # NEW
         "school_calendar_get_registration",
         "school_calendar_search",
+        "school_calendar_get_today",              # NEW
+        "school_calendar_get_month",              # NEW
+
+        # ── 圖書館 ────────────────────────────────────
         "get_library_hours",
         "get_24hour_spaces",
         "library_search_books",
+        "search_library_space",                   # NEW
+
+        # ── 其他 ──────────────────────────────────────
         "rule_search_by_query",
-        "nchu_cross_program_search_by_program",
-        "modules_get_detail"
+        "modules_get_detail",
     }
+
 
     print(f"🔍 Filtering data from {len(data_dict)} APIs (Targeting {len(TARGET_APIS)} specific APIs)")
 
@@ -131,19 +154,23 @@ def main(
         save_file_name = "tool_data_train.json"
     out_path = os.path.join(dir_write, save_file_name)
 
-    # 讀取已存在的檔案以接續進度 (斷點續傳)
+    # === 讀取現有資料以進行「接續」 (Merge/Append 模式) ===
     tool_data_train = []
     processed_queries = set()
     if os.path.exists(out_path):
         try:
             with open(out_path, "r", encoding="utf-8") as f:
-                tool_data_train = json.load(f)
-            # 建立已經處理過的 query 集合
+                content = json.load(f)
+                if isinstance(content, list):
+                    tool_data_train = content
+                else:
+                    print(f"⚠️ 檔案格式非列表，將從頭開始。")
+            # 建立已經處理過的 query 集合，避免重複加入完全一樣的樣本
             for item in tool_data_train:
-                processed_queries.add(item["query"])
-            print(f"📥 Loaded {len(tool_data_train)} existing examples from {out_path} to resume.")
+                processed_queries.add(item.get("query", ""))
+            print(f"📥 已載入舊有資料：共 {len(tool_data_train)} 筆資料，新資料將接續在其後。")
         except Exception as e:
-            print(f"⚠️ Could not load existing file: {e}. Starting fresh.")
+            print(f"⚠️ 無法讀取舊檔 ({e})，將建立新檔案。")
 
     for api_name, examples in dataset.items():
         if not examples:
